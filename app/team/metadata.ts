@@ -1,0 +1,39 @@
+import type { Metadata } from 'next'
+
+const title = 'Our Team — Discipulus Ventures'
+const description = 'Meet the Discipulus Ventures team and advisors in El Segundo.'
+
+const url = 'https://discipulusventures.com/team'
+// Using a clean, dark background with logo/brand area; adjust if you add a dedicated hero image later
+const image = '/Discipulus - Logo.png'
+
+const metadata: Metadata = {
+  title,
+  description,
+  openGraph: {
+    title,
+    description,
+    url,
+    siteName: 'Discipulus Ventures',
+    images: [
+      {
+        url: image,
+        width: 1200,
+        height: 630,
+        alt: 'Discipulus Ventures team page hero',
+      },
+    ],
+    locale: 'en_US',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title,
+    description,
+    images: [image],
+  },
+}
+
+export default metadata
+
+
