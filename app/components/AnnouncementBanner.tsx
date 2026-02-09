@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 
 const AnnouncementBanner: React.FC = () => {
   return (
-    <Link href="https://forms.gle/Z1bpVuvprxfmXfSS7">
+    <Link href="https://web.miniextensions.com/Zliw55HfhOWXZnca7Q9Q">
       <motion.div
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
