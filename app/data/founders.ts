@@ -93,6 +93,7 @@ export const founders: Founder[] = [
       companyLogo: "/companies/tex.png",
       companyLink: "https://tex.pro/",
       companyDescription: "Intelligence for equipment procurement & sales.",
+      testimonial: "From day one, Discipulus brought together founders who were deeply mission-aligned and serious about building enduring American companies. That alignment created trust, speed, and an uncommon sense of purpose. It's rare to find a program that pushes this hard while staying true to first principles.",
       grayscale: true,
       companyLogoSize: 'large',
       companyLogoPadding: true,
