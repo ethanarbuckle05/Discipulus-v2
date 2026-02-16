@@ -68,7 +68,7 @@ const Footer = () => {
               {submitting ? <Spinner size="xs" /> : "Subscribe"}
             </button>
           </div> */}
-          <a href="https://docs.google.com/forms/d/e/1FAIpQLSf8Oj6KjizD6018TXnw-iNKOPrXovPEBmbCkJU5TU7kdgzZ7w/viewform" className="hover:cursor-pointer duration-500 hover:opacity-90 flex items-center text-black bg-white px-4 py-2 rounded-[75px] font-semibold sm:text-sm">
+          <a href="https://web.miniextensions.com/Zliw55HfhOWXZnca7Q9Q" className="hover:cursor-pointer duration-500 hover:opacity-90 flex items-center text-black bg-white px-4 py-2 rounded-[75px] font-semibold sm:text-sm">
             Join us
           </a>
         </div>

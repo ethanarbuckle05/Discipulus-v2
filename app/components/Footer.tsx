@@ -18,7 +18,7 @@ const Footer = () => {
         className="flex items-center pt-6 space-x-8"
       >
         <div className="flex flex-col gap-4 text-left">
-          <a href="https://docs.google.com/forms/d/e/1FAIpQLSfCfpkIISj3Zr4LPuhXkm7NCI8XwMT7H5yuOQEpc_o0yp1QJQ/viewform?usp=sharing" className="hover:cursor-pointer duration-500 hover:opacity-90 flex justify-center items-center text-black bg-white px-4 py-2 rounded-[75px] font-semibold sm:text-sm">
+          <a href="https://web.miniextensions.com/Zliw55HfhOWXZnca7Q9Q" className="hover:cursor-pointer duration-500 hover:opacity-90 flex justify-center items-center text-black bg-white px-4 py-2 rounded-[75px] font-semibold sm:text-sm">
             Join us
           </a>
           <a href="mailto:jakob.diepenbrock@discipulusventures.com" className="hover:cursor-pointer duration-500 hover:opacity-90 flex justify-center items-center text-white border-[0.5px] border-white px-4 py-2 rounded-[75px] font-semibold sm:text-sm">
