@@ -32,6 +32,11 @@ const AudioVideoEmbed: React.FC<AudioVideoEmbedProps> = ({
 
   // Intersection Observer for autoplay
   useEffect(() => {
+    // Set muted via DOM property (not JSX attr) to avoid SSR hydration mismatch
+    if (videoRef.current) {
+      videoRef.current.muted = true;
+    }
+
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting && videoRef.current) {
@@ -93,7 +98,6 @@ const AudioVideoEmbed: React.FC<AudioVideoEmbedProps> = ({
         src={webmSrc ?? src}
         title={title}
         className="w-full h-auto rounded-lg"
-        muted={true}
         loop={loop}
         preload="metadata"
         playsInline

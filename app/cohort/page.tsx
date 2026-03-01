@@ -10,8 +10,10 @@ import FAQ from "../components/cohort/FAQ";
 import Investors from "../components/cohort/Investors";
 import SpeakerGrid from "../components/cohort/SpeakerCard";
 import TeamSection from "../components/TeamSection";
-import AudioVideoEmbed from "../components/AudioVideoEmbed";
+import dynamic from "next/dynamic";
 import Link from "next/link";
+
+const AudioVideoEmbed = dynamic(() => import("../components/AudioVideoEmbed"), { ssr: false });
 
 const CohortComponent: React.FC = () => { 
   return (
