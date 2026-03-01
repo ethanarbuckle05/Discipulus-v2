@@ -1,6 +1,5 @@
 "use client";
 
-import { Spinner, useToast } from "@chakra-ui/react";
 import axios from "axios";
 import Link from "next/link";
 import { useState } from "react";

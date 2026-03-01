@@ -1,8 +1,15 @@
 "use client";
 
 import React from "react";
-import loadable, { LoadableComponent } from "@loadable/component";
-import { IconBaseProps } from "react-icons/lib";
+import type { IconBaseProps } from "react-icons/lib";
+import { AiOutlineDeploymentUnit, AiOutlineSearch } from "react-icons/ai";
+import { RxRocket } from "react-icons/rx";
+
+const iconMap: Record<string, React.ComponentType<IconBaseProps>> = {
+  AiOutlineDeploymentUnit,
+  AiOutlineSearch,
+  RxRocket,
+};
 
 interface typesPropsIcon {
   nameIcon: string;
@@ -10,17 +17,7 @@ interface typesPropsIcon {
 }
 
 export function Icon({ nameIcon, propsIcon }: typesPropsIcon): React.ReactNode {
-  const lib = nameIcon
-    .replace(/([a-z0-9])([A-Z])/g, "$1 $2")
-    .split(" ")[0]
-    .toLocaleLowerCase();
-  const ElementIcon: LoadableComponent<IconBaseProps> = loadable(
-    async () => await import(`react-icons/${lib}/index.js`),
-    {
-      resolveComponent: (el: JSX.Element) => el[nameIcon as keyof JSX.Element],
-    }
-  );
-
-  const SafeIcon = ElementIcon as React.ComponentType<IconBaseProps>;
-  return <SafeIcon {...propsIcon} />;
+  const IconComponent = iconMap[nameIcon];
+  if (!IconComponent) return null;
+  return <IconComponent {...propsIcon} />;
 }

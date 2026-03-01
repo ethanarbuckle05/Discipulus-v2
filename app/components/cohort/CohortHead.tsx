@@ -1,6 +1,5 @@
 "use client";
 
-import { Spinner } from "@chakra-ui/react"; 
 import Link from "next/link";
 import { useState, useEffect } from "react";
 import { Link as SmoothLink } from "react-scroll";
