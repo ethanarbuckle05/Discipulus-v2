@@ -65,7 +65,7 @@ const RecentTweets = () => {
           {tweets.map((tweet, index) => (
             <div 
               key={tweet.id}
-              ref={el => tweetRefs.current[index] = el}
+              ref={el => { tweetRefs.current[index] = el; }}
               className="w-full"
             />
           ))}

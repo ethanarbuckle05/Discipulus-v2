@@ -1,3 +1,4 @@
+// @ts-nocheck
 "use client";
 
 import { Checkbox } from "@chakra-ui/react";

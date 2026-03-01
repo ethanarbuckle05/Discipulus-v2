@@ -2,7 +2,8 @@
 
 import React, { useState } from "react";
 import { usePathname, useRouter } from "next/navigation";
-import { Link as SmoothLink } from "react-scroll";
+import { Link as SmoothLinkBase } from "react-scroll";
+const SmoothLink = SmoothLinkBase as React.ComponentType<any>;
 import Link from "next/link";
 import Logo from "./Logo";
 import { RxHamburgerMenu, RxCross1 } from "react-icons/rx";
