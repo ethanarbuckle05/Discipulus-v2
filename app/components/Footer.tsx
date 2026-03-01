@@ -1,9 +1,6 @@
 "use client";
 
-import axios from "axios";
 import Link from "next/link";
-import { useState } from "react";
-import { FieldValues, SubmitHandler, useForm } from "react-hook-form";
 import x from '/public/social/x.png'
 import substack from '/public/social/substack.png'
 import linkedin from '/public/social/linkedin.png'

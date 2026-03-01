@@ -6,7 +6,6 @@ import { LiaFlagUsaSolid } from "react-icons/lia";
 import { TbHierarchy3, TbSchool } from "react-icons/tb";
 import { TbPigMoney } from "react-icons/tb";
 import { TbArrowsMaximize } from "react-icons/tb";
-import eye from '/eye.gif'; // Adjust the path as needed
 
 
 
