@@ -2,12 +2,9 @@
 
 import Link from "next/link";
 import { useState } from "react";
-import { Link as SmoothLink } from "react-scroll";
 import { motion } from "framer-motion";
 import Image from "next/image";
 
-//@ts-ignore
-import { Campuses } from "./Campuses";
 import Banner from "./Banner";
 
 const Head: React.FC = () => {
