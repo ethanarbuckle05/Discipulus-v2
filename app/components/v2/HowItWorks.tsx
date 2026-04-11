@@ -1,0 +1,51 @@
+"use client";
+
+import React from "react";
+import { Reveal } from "./useScrollEffects";
+
+const steps = [
+  { num: "01", title: "Apply", desc: "We select ~10 founders per cohort for technical depth, mission alignment, and intensity." },
+  { num: "02", title: "Arrive", desc: "Move into the El Segundo house. Meet your cohort — the people you'll build alongside for 10 days." },
+  { num: "03", title: "Train", desc: "Daily sessions with unicorn founders and defense operators. Office hours. Peer pressure that compounds." },
+  { num: "04", title: "Demo Day", desc: "Present to 100+ investors at the Demo Day for the American Interest. Walk out funded." },
+  { num: "05", title: "For life", desc: "Ongoing mentorship, fundraising support, and lifetime access to the El Segundo network." },
+];
+
+const HowItWorks: React.FC = () => (
+  <section id="how" className="py-16 lg:py-20">
+    <div className="max-w-[1200px] mx-auto px-6 lg:px-12">
+      <Reveal>
+        <p className="font-mono text-[0.72rem] text-white/60 tracking-[0.14em] uppercase mb-5">
+          How it works
+        </p>
+        <h2 className="font-freight text-[2.1rem] font-normal text-white mb-12">
+          From day one to Demo Day and beyond.
+        </h2>
+      </Reveal>
+      <div className="grid grid-cols-1 lg:grid-cols-5 gap-px bg-white/5 border border-white/5">
+        {steps.map((s, i) => (
+          <div key={s.num} className="bg-navy p-5 lg:p-6 relative">
+            <Reveal delay={i * 100}>
+              <div className="font-mono text-[0.58rem] text-white/40 tracking-widest mb-3">
+                {s.num}
+              </div>
+              <div className="font-freight text-base font-medium text-white mb-2">
+                {s.title}
+              </div>
+              <div className="text-[0.74rem] text-white/60 leading-relaxed">
+                {s.desc}
+              </div>
+            </Reveal>
+            {i < steps.length - 1 && (
+              <span className="hidden lg:block absolute -right-[7px] top-1/2 -translate-y-1/2 text-white/20 text-sm z-10">
+                →
+              </span>
+            )}
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+);
+
+export default HowItWorks;

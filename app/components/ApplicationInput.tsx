@@ -26,19 +26,15 @@ const ApplicationInput: React.FC<Props> = ({
         <textarea
           placeholder={placeholder}
           value={value}
-          onChange={async (e) => {
-            setValue(e.target.value);
-          }}
+          onChange={(e) => setValue(e.target.value)}
           className={`w-full bg-[#202020] border-[0.5px] py-2 rounded-xl px-4 min-h-[25vh]`}
         />
       ) : (
         <input
           placeholder={placeholder}
-          type={`${label === "Password" ? "password" : ""}`}
+          type={label === "Password" ? "password" : "text"}
           value={value}
-          onChange={async (e) => {
-            setValue(e.target.value);
-          }}
+          onChange={(e) => setValue(e.target.value)}
           className={`w-full  bg-[#202020] border-[1px] py-2 rounded-xl px-4`}
         />
       )}

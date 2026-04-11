@@ -1,18 +1,21 @@
-"use client";
+import type { Metadata } from "next";
+import NavbarV2 from "../components/v2/NavbarV2";
+import TeamSection from "../components/v2/TeamSection";
+import CTASection from "../components/v2/CTASection";
+import FooterV2 from "../components/v2/FooterV2";
 
-import Container from "../components/Container";
-import Footer from "../components/Footer";
-import FullTeamSection from "../components/FullTeamSection";
-
-const TeamPage: React.FC = () => {
-  return (
-    <Container bgColor="#000000">
-      <div className="min-h-screen pt-16">
-        <FullTeamSection />
-      </div>
-      <Footer />
-    </Container>
-  );
+export const metadata: Metadata = {
+  title: "Team — Discipulus Ventures",
+  description: "Meet the team behind Discipulus Ventures. Jakob Diepenbrock (General Partner) and Augustus Doricko (Venture Partner).",
 };
 
-export default TeamPage; 
+export default function TeamPage() {
+  return (
+    <div className="flex flex-col bg-navy text-white/80 font-sans min-h-screen antialiased">
+      <NavbarV2 />
+      <TeamSection />
+      <CTASection />
+      <FooterV2 />
+    </div>
+  );
+}

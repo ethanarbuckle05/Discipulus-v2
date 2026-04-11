@@ -10,7 +10,7 @@ Discipulus Ventures website — a Next.js 15 App Router site for a venture capit
 - **Runtime:** React 19
 - **Language:** TypeScript 5
 - **Styling:** Tailwind CSS 3 with custom config; no CSS modules
-- **Animation:** Framer Motion 11, React Reveal
+- **Animation:** Framer Motion 11
 - **Icons:** Lucide React, React Icons
 - **Package manager:** Yarn
 

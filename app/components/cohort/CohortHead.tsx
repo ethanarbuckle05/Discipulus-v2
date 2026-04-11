@@ -1,13 +1,10 @@
 "use client";
 
 import Link from "next/link";
-import { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 
-
 const CohortHead: React.FC = () => {
-  const [loading, setLoading] = useState(false);
-  const [submitting, setSubmitting] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {

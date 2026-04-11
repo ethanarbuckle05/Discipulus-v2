@@ -1,0 +1,158 @@
+"use client";
+
+import React, { useRef, useState, useEffect } from "react";
+import Image from "next/image";
+import { Reveal, Parallax } from "./useScrollEffects";
+
+const principals = [
+  {
+    name: "Jakob Diepenbrock",
+    role: "General Partner",
+    bio: "Founded Discipulus to build the ecosystem he wished existed for value-driven founders. Based in El Segundo. Runs cohort operations, investor relations, and founder selection.",
+    img: "/team/jakob.png",
+  },
+  {
+    name: "Augustus Doricko",
+    role: "Venture Partner",
+    bio: "Founder of Rainmaker. Built weather modification technology from a YC batch to deployed hardware. Brings firsthand hard tech founder experience to every cohort company.",
+    img: "/team/augustus.png",
+  },
+];
+
+const advisors = [
+  { name: "Josh Manchester", desc: "Defense policy & national security", img: "/team/josh.png" },
+  { name: "Kevin Hartz", desc: "GP at A* · Co-founder of Eventbrite", img: "/team/kevin.png" },
+  { name: "Ben Kohlmann", desc: "Defense innovation & military tech", img: "/team/ben.png" },
+  { name: "Josh Steinman", desc: "Former NSC · National security strategy", img: "/team/joshua.png" },
+  { name: "Isaiah Taylor", desc: "Founder, Valar Atomics · Nuclear energy", img: "/team/isaiah.png" },
+];
+
+const AdvisorSlider: React.FC = () => {
+  const scrollRef = useRef<HTMLDivElement>(null);
+  const [canScrollLeft, setCanScrollLeft] = useState(false);
+  const [canScrollRight, setCanScrollRight] = useState(true);
+
+  const checkScroll = () => {
+    const el = scrollRef.current;
+    if (!el) return;
+    setCanScrollLeft(el.scrollLeft > 4);
+    setCanScrollRight(el.scrollLeft < el.scrollWidth - el.clientWidth - 4);
+  };
+
+  useEffect(() => {
+    checkScroll();
+    const el = scrollRef.current;
+    if (el) el.addEventListener("scroll", checkScroll, { passive: true });
+    return () => el?.removeEventListener("scroll", checkScroll);
+  }, []);
+
+  const scroll = (dir: "left" | "right") => {
+    const el = scrollRef.current;
+    if (!el) return;
+    const amount = el.clientWidth * 0.6;
+    el.scrollBy({ left: dir === "left" ? -amount : amount, behavior: "smooth" });
+  };
+
+  return (
+    <div className="relative">
+      {/* Left fade + arrow */}
+      {canScrollLeft && (
+        <button
+          onClick={() => scroll("left")}
+          aria-label="Scroll advisors left"
+          className="absolute left-0 top-0 bottom-0 z-10 w-12 bg-gradient-to-r from-navy to-transparent flex items-center justify-start pl-2 text-white/40 hover:text-white transition-colors"
+        >
+          ←
+        </button>
+      )}
+      {/* Right fade + arrow */}
+      {canScrollRight && (
+        <button
+          onClick={() => scroll("right")}
+          aria-label="Scroll advisors right"
+          className="absolute right-0 top-0 bottom-0 z-10 w-12 bg-gradient-to-l from-navy to-transparent flex items-center justify-end pr-2 text-white/40 hover:text-white transition-colors"
+        >
+          →
+        </button>
+      )}
+
+      <div
+        ref={scrollRef}
+        className="flex gap-5 overflow-x-auto scrollbar-hide snap-x snap-mandatory pb-2"
+        style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
+      >
+        {advisors.map((a) => (
+          <div
+            key={a.name}
+            className="snap-start shrink-0 w-[200px] md:w-[220px] flex flex-col items-center text-center"
+          >
+            <Image
+              src={a.img}
+              alt={a.name}
+              width={200}
+              height={200}
+              className="w-[140px] h-[140px] md:w-[180px] md:h-[180px] rounded-full object-cover mb-4 grayscale-[0.15] border border-white/10"
+            />
+            <div className="font-freight text-[1rem] font-medium text-white mb-0.5">
+              {a.name}
+            </div>
+            <div className="text-[0.74rem] text-white/40 leading-snug font-light">
+              {a.desc}
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+};
+
+const TeamSection: React.FC = () => (
+  <section id="team" className="py-16 lg:py-20">
+    <div className="max-w-[1200px] mx-auto px-6 lg:px-12">
+      <Reveal>
+        <p className="font-mono text-[0.72rem] text-white/60 tracking-[0.14em] uppercase mb-5">
+          The team
+        </p>
+      </Reveal>
+      <Reveal delay={80}>
+        <h2 className="font-freight text-[2.1rem] font-normal text-white mb-12">
+          Who runs the program.
+        </h2>
+      </Reveal>
+
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-14">
+        {principals.map((p, i) => (
+          <Reveal key={p.name} delay={i * 120}>
+          <div className="bg-navy-2 border border-white/5 p-6 lg:p-8 flex flex-col items-center text-center">
+            <Image
+              src={p.img}
+              alt={p.name}
+              width={240}
+              height={240}
+              className="w-[160px] h-[160px] md:w-[200px] md:h-[200px] rounded-full object-cover grayscale-[0.1] border border-white/10 mb-5"
+            />
+            <div className="font-freight text-[1.3rem] font-medium text-white mb-1">
+              {p.name}
+            </div>
+            <div className="text-[0.78rem] text-white/40 font-medium mb-3">
+              {p.role}
+            </div>
+            <div className="text-[0.82rem] text-white/60 leading-relaxed max-w-[400px]">
+              {p.bio}
+            </div>
+          </div>
+          </Reveal>
+        ))}
+      </div>
+
+      <Reveal>
+        <p className="font-mono text-[0.64rem] text-white/20 tracking-[0.12em] uppercase mb-6">
+          Senior Advisors
+        </p>
+      </Reveal>
+      <AdvisorSlider />
+    </div>
+  </section>
+);
+
+export default TeamSection;

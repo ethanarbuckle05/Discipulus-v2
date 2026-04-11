@@ -2,6 +2,7 @@ export const investors = [
   {
     id: "palmer",
     src: "/logos/palmer.png",
+    href: "https://palmerluckey.com/",
   },
   {
     id: "a16z",

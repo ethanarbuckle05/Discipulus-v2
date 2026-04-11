@@ -11,8 +11,7 @@ import RecentTweets from "./components/RecentTweets";
 const HomeComponent: React.FC = () => { 
   return (
     <Container bgColor='#0d090e'>
-      <Head />  
-      {/* <Sponsors /> */}
+      <Head />
       <Investors />
       <Manifesto />
       <RecentTweets />

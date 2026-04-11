@@ -2,7 +2,6 @@
 
 import React from "react";
 import Image from "next/image";
-import { Icon } from "./Icon";
 import Link from "next/link";
 
 const Manifesto3 = () => {
@@ -24,7 +23,7 @@ const Manifesto3 = () => {
               src={"/manifesto3.png"}
               width={400}
               height={300}
-              alt="A call to contrarians"
+              alt="A call to the new industrialists"
             />
           </div>
           <h1 className="font-freight font-bold text-4xl md:text-5xl mt-4 text-center">

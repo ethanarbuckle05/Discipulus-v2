@@ -80,12 +80,15 @@ const FounderCard: React.FC<FounderCardProps> = ({ founder, onHover, defaultHove
             <div className={founder.companyLogoPadding ? `p-5 ${founder.companyLogoMarginBottom === 'less' ? 'mb-2' : 'mb-4'}` : undefined}>
               <Image
                 src={founder.companyLogo}
-                alt="Company Logo"
+                alt={`${founder.name}'s company logo`}
                 width={128}
                 height={48}
-                className={`object-contain filter brightness-0 invert ${
-                  founder.companyLogoSize === 'xsmall' ? 'max-h-6' : founder.companyLogoSize === 'small' ? 'max-h-8' : founder.companyLogoSize === 'large' ? 'max-h-16' : 'max-h-12'
-                }`}
+                className={`object-contain filter brightness-0 invert ${{
+                  xsmall: 'max-h-6',
+                  small: 'max-h-8',
+                  large: 'max-h-16',
+                  default: 'max-h-12',
+                }[founder.companyLogoSize || 'default']}`}
               />
             </div>
           ) : (

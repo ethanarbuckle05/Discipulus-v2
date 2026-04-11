@@ -1,65 +1,43 @@
-# discipulusventures.com
+# Discipulus Ventures
 
 This GitHub repository contains the code for the Discipulus Ventures website.
-
-## Branches:
-
-dev --> dev branch, pull-request this branch for everything
-prod --> prod branch that is live on Vercel; do not code on this!
-
-To make edits to the repository:
-1. Switch to the dev branch
-
-   ```shell
-   git branch dev
-   ```
-
-2. Make edits
-
-3. Add edits to git branch and push it
-    ```shell
-    git add .
-    git commit -m "Your git message" 
-    git push
-    ```
 
 ## Tech Stack
 
 - TypeScript
-- Next.js 13
+- Next.js 15
+- React 19
 - TailwindCSS
-- Node.js
 - Vercel
 
-### Installation
+## Getting Started
 
-1. Clone this repository to your local machine:
+1. Clone this repository:
 
    ```shell
-   git clone https://github.com/wp4032/discipulusventures.com
+   git clone https://github.com/ethanarbuckle05/Discipulus-v2.git
    ```
 
 2. Navigate to the project directory:
 
    ```shell
-   cd discipulusventures.com
+   cd Discipulus-v2
    ```
 
-3. Install project dependencies:
+3. Install dependencies:
 
    ```shell
    yarn
    ```
 
-### Running the Development Server
+4. Start the development server:
 
-To start the Next.js development server, run the following command:
+   ```shell
+   yarn dev
+   ```
 
-```shell
-yarn dev
-```
+   Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-This will start the development server at [http://localhost:3000](http://localhost:3000).
+## Deployment
 
-Open your web browser and navigate to the above URL to view your Next.js app.
-
+Deployed on **Vercel**. Push to `main` triggers production deploy.

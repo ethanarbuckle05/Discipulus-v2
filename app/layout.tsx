@@ -1,10 +1,12 @@
 import './globals.css'
 import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
+import { DM_Sans, JetBrains_Mono } from 'next/font/google'
+import Script from 'next/script'
 import AnnouncementBanner from './components/AnnouncementBanner'
 import CookieBanner from './components/CookieBanner'
 
-const inter = Inter({ subsets: ['latin'] })
+const dmSans = DM_Sans({ subsets: ['latin'], variable: '--font-dm-sans' })
+const jetbrainsMono = JetBrains_Mono({ subsets: ['latin'], weight: ['300', '400', '500'], variable: '--font-jetbrains-mono' })
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://discipulusventures.com'),
@@ -46,12 +48,12 @@ export default function RootLayout({
     <html lang="en">
       <head>
         <link rel="stylesheet" href="https://use.typekit.net/bzq7scp.css" />
-        <script async src="https://platform.twitter.com/widgets.js" charSet="utf-8"></script>
       </head>
-      <body className={inter.className}>
+      <body className={`${dmSans.variable} ${jetbrainsMono.variable} font-sans`}>
         <AnnouncementBanner />
         {children}
         <CookieBanner />
+        <Script src="https://platform.twitter.com/widgets.js" strategy="lazyOnload" />
       </body>
     </html>
   )

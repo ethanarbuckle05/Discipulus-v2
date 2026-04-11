@@ -6,12 +6,14 @@ html,
 body,
 :root {
   height: 100%;
-  background-color: black;
+  background-color: #060c1a;
 }
 
 @layer base {
   :root {
     --radius: 0.5rem;
+    --ease-8vc: cubic-bezier(.246,.75,.187,1);
+    --ease-8vc-out: cubic-bezier(.19,1,.22,1);
   }
 }
 
@@ -24,13 +26,13 @@ body,
 
 @keyframes investor-scroll {
   0% {
-    transform: translateX(-8.333%);
+    transform: translateX(0);
   }
   100% {
-    transform: translateX(0);
+    transform: translateX(-50%);
   }
 }
 
 .animate-investor-scroll {
-  animation: investor-scroll 40s linear infinite;
+  animation: investor-scroll 30s linear infinite;
 }

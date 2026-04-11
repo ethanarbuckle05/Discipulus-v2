@@ -7,11 +7,29 @@ import { useRef, useState, useEffect } from "react";
 
 const logoClass = "w-auto hover:cursor-pointer duration-500 hover:opacity-75 filter brightness-0 invert";
 
+const InvestorLogoSet = () => (
+  <>
+    {investors.map((v) => (
+      <a
+        key={v.id}
+        href={v.href}
+        className="flex items-center justify-center shrink-0"
+        target="_blank"
+        rel="noreferrer"
+      >
+        <Image
+          src={v.src}
+          alt={v.id}
+          width={150}
+          height={45}
+          className={`${logoClass} max-h-[35px] max-w-[90px] sm:max-h-[40px] sm:max-w-[120px]`}
+        />
+      </a>
+    ))}
+  </>
+);
+
 const Investors = () => {
-  // 12 copies so the strip fills the right side even when fully zoomed out
-  const duplicatedInvestors = Array(12)
-    .fill(null)
-    .flatMap(() => [...investors]);
   const sectionRef = useRef<HTMLDivElement>(null);
   const [isInView, setIsInView] = useState(false);
 
@@ -41,29 +59,18 @@ const Investors = () => {
       >
         COHORT COMPANIES FUNDED BY
       </motion.div>
-      {/* Infinite scrolling carousel - animation starts when section is in view */}
+      {/* Infinite scrolling marquee — two copies for seamless loop */}
       <div className="w-full mt-6 overflow-hidden">
         <div
-          className={`flex flex-nowrap gap-6 md:gap-8 justify-start items-center ${isInView ? "animate-investor-scroll" : ""}`}
-          style={{ width: "max-content", transform: isInView ? undefined : "translateX(-8.333%)" }}
+          className={`flex flex-nowrap gap-6 md:gap-8 items-center ${isInView ? "animate-investor-scroll" : ""}`}
+          style={{ width: "max-content" }}
         >
-          {duplicatedInvestors.map((v, i) => (
-            <a
-              key={`${v.id}-${i}`}
-              href={v.href}
-              className="flex items-center justify-center shrink-0"
-              target="_blank"
-              rel="noreferrer"
-            >
-              <Image
-                src={v.src}
-                alt={v.id}
-                width={150}
-                height={45}
-                className={`${logoClass} max-h-[35px] max-w-[90px] sm:max-h-[40px] sm:max-w-[120px]`}
-              />
-            </a>
-          ))}
+          <div className="flex flex-nowrap gap-6 md:gap-8 items-center shrink-0">
+            <InvestorLogoSet />
+          </div>
+          <div className="flex flex-nowrap gap-6 md:gap-8 items-center shrink-0" aria-hidden="true">
+            <InvestorLogoSet />
+          </div>
         </div>
       </div>
     </div>

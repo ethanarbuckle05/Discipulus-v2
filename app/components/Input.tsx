@@ -8,6 +8,7 @@ interface Props {
   setValue: Dispatch<SetStateAction<string>>;
   error?: string;
   textarea?: boolean;
+  type?: string;
 }
 
 const Input: React.FC<Props> = ({
@@ -16,6 +17,7 @@ const Input: React.FC<Props> = ({
   setValue,
   error,
   textarea,
+  type,
 }) => {
   return (
     <div>
@@ -36,7 +38,7 @@ const Input: React.FC<Props> = ({
         />
       ) : (
         <input
-          type={`${label.includes("Password") ? "password" : ""}`}
+          type={type || (label.includes("Password") ? "password" : "text")}
           value={value}
           onChange={(e) => setValue(e.target.value)}
           className={`w-full bg-black border-[0.5px] ${

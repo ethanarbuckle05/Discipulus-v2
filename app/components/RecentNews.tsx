@@ -28,7 +28,7 @@ export default function RecentNews() {
 
   const cardClass = "flex-1 min-w-0 max-w-full";
 
-  const renderArticleCard = (article: any, index: number) => (
+  const renderArticleCard = (article: { title: string; source: string; date: string; url: string; logo: string }, index: number) => (
     <Card
       key={index}
       className={`group hover:shadow-[0_0_15px_rgba(156,156,156,0.2)] transition-shadow bg-zinc-900 border-zinc-800 ${cardClass}`}

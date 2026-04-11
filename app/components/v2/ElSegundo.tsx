@@ -1,0 +1,82 @@
+"use client";
+
+import React from "react";
+import { Reveal, Parallax } from "./useScrollEffects";
+
+const TopoSVG = () => (
+  <svg
+    className="absolute top-0 left-0 w-full h-full opacity-[0.03] pointer-events-none"
+    viewBox="0 0 1200 600"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <g stroke="white" strokeWidth=".5" fill="none" opacity=".5">
+      <ellipse cx="600" cy="300" rx="480" ry="240" />
+      <ellipse cx="600" cy="300" rx="400" ry="200" />
+      <ellipse cx="600" cy="300" rx="320" ry="160" />
+      <ellipse cx="600" cy="300" rx="240" ry="120" />
+      <ellipse cx="600" cy="300" rx="160" ry="80" />
+      <ellipse cx="600" cy="300" rx="80" ry="40" />
+      <ellipse cx="585" cy="292" rx="440" ry="220" transform="rotate(2.5 600 300)" />
+      <ellipse cx="615" cy="308" rx="360" ry="180" transform="rotate(-1.8 600 300)" />
+      <ellipse cx="592" cy="296" rx="280" ry="140" transform="rotate(3.5 600 300)" />
+    </g>
+  </svg>
+);
+
+const companies = [
+  { name: "Anduril Industries", desc: "Defense technology", href: "https://www.anduril.com/" },
+  { name: "Shinkei Systems", desc: "Robotic fish processing", href: "https://www.shinkei.systems/" },
+  { name: "Impulse Space", desc: "In-space transportation", href: "https://www.impulsespace.com/" },
+  { name: "Valar Atomics", desc: "Nuclear energy", href: "https://www.valaratomics.com/" },
+  { name: "Epirus", desc: "Directed energy systems", href: "https://www.epirusinc.com/" },
+  { name: "Rainmaker Technology Corp", desc: "Weather modification technology", href: "https://www.rainmaker.com/" },
+];
+
+const ElSegundo: React.FC = () => (
+  <section className="py-16 lg:py-20 relative overflow-hidden">
+    <TopoSVG />
+    <div className="max-w-[1200px] mx-auto px-6 lg:px-12 grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-start relative z-10">
+      <Parallax speed={0.08}>
+        <p className="font-mono text-[0.72rem] text-white/60 tracking-[0.14em] uppercase mb-5">
+          Why El Segundo
+        </p>
+        <h2 className="font-freight text-[1.9rem] font-normal leading-tight text-white mb-4">
+          The new center of gravity for American hard tech.
+        </h2>
+        <p className="text-[0.85rem] text-white/60 leading-relaxed mt-3">
+          El Segundo is home to a growing cluster of defense, aerospace, and deep
+          tech companies. The cohort plugs founders directly into this physical
+          ecosystem — the actual people and buildings where the work is happening.
+        </p>
+      </Parallax>
+      <div>
+        <p className="font-mono text-[0.6rem] text-white/30 tracking-[0.12em] uppercase mb-3">
+          Featured Companies
+        </p>
+        <div className="border border-white/5">
+        {companies.map((c, i) => (
+          <Reveal key={c.name} delay={i * 60}>
+            <a
+              href={c.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={`flex justify-between items-center px-5 py-4 hover:bg-navy-2 transition-colors duration-200 ease-8vc ${
+                i < companies.length - 1 ? "border-b border-white/5" : ""
+              }`}
+            >
+              <span className="font-freight text-[0.88rem] font-medium text-white">
+                {c.name}
+              </span>
+              <span className="text-[0.7rem] text-white/20 font-light">
+                {c.desc}
+              </span>
+            </a>
+          </Reveal>
+        ))}
+        </div>
+      </div>
+    </div>
+  </section>
+);
+
+export default ElSegundo;

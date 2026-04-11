@@ -1,0 +1,51 @@
+"use client";
+
+import React from "react";
+import { Reveal } from "./useScrollEffects";
+
+const scheduleItems = [
+  { time: "06:00", desc: "Founder workout" },
+  { time: "08:15", desc: "One-hour session from a guest speaker" },
+  { time: "09:15", desc: "Unicorn founder office hours" },
+  { time: "12:00", desc: "Working lunch — peer feedback sessions" },
+  { time: "15:00", desc: "Investor office hours" },
+  { time: "19:00", desc: "Dinner with special guest speaker" },
+];
+
+const Schedule: React.FC = () => (
+  <section id="experience" className="py-16 lg:py-20">
+    <div className="max-w-[1200px] mx-auto px-6 lg:px-12">
+      <div className="grid grid-cols-1 lg:grid-cols-[1fr_1.4fr] gap-8 lg:gap-16">
+        <Reveal>
+          <p className="font-mono text-[0.72rem] text-white/60 tracking-[0.14em] uppercase mb-5">
+            Example day
+          </p>
+          <h2 className="font-freight text-[1.9rem] font-normal leading-tight text-white mb-3.5">
+            What a day looks like inside the cohort.
+          </h2>
+          <p className="text-[0.82rem] text-white/60 leading-relaxed">
+            The most productive 10 days of your company&apos;s life.
+          </p>
+        </Reveal>
+        <div className="border-l border-white/5">
+          {scheduleItems.map((item, i) => (
+            <Reveal key={item.time} delay={i * 80}>
+              <div
+                className="grid grid-cols-[88px_1fr] border-b border-white/5 hover:bg-navy-2 transition-colors duration-200 ease-8vc"
+              >
+                <div className="font-mono text-[0.7rem] text-white/40 px-4 py-4 tracking-wide">
+                  {item.time}
+                </div>
+                <div className="text-[0.82rem] text-white/80 px-4 py-4">
+                  {item.desc}
+                </div>
+              </div>
+            </Reveal>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+);
+
+export default Schedule;

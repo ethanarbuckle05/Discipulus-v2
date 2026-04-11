@@ -1,15 +1,10 @@
 "use client";
 
 import Link from "next/link";
-import { useState } from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
 
-import Banner from "./Banner";
-
 const Head: React.FC = () => {
-  const [loading, setLoading] = useState(false);
-  const [submitting, setSubmitting] = useState(false);
 
   return (
     <div

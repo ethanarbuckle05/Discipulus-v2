@@ -14,7 +14,7 @@ const Footer = () => {
         className="flex items-center pt-6 space-x-8"
       >
         <div className="flex flex-col gap-4 text-left">
-          <a href="https://web.miniextensions.com/Zliw55HfhOWXZnca7Q9Q" className="hover:cursor-pointer duration-500 hover:opacity-90 flex justify-center items-center text-black bg-white px-4 py-2 rounded-[75px] font-semibold sm:text-sm">
+          <a href="https://web.miniextensions.com/Zliw55HfhOWXZnca7Q9Q" target="_blank" rel="noopener noreferrer" className="hover:cursor-pointer duration-500 hover:opacity-90 flex justify-center items-center text-black bg-white px-4 py-2 rounded-[75px] font-semibold sm:text-sm">
             Join us
           </a>
           <a href="mailto:jakob.diepenbrock@discipulusventures.com" className="hover:cursor-pointer duration-500 hover:opacity-90 flex justify-center items-center text-white border-[0.5px] border-white px-4 py-2 rounded-[75px] font-semibold sm:text-sm">
@@ -26,15 +26,15 @@ const Footer = () => {
         <div className="flex flex-col items-center">
           <Image
             src="/Discipulus - Logo.png"
-            alt="logo"
+            alt="Discipulus Ventures logo"
             width={150}
             height={150}
             className="w-[150px] sm:w-[150px]"
           />
           <div className='flex gap-[1rem] flex-row mb-2 mt-2'>
-            <a className='w-[30px] cursor-pointer' href='https://x.com/discipulusvent'> <Image src={x} alt='x' /> </a>
-            <a className='w-[30px] cursor-pointer' href='https://www.linkedin.com/company/discipulus-ventures'> <Image src={linkedin} alt='linkedin' /> </a>
-            <a className='w-[30px] cursor-pointer' href='http://discipulusventures.substack.com/'> <Image src={substack} alt='substack' /> </a>
+            <a className='w-[30px] cursor-pointer' href='https://x.com/discipulusvent' target="_blank" rel="noopener noreferrer"> <Image src={x} alt='Discipulus Ventures on X' /> </a>
+            <a className='w-[30px] cursor-pointer' href='https://www.linkedin.com/company/discipulus-ventures' target="_blank" rel="noopener noreferrer"> <Image src={linkedin} alt='Discipulus Ventures on LinkedIn' /> </a>
+            <a className='w-[30px] cursor-pointer' href='http://discipulusventures.substack.com/' target="_blank" rel="noopener noreferrer"> <Image src={substack} alt='Discipulus Ventures on Substack' /> </a>
           </div>
           <div className="pb-12 pt-2 text-sm font-light">
             © 2026 Discipulus Ventures <br />

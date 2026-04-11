@@ -1,0 +1,40 @@
+"use client";
+
+import React from "react";
+import { Reveal } from "./useScrollEffects";
+
+const deals = [
+  { value: "10 days", desc: "Intensive in-person residency with housing in El Segundo" },
+  { value: "30+", desc: "Speakers, mentors, and operators across defense and hard tech" },
+  { value: "100+", desc: "Investors at the Demo Day for the American Interest" },
+  { value: "$175k", desc: "Investment per company" },
+];
+
+const DealGrid: React.FC = () => (
+  <section className="relative py-16 lg:py-20">
+    <div className="absolute inset-0 bg-gradient-to-b from-navy via-navy-2 to-navy pointer-events-none" />
+    <div className="relative max-w-[1200px] mx-auto px-6 lg:px-12">
+      <Reveal>
+        <p className="font-mono text-[0.72rem] text-white/60 tracking-[0.14em] uppercase mb-5">
+          The cohort at a glance
+        </p>
+      </Reveal>
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-px bg-white/5 border border-white/5">
+        {deals.map((d, i) => (
+          <div key={d.value} className="bg-navy-2 p-6 lg:p-7 hover:bg-navy-3 transition-colors duration-200 ease-8vc">
+            <Reveal delay={i * 80}>
+              <div className="font-freight text-[1.45rem] text-white font-medium mb-1">
+                {d.value}
+              </div>
+              <div className="text-[0.78rem] text-white/60 leading-relaxed">
+                {d.desc}
+              </div>
+            </Reveal>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+);
+
+export default DealGrid;
