@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { Reveal } from "./useScrollEffects";
+import { Reveal, WordReveal } from "./useScrollEffects";
 
 const steps = [
   { num: "01", title: "Apply", desc: "We select ~10 founders per cohort for technical depth, mission alignment, and intensity." },
@@ -18,7 +18,7 @@ const HowItWorks: React.FC = () => (
         <p className="font-mono text-[0.72rem] text-white/60 tracking-[0.14em] uppercase mb-5">
           How it works
         </p>
-        <h2 className="font-freight text-[2.1rem] font-normal text-white mb-12">
+        <h2 className="font-freight text-[2.1rem] font-normal text-white mb-12 underline-reveal">
           From day one to Demo Day and beyond.
         </h2>
       </Reveal>
@@ -32,9 +32,7 @@ const HowItWorks: React.FC = () => (
               <div className="font-freight text-base font-medium text-white mb-2">
                 {s.title}
               </div>
-              <div className="text-[0.74rem] text-white/60 leading-relaxed">
-                {s.desc}
-              </div>
+              <WordReveal className="text-[0.74rem] text-white/60 leading-relaxed" tag="div" speed={30}>{s.desc}</WordReveal>
             </Reveal>
             {i < steps.length - 1 && (
               <span className="hidden lg:block absolute -right-[7px] top-1/2 -translate-y-1/2 text-white/20 text-sm z-10">

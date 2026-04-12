@@ -10,6 +10,7 @@ const articles = [
     logo: "/news/forbes.png",
     title: "Silicon Valley's 'Gundo' Bros Are Building A Y Combinator For Military Tech",
     date: "February 10, 2025",
+    preview: "Inside the El Segundo cohort building the next generation of defense tech founders.",
     url: "https://www.forbes.com/sites/davidjeans/2025/02/10/silicon-valley-gundo-bros-ycombinator/",
   },
   {
@@ -17,6 +18,7 @@ const articles = [
     logo: "/news/techcrunch.png",
     title: "Discipulus Ventures mentors young founders to revive a Norman Rockwell vision of America",
     date: "March 26, 2024",
+    preview: "A new cohort model for value-aligned founders building for the national interest.",
     url: "https://techcrunch.com/2024/03/26/discipluus-ventures-mentors-founders-norman-rockwell-america/",
   },
   {
@@ -24,6 +26,7 @@ const articles = [
     logo: "/news/labj.png",
     title: "Military Culture in Tech?",
     date: "June 23, 2025",
+    preview: "How El Segundo is becoming the center of gravity for American hard tech.",
     url: "https://labusinessjournal.com/featured/military-culture-in-tech/",
   },
 ];
@@ -45,7 +48,7 @@ const Press: React.FC = () => (
             href={a.url}
             target="_blank"
             rel="noopener noreferrer"
-            className="block bg-cream p-6 lg:p-7 hover:bg-cream-hover transition-colors duration-300 ease-8vc"
+            className="shimmer block bg-cream p-6 lg:p-7 hover:bg-cream-hover transition-all duration-300 ease-8vc group"
           >
             <Reveal delay={i * 120}>
               <div className="h-[20px] mb-4">
@@ -54,14 +57,18 @@ const Press: React.FC = () => (
                   alt={`${a.outlet} logo`}
                   width={120}
                   height={20}
-                  className="h-[16px] w-auto object-contain brightness-0 opacity-50"
+                  className="h-[16px] w-auto object-contain brightness-0 opacity-50 group-hover:opacity-80 transition-opacity duration-300"
                 />
               </div>
-              <div className="font-freight text-[1.05rem] text-navy leading-snug font-medium mb-3">
+              <div className="font-freight text-[1.05rem] text-navy leading-snug font-medium mb-2 group-hover:underline underline-offset-2 decoration-navy/30 transition-all duration-300">
                 {a.title}
               </div>
-              <div className="text-[0.7rem] text-navy/30 font-light">
-                {a.date}
+              {/* Preview snippet — appears on hover */}
+              <div className="text-[0.75rem] text-navy/40 leading-relaxed mb-2 max-h-0 overflow-hidden group-hover:max-h-[60px] transition-all duration-500 ease-8vc-out">
+                {a.preview}
+              </div>
+              <div className="text-[0.7rem] text-navy/30 group-hover:text-navy/50 transition-colors duration-300">
+                {a.date} →
               </div>
             </Reveal>
           </a>

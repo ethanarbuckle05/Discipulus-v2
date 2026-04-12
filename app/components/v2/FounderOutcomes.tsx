@@ -8,6 +8,7 @@ const founders = [
   {
     name: "Peter Goldsborough",
     company: "Rune Technologies",
+    url: "https://www.runetech.co/",
     headshot: "/founders/peter.jpg",
     logo: "/companies/rune.png",
     before: "Arrived with a working prototype and zero government contacts.",
@@ -17,6 +18,7 @@ const founders = [
   {
     name: "Ted Feldmann",
     company: "Durin",
+    url: "https://www.durin.com/",
     headshot: "/founders/ted.jpeg",
     logo: "/companies/durin.png",
     before: "Had the technical vision but needed the right investor introductions.",
@@ -26,6 +28,7 @@ const founders = [
   {
     name: "Johnny Ni",
     company: "Vanguard Defense",
+    url: "https://www.vanguarddefense.us/",
     headshot: "/founders/johnny.jpeg",
     logo: "/companies/vanguard.png",
     before: "Early-stage defense startup looking for a community that understood the mission.",
@@ -35,6 +38,7 @@ const founders = [
   {
     name: "Denver Rayburn",
     company: "Framework",
+    url: "https://framework.co/",
     headshot: "/founders/denver.png",
     logo: "/companies/framework.png",
     before: "Building an apparel manufacturing company — needed the network to scale.",
@@ -44,6 +48,7 @@ const founders = [
   {
     name: "Constantin Whitmire",
     company: "1AU Technologies",
+    url: "https://www.1autechnologies.com/",
     headshot: "/founders/constantin.jpg",
     logo: "/companies/1aulogo.png",
     before: "Deep tech photonics company at the earliest stage.",
@@ -53,6 +58,7 @@ const founders = [
   {
     name: "Elliot Forcier-Poirier",
     company: "Watoga",
+    url: "https://www.watoga.tech/",
     headshot: "/founders/elliot.png",
     logo: "/companies/watoga.png",
     before: "AI for mining — needed exposure to US defense and industrial investors.",
@@ -71,7 +77,7 @@ const FounderOutcomes: React.FC = () => (
           The cohort works
         </p>
         <div className="flex flex-col lg:flex-row justify-between lg:items-end mb-12 gap-2">
-          <h2 className="font-freight text-[2.1rem] font-normal leading-tight max-w-[520px] text-navy">
+          <h2 className="font-freight text-[2.1rem] font-normal leading-tight max-w-[520px] text-navy underline-reveal underline-reveal-dark">
             Founders arrive early-stage. They leave with momentum that compounds.
           </h2>
           <p className="text-navy/50 text-[0.82rem] max-w-[300px] lg:text-right">
@@ -79,11 +85,11 @@ const FounderOutcomes: React.FC = () => (
           </p>
         </div>
       </Reveal>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-px bg-navy/[0.07] border border-navy/[0.07]">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-px bg-white/10 border border-white/10">
         {founders.map((f, i) => (
           <div
             key={f.name}
-            className="bg-cream p-6 lg:p-8 hover:bg-cream-hover transition-colors duration-300 ease-8vc"
+            className="shimmer bg-navy p-6 lg:p-8 hover:bg-navy-2 transition-all duration-300 ease-8vc hover:scale-[1.01] hover:shadow-[0_0_20px_rgba(255,255,255,0.03)]"
           >
             <Reveal delay={i * 100}>
               <div className="flex items-center gap-3 mb-4">
@@ -92,10 +98,10 @@ const FounderOutcomes: React.FC = () => (
                   alt={f.name}
                   width={48}
                   height={48}
-                  className="w-[48px] h-[48px] rounded-full object-cover grayscale-[0.15] border border-navy/[0.08] shrink-0"
+                  className="w-[48px] h-[48px] rounded-full object-cover grayscale-[0.15] border border-white/10 shrink-0"
                 />
                 <div>
-                  <div className="font-freight text-[1.15rem] font-semibold text-navy leading-tight">
+                  <div className="font-freight text-[1.15rem] font-semibold text-white leading-tight">
                     {f.name}
                   </div>
                   <div className="flex items-center gap-2 mt-0.5">
@@ -106,23 +112,23 @@ const FounderOutcomes: React.FC = () => (
                       height={18}
                       className="h-[16px] w-auto object-contain opacity-60"
                     />
-                    <span className="text-[0.72rem] text-navy/45 font-medium">
+                    <a href={f.url} target="_blank" rel="noopener noreferrer" className="text-[0.72rem] text-white/50 font-medium hover:text-white/80 transition-colors duration-200 underline underline-offset-2 decoration-white/20 hover:decoration-white/50">
                       {f.company}
-                    </span>
+                    </a>
                   </div>
                 </div>
               </div>
-              <div className="font-mono text-[0.62rem] text-navy/40 tracking-widest uppercase mb-2">
+              <div className="font-mono text-[0.62rem] text-white/40 tracking-widest uppercase mb-2">
                 Before → After
               </div>
-              <div className="text-[0.78rem] text-navy/45 leading-relaxed italic mb-2">
+              <div className="text-[0.78rem] text-white/45 leading-relaxed italic mb-2">
                 &ldquo;{f.before}&rdquo;
               </div>
               <div
-                className="text-[0.82rem] text-navy leading-relaxed"
+                className="text-[0.82rem] text-white/80 leading-relaxed"
                 dangerouslySetInnerHTML={{ __html: f.after }}
               />
-              <div className="font-mono text-[0.58rem] text-navy/25 tracking-wider mt-3.5">
+              <div className="font-mono text-[0.58rem] text-white/25 tracking-wider mt-3.5">
                 {f.tag}
               </div>
             </Reveal>

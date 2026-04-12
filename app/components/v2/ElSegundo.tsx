@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { Reveal, Parallax } from "./useScrollEffects";
+import { Reveal, Parallax, WordReveal } from "./useScrollEffects";
 
 const TopoSVG = () => (
   <svg
@@ -40,14 +40,10 @@ const ElSegundo: React.FC = () => (
         <p className="font-mono text-[0.72rem] text-white/60 tracking-[0.14em] uppercase mb-5">
           Why El Segundo
         </p>
-        <h2 className="font-freight text-[1.9rem] font-normal leading-tight text-white mb-4">
+        <h2 className="font-freight text-[1.9rem] font-normal leading-tight text-white mb-4 underline-reveal">
           The new center of gravity for American hard tech.
         </h2>
-        <p className="text-[0.85rem] text-white/60 leading-relaxed mt-3">
-          El Segundo is home to a growing cluster of defense, aerospace, and deep
-          tech companies. The cohort plugs founders directly into this physical
-          ecosystem — the actual people and buildings where the work is happening.
-        </p>
+        <WordReveal className="text-[0.85rem] text-white/60 leading-relaxed mt-3" speed={30}>El Segundo is home to a growing cluster of defense, aerospace, and deep tech companies. The cohort plugs founders directly into this physical ecosystem — the actual people and buildings where the work is happening.</WordReveal>
       </Parallax>
       <div>
         <p className="font-mono text-[0.6rem] text-white/30 tracking-[0.12em] uppercase mb-3">
@@ -60,14 +56,14 @@ const ElSegundo: React.FC = () => (
               href={c.href}
               target="_blank"
               rel="noopener noreferrer"
-              className={`flex justify-between items-center px-5 py-4 hover:bg-navy-2 transition-colors duration-200 ease-8vc ${
+              className={`flex justify-between items-center px-5 py-4 hover:bg-navy-2 hover:pl-7 transition-all duration-300 ease-8vc group ${
                 i < companies.length - 1 ? "border-b border-white/5" : ""
               }`}
             >
-              <span className="font-freight text-[0.88rem] font-medium text-white">
+              <span className="font-freight text-[0.88rem] font-medium text-white group-hover:text-white transition-colors duration-300">
                 {c.name}
               </span>
-              <span className="text-[0.7rem] text-white/20 font-light">
+              <span className="text-[0.7rem] text-white/20 group-hover:text-white/50 font-light transition-colors duration-300">
                 {c.desc}
               </span>
             </a>

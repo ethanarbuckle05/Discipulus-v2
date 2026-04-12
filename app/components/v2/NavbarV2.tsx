@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import Image from "next/image";
 
 interface NavbarV2Props {
@@ -17,6 +18,7 @@ const navLinks = [
 
 const NavbarV2: React.FC<NavbarV2Props> = ({ transparent = false }) => {
   const [menuOpen, setMenuOpen] = useState(false);
+  const pathname = usePathname();
 
   return (
     <>
@@ -44,7 +46,11 @@ const NavbarV2: React.FC<NavbarV2Props> = ({ transparent = false }) => {
             <Link
               key={link.href}
               href={link.href}
-              className="text-white/80 text-[0.82rem] font-medium tracking-wide hover:text-white transition-colors duration-300 ease-8vc hidden md:block"
+              className={`text-[0.82rem] font-medium tracking-wide transition-all duration-300 ease-8vc hidden md:block ${
+                pathname === link.href
+                  ? "text-white border-b border-white/50 pb-0.5"
+                  : "text-white/60 hover:text-white"
+              }`}
             >
               {link.label}
             </Link>

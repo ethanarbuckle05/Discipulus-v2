@@ -71,6 +71,14 @@ export const Reveal: React.FC<{
     right: "-translate-x-8",
   }[direction];
 
+  // Add 'revealed' class to children that have 'underline-reveal'
+  useEffect(() => {
+    if (visible && ref.current) {
+      const els = ref.current.querySelectorAll('.underline-reveal');
+      els.forEach(el => el.classList.add('revealed'));
+    }
+  }, [visible]);
+
   return (
     <div
       ref={ref}
@@ -108,6 +116,54 @@ export const Parallax: React.FC<{
 /**
  * Staggered children reveal — each child fades in sequentially
  */
+/**
+ * Word-by-word text reveal — like AI generating text at reading pace
+ * Splits text into words, each fades in sequentially on scroll
+ */
+export const WordReveal: React.FC<{
+  children: string;
+  className?: string;
+  speed?: number;
+  tag?: "p" | "h1" | "h2" | "h3" | "div" | "span" | "blockquote";
+}> = ({ children, className = "", speed = 40, tag = "p" }) => {
+  const ref = useRef<HTMLDivElement>(null);
+  const [visible, setVisible] = useState(false);
+  const words = children.split(" ");
+
+  useEffect(() => {
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      setVisible(true);
+      return;
+    }
+    const el = ref.current;
+    if (!el) return;
+    const obs = new IntersectionObserver(
+      ([e]) => { if (e.isIntersecting) setVisible(true); },
+      { threshold: 0.15, rootMargin: "0px 0px -40px 0px" }
+    );
+    obs.observe(el);
+    return () => obs.disconnect();
+  }, []);
+
+  return (
+    <div ref={ref} className={className} role="text" data-tag={tag}>
+      {words.map((word, i) => (
+        <span
+          key={i}
+          className="inline-block transition-all duration-300 ease-8vc-out"
+          style={{
+            opacity: visible ? 1 : 0,
+            transform: visible ? "translateY(0)" : "translateY(4px)",
+            transitionDelay: visible ? `${i * speed}ms` : "0ms",
+          }}
+        >
+          {word}{i < words.length - 1 ? "\u00A0" : ""}
+        </span>
+      ))}
+    </div>
+  );
+};
+
 export const StaggerReveal: React.FC<{
   children: React.ReactNode;
   className?: string;

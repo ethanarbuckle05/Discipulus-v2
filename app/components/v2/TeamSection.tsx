@@ -8,23 +8,25 @@ const principals = [
   {
     name: "Jakob Diepenbrock",
     role: "General Partner",
+    url: "https://www.linkedin.com/in/jakobdiepenbrock/",
     bio: "Founded Discipulus to build the ecosystem he wished existed for value-driven founders. Based in El Segundo. Runs cohort operations, investor relations, and founder selection.",
     img: "/team/jakob.png",
   },
   {
     name: "Augustus Doricko",
     role: "Venture Partner",
+    url: "https://www.rainmaker.com/",
     bio: "Founder of Rainmaker. Built weather modification technology from a YC batch to deployed hardware. Brings firsthand hard tech founder experience to every cohort company.",
     img: "/team/augustus.png",
   },
 ];
 
 const advisors = [
-  { name: "Josh Manchester", desc: "Defense policy & national security", img: "/team/josh.png" },
-  { name: "Kevin Hartz", desc: "GP at A* · Co-founder of Eventbrite", img: "/team/kevin.png" },
-  { name: "Ben Kohlmann", desc: "Defense innovation & military tech", img: "/team/ben.png" },
-  { name: "Josh Steinman", desc: "Former NSC · National security strategy", img: "/team/joshua.png" },
-  { name: "Isaiah Taylor", desc: "Founder, Valar Atomics · Nuclear energy", img: "/team/isaiah.png" },
+  { name: "Josh Manchester", desc: "Defense policy & national security", img: "/team/josh.png", url: "#" },
+  { name: "Kevin Hartz", desc: "GP at A* · Co-founder of Eventbrite", img: "/team/kevin.png", url: "https://www.astarfund.com/" },
+  { name: "Ben Kohlmann", desc: "Defense innovation & military tech", img: "/team/ben.png", url: "#" },
+  { name: "Josh Steinman", desc: "Former NSC · National security strategy", img: "/team/joshua.png", url: "https://www.linkedin.com/in/joshsteinman/" },
+  { name: "Isaiah Taylor", desc: "Founder, Valar Atomics · Nuclear energy", img: "/team/isaiah.png", url: "https://www.valaratomics.com/" },
 ];
 
 const AdvisorSlider: React.FC = () => {
@@ -93,9 +95,9 @@ const AdvisorSlider: React.FC = () => {
               height={200}
               className="w-[140px] h-[140px] md:w-[180px] md:h-[180px] rounded-full object-cover mb-4 grayscale-[0.15] border border-white/10"
             />
-            <div className="font-freight text-[1rem] font-medium text-white mb-0.5">
+            <a href={a.url} target="_blank" rel="noopener noreferrer" className="font-freight text-[1rem] font-medium text-white mb-0.5 hover:text-white/80 underline underline-offset-2 decoration-white/20 hover:decoration-white/50 transition-colors duration-200">
               {a.name}
-            </div>
+            </a>
             <div className="text-[0.74rem] text-white/40 leading-snug font-light">
               {a.desc}
             </div>
@@ -115,7 +117,7 @@ const TeamSection: React.FC = () => (
         </p>
       </Reveal>
       <Reveal delay={80}>
-        <h2 className="font-freight text-[2.1rem] font-normal text-white mb-12">
+        <h2 className="font-freight text-[2.1rem] font-normal text-white mb-12 underline-reveal">
           Who runs the program.
         </h2>
       </Reveal>
@@ -123,17 +125,17 @@ const TeamSection: React.FC = () => (
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-14">
         {principals.map((p, i) => (
           <Reveal key={p.name} delay={i * 120}>
-          <div className="bg-navy-2 border border-white/5 p-6 lg:p-8 flex flex-col items-center text-center">
+          <div className="bg-navy-2 border border-white/5 p-6 lg:p-8 flex flex-col items-center text-center hover:border-white/15 hover:shadow-[0_0_30px_rgba(255,255,255,0.03)] transition-all duration-300 ease-8vc group">
             <Image
               src={p.img}
               alt={p.name}
               width={240}
               height={240}
-              className="w-[160px] h-[160px] md:w-[200px] md:h-[200px] rounded-full object-cover grayscale-[0.1] border border-white/10 mb-5"
+              className="w-[160px] h-[160px] md:w-[200px] md:h-[200px] rounded-full object-cover grayscale-[0.1] group-hover:grayscale-0 border border-white/10 group-hover:border-white/20 mb-5 transition-all duration-500 ease-8vc"
             />
-            <div className="font-freight text-[1.3rem] font-medium text-white mb-1">
+            <a href={p.url} target="_blank" rel="noopener noreferrer" className="font-freight text-[1.3rem] font-medium text-white mb-1 hover:text-white/80 underline underline-offset-2 decoration-white/20 hover:decoration-white/50 transition-colors duration-200">
               {p.name}
-            </div>
+            </a>
             <div className="text-[0.78rem] text-white/40 font-medium mb-3">
               {p.role}
             </div>

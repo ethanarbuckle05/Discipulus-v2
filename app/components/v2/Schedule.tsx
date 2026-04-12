@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { Reveal } from "./useScrollEffects";
+import { Reveal, WordReveal } from "./useScrollEffects";
 
 const scheduleItems = [
   { time: "06:00", desc: "Founder workout" },
@@ -20,23 +20,21 @@ const Schedule: React.FC = () => (
           <p className="font-mono text-[0.72rem] text-white/60 tracking-[0.14em] uppercase mb-5">
             Example day
           </p>
-          <h2 className="font-freight text-[1.9rem] font-normal leading-tight text-white mb-3.5">
+          <h2 className="font-freight text-[1.9rem] font-normal leading-tight text-white mb-3.5 underline-reveal">
             What a day looks like inside the cohort.
           </h2>
-          <p className="text-[0.82rem] text-white/60 leading-relaxed">
-            The most productive 10 days of your company&apos;s life.
-          </p>
+          <WordReveal className="text-[0.82rem] text-white/60 leading-relaxed" speed={40}>The most productive 10 days of your company&apos;s life.</WordReveal>
         </Reveal>
         <div className="border-l border-white/5">
           {scheduleItems.map((item, i) => (
             <Reveal key={item.time} delay={i * 80}>
               <div
-                className="grid grid-cols-[88px_1fr] border-b border-white/5 hover:bg-navy-2 transition-colors duration-200 ease-8vc"
+                className="grid grid-cols-[88px_1fr] border-b border-white/5 hover:bg-navy-2 transition-all duration-300 ease-8vc hover:pl-2 group"
               >
-                <div className="font-mono text-[0.7rem] text-white/40 px-4 py-4 tracking-wide">
+                <div className="font-mono text-[0.7rem] text-white/40 group-hover:text-white/70 px-4 py-4 tracking-wide transition-colors duration-300">
                   {item.time}
                 </div>
-                <div className="text-[0.82rem] text-white/80 px-4 py-4">
+                <div className="text-[0.82rem] text-white/80 group-hover:text-white px-4 py-4 transition-colors duration-300">
                   {item.desc}
                 </div>
               </div>

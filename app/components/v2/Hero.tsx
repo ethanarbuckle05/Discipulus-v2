@@ -2,7 +2,7 @@
 
 import React, { useRef, useEffect, useState } from "react";
 import NavbarV2 from "./NavbarV2";
-import { Reveal } from "./useScrollEffects";
+import { Reveal, WordReveal } from "./useScrollEffects";
 
 const metaItems = [
   { label: "Residency", value: "10 days, in-person" },
@@ -88,14 +88,7 @@ const Hero: React.FC = () => {
             </h1>
           </Reveal>
 
-          <Reveal delay={160}>
-            <p className="text-[0.95rem] text-white/60 max-w-[520px] leading-relaxed mb-10">
-              10 days in a room with the operators who built Anduril, SpaceX, and
-              Eventbrite — plus daily investor sessions, peer founders building for
-              the national interest, and a Demo Day in front of 100+ investors. This
-              is the most intensive founder training program in defense and hard tech.
-            </p>
-          </Reveal>
+          <WordReveal className="text-[0.95rem] text-white/60 max-w-[520px] leading-relaxed mb-10" speed={30}>10 days in a room with the operators who built Anduril, SpaceX, and Eventbrite — plus daily investor sessions, peer founders building for the national interest, and a Demo Day in front of 100+ investors. This is the most intensive founder training program in defense and hard tech.</WordReveal>
 
           <Reveal delay={240}>
             <div className="flex flex-col sm:flex-row gap-3.5 items-start sm:items-center mb-14">
@@ -103,7 +96,7 @@ const Hero: React.FC = () => {
                 href="https://web.miniextensions.com/Zliw55HfhOWXZnca7Q9Q"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-white text-navy px-7 py-3 text-[0.8rem] font-semibold tracking-widest uppercase hover:opacity-85 transition-opacity duration-300 ease-8vc inline-block"
+                className="bg-white text-navy px-7 py-3 text-[0.8rem] font-semibold tracking-widest uppercase hover:scale-105 hover:shadow-[0_0_25px_rgba(255,255,255,0.2)] transition-all duration-300 ease-8vc inline-block"
               >
                 Apply to the Cohort
               </a>

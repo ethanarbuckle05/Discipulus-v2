@@ -31,13 +31,13 @@ const FooterV2: React.FC = () => (
       </Link>
       <span className="hidden sm:inline text-white/10">|</span>
       <div className="flex gap-3 items-center">
-        <a href="https://x.com/discipulusvent" target="_blank" rel="noopener noreferrer" className="opacity-20 hover:opacity-40 transition-opacity duration-200 ease-8vc">
+        <a href="https://x.com/discipulusvent" target="_blank" rel="noopener noreferrer" className="opacity-20 hover:opacity-60 hover:scale-125 transition-all duration-300 ease-8vc">
           <Image src="/social/x.png" alt="Discipulus Ventures on X" width={16} height={16} className="w-[16px] h-[16px] invert" />
         </a>
-        <a href="https://www.linkedin.com/company/discipulus-ventures" target="_blank" rel="noopener noreferrer" className="opacity-20 hover:opacity-40 transition-opacity duration-200 ease-8vc">
+        <a href="https://www.linkedin.com/company/discipulus-ventures" target="_blank" rel="noopener noreferrer" className="opacity-20 hover:opacity-60 hover:scale-125 transition-all duration-300 ease-8vc">
           <Image src="/social/linkedin.png" alt="Discipulus Ventures on LinkedIn" width={16} height={16} className="w-[16px] h-[16px] invert" />
         </a>
-        <a href="http://discipulusventures.substack.com/" target="_blank" rel="noopener noreferrer" className="opacity-20 hover:opacity-40 transition-opacity duration-200 ease-8vc">
+        <a href="http://discipulusventures.substack.com/" target="_blank" rel="noopener noreferrer" className="opacity-20 hover:opacity-60 hover:scale-125 transition-all duration-300 ease-8vc">
           <Image src="/social/substack.png" alt="Discipulus Ventures on Substack" width={16} height={16} className="w-[16px] h-[16px] invert" />
         </a>
       </div>

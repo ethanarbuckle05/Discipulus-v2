@@ -132,6 +132,7 @@ module.exports = {
   			'pulse-glow': 'pulse-glow 6s ease-in-out infinite',
   			'drift-rotate': 'drift-rotate 15s ease-in-out infinite',
   			'spin-very-slow': 'spin-very-slow 90s linear infinite',
+  			'marquee-photos': 'marquee-scroll 45s linear infinite',
   		},
   		fontFamily: {
   			freight: ['"freight-display-pro"', 'serif'],

@@ -4,6 +4,7 @@ import { DM_Sans, JetBrains_Mono } from 'next/font/google'
 import Script from 'next/script'
 import AnnouncementBanner from './components/AnnouncementBanner'
 import CookieBanner from './components/CookieBanner'
+import PageTransition from './components/v2/PageTransition'
 
 const dmSans = DM_Sans({ subsets: ['latin'], variable: '--font-dm-sans' })
 const jetbrainsMono = JetBrains_Mono({ subsets: ['latin'], weight: ['300', '400', '500'], variable: '--font-jetbrains-mono' })
@@ -51,7 +52,9 @@ export default function RootLayout({
       </head>
       <body className={`${dmSans.variable} ${jetbrainsMono.variable} font-sans`}>
         <AnnouncementBanner />
-        {children}
+        <PageTransition>
+          {children}
+        </PageTransition>
         <CookieBanner />
         <Script src="https://platform.twitter.com/widgets.js" strategy="lazyOnload" />
       </body>

@@ -7,6 +7,79 @@ body,
 :root {
   height: 100%;
   background-color: #060c1a;
+  scroll-behavior: smooth;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #060c1a;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(255,255,255,0.1);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255,255,255,0.2);
+}
+
+/* Selection color */
+::selection {
+  background: rgba(255,255,255,0.15);
+  color: white;
+}
+
+/* Underline reveal — animated underline that draws in on scroll */
+.underline-reveal {
+  position: relative;
+  display: inline-block;
+}
+.underline-reveal::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: linear-gradient(90deg, rgba(255,255,255,0.4), rgba(255,255,255,0.1));
+  transition: width 1s cubic-bezier(.19,1,.22,1);
+}
+.underline-reveal.revealed::after {
+  width: 100%;
+}
+/* Cream variant */
+.underline-reveal-dark::after {
+  background: linear-gradient(90deg, rgba(6,12,26,0.3), rgba(6,12,26,0.08));
+}
+
+/* Shimmer effect */
+.shimmer {
+  position: relative;
+  overflow: hidden;
+}
+.shimmer::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 60%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255,255,255,0.03) 30%,
+    rgba(255,255,255,0.08) 50%,
+    rgba(255,255,255,0.03) 70%,
+    transparent 100%
+  );
+  transition: none;
+  pointer-events: none;
+}
+.shimmer:hover::after {
+  left: 150%;
+  transition: left 0.8s cubic-bezier(.19,1,.22,1);
 }
 
 @layer base {

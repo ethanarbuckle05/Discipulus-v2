@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { Reveal } from "./useScrollEffects";
+import { Reveal, WordReveal } from "./useScrollEffects";
 
 const deals = [
   { value: "10 days", desc: "Intensive in-person residency with housing in El Segundo" },
@@ -21,14 +21,12 @@ const DealGrid: React.FC = () => (
       </Reveal>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-px bg-white/5 border border-white/5">
         {deals.map((d, i) => (
-          <div key={d.value} className="bg-navy-2 p-6 lg:p-7 hover:bg-navy-3 transition-colors duration-200 ease-8vc">
+          <div key={d.value} className="bg-navy-2 p-6 lg:p-7 hover:bg-navy-3 transition-all duration-300 ease-8vc group hover:scale-[1.02] hover:shadow-[0_0_20px_rgba(255,255,255,0.03)]">
             <Reveal delay={i * 80}>
-              <div className="font-freight text-[1.45rem] text-white font-medium mb-1">
+              <div className="font-freight text-[1.45rem] text-white font-medium mb-1 group-hover:text-white transition-colors duration-300">
                 {d.value}
               </div>
-              <div className="text-[0.78rem] text-white/60 leading-relaxed">
-                {d.desc}
-              </div>
+              <WordReveal className="text-[0.78rem] text-white/60 leading-relaxed" tag="div" speed={35}>{d.desc}</WordReveal>
             </Reveal>
           </div>
         ))}
