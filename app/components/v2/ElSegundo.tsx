@@ -56,11 +56,11 @@ const ElSegundo: React.FC = () => (
               href={c.href}
               target="_blank"
               rel="noopener noreferrer"
-              className={`flex justify-between items-center px-5 py-4 hover:bg-navy-2 hover:pl-7 transition-all duration-300 ease-8vc group ${
+              className={`flex flex-col sm:flex-row sm:justify-between sm:items-center px-4 sm:px-5 py-3 sm:py-4 hover:bg-navy-2 hover:pl-5 sm:hover:pl-7 transition-all duration-300 ease-8vc group ${
                 i < companies.length - 1 ? "border-b border-white/5" : ""
               }`}
             >
-              <span className="font-freight text-[0.88rem] font-medium text-white group-hover:text-white transition-colors duration-300">
+              <span className="font-freight text-[0.82rem] sm:text-[0.88rem] font-medium text-white group-hover:text-white transition-colors duration-300">
                 {c.name}
               </span>
               <span className="text-[0.7rem] text-white/20 group-hover:text-white/50 font-light transition-colors duration-300">

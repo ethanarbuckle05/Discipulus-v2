@@ -3,7 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 const FooterV2: React.FC = () => (
-  <footer className="px-6 lg:px-12 py-9 flex flex-col sm:flex-row justify-between items-center gap-4">
+  <footer className="px-4 sm:px-6 lg:px-12 py-6 sm:py-9 flex flex-col sm:flex-row justify-between items-center gap-4">
     <div>
       <Image
         src="/Discipulus - Logo.png"
@@ -14,19 +14,19 @@ const FooterV2: React.FC = () => (
       />
     </div>
     <div className="flex gap-5 flex-wrap justify-center items-center">
-      <Link href="/experience" className="text-white/20 text-[0.74rem] tracking-wide hover:text-white/60 transition-colors duration-200 ease-8vc">
+      <Link href="/experience" className="text-white/20 text-[0.78rem] sm:text-[0.74rem] tracking-wide hover:text-white/60 transition-colors duration-200 ease-8vc">
         Experience
       </Link>
-      <Link href="/speakers" className="text-white/20 text-[0.74rem] tracking-wide hover:text-white/60 transition-colors duration-200 ease-8vc">
+      <Link href="/speakers" className="text-white/20 text-[0.78rem] sm:text-[0.74rem] tracking-wide hover:text-white/60 transition-colors duration-200 ease-8vc">
         Speakers
       </Link>
-      <Link href="/outcomes" className="text-white/20 text-[0.74rem] tracking-wide hover:text-white/60 transition-colors duration-200 ease-8vc">
+      <Link href="/outcomes" className="text-white/20 text-[0.78rem] sm:text-[0.74rem] tracking-wide hover:text-white/60 transition-colors duration-200 ease-8vc">
         Cohort
       </Link>
-      <Link href="/team" className="text-white/20 text-[0.74rem] tracking-wide hover:text-white/60 transition-colors duration-200 ease-8vc">
+      <Link href="/team" className="text-white/20 text-[0.78rem] sm:text-[0.74rem] tracking-wide hover:text-white/60 transition-colors duration-200 ease-8vc">
         Team
       </Link>
-      <Link href="/cookies" className="text-white/20 text-[0.74rem] tracking-wide hover:text-white/60 transition-colors duration-200 ease-8vc">
+      <Link href="/cookies" className="text-white/20 text-[0.78rem] sm:text-[0.74rem] tracking-wide hover:text-white/60 transition-colors duration-200 ease-8vc">
         Cookies
       </Link>
       <span className="hidden sm:inline text-white/10">|</span>

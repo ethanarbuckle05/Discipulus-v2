@@ -83,9 +83,9 @@ const Speakers: React.FC = () => (
         <h2 className="font-freight text-[2.1rem] font-normal text-white mb-2.5 underline-reveal">
           Past speakers and mentors.
         </h2>
-        <WordReveal className="text-white/60 text-[0.82rem] mb-12 max-w-[480px]" speed={40}>Founders, investors, and operators who&apos;ve built at the scale that matters.</WordReveal>
+        <WordReveal className="text-white/60 text-[0.82rem] mb-12 max-w-[480px]" speed={40}>{"Founders, investors, and operators who've built at the scale that matters."}</WordReveal>
       </Reveal>
-      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-px bg-white/5 border border-white/5">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-px bg-white/5 border border-white/5">
         {speakers.map((s) => (
           <SpeakerCard key={s.name} speaker={s} />
         ))}

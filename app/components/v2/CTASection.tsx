@@ -27,7 +27,7 @@ const ParticlesSVG = () => (
 );
 
 const CTASection: React.FC = () => (
-  <section className="py-16 lg:py-[88px] text-center relative overflow-hidden">
+  <section className="py-16 lg:py-20 text-center relative overflow-hidden">
     <div className="absolute inset-0 bg-gradient-to-b from-navy via-navy-2 to-navy pointer-events-none" />
     <ParticlesSVG />
     <Reveal>
@@ -35,14 +35,14 @@ const CTASection: React.FC = () => (
         The next cohort is forming now.
       </h2>
     </Reveal>
-    <WordReveal className="text-white/60 text-[0.85rem] mb-8 relative z-10 max-w-[540px] mx-auto" speed={30}>We select for the founder, not the deck. No revenue, no product, no fully baked idea required — if you&apos;re building for the national interest and ready to be trained, apply.</WordReveal>
+    <WordReveal className="text-white/60 text-[0.85rem] mb-8 relative z-10 max-w-[540px] mx-auto" speed={30}>{"We select for the founder, not the deck. No revenue, no product, no fully baked idea required — if you're building for the national interest and ready to be trained, apply."}</WordReveal>
     <Reveal delay={200}>
-      <div className="flex gap-3.5 justify-center relative z-10">
+      <div className="flex flex-col sm:flex-row gap-3.5 items-center justify-center relative z-10">
       <a
         href="https://web.miniextensions.com/Zliw55HfhOWXZnca7Q9Q"
         target="_blank"
         rel="noopener noreferrer"
-        className="bg-white text-navy px-7 py-3 text-[0.8rem] font-semibold tracking-widest uppercase hover:scale-105 hover:shadow-[0_0_25px_rgba(255,255,255,0.2)] transition-all duration-300 ease-8vc inline-block"
+        className="bg-white text-navy px-5 sm:px-7 py-3 text-[0.72rem] sm:text-[0.8rem] font-semibold tracking-widest uppercase hover:scale-105 hover:shadow-[0_0_25px_rgba(255,255,255,0.2)] transition-all duration-300 ease-8vc inline-block"
       >
         Apply to Spring 2026
       </a>

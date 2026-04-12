@@ -61,7 +61,8 @@ const PortalIntro: React.FC<PortalIntroProps> = ({ children }) => {
     }
 
     const warpStars: WarpStar[] = [];
-    for (let i = 0; i < 400; i++) {
+    const starCount = w < 768 ? 200 : 400;
+    for (let i = 0; i < starCount; i++) {
       warpStars.push({
         angle: Math.random() * Math.PI * 2,
         speed: Math.random() * 8 + 3,

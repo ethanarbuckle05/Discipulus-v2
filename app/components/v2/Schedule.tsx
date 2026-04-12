@@ -23,18 +23,18 @@ const Schedule: React.FC = () => (
           <h2 className="font-freight text-[1.9rem] font-normal leading-tight text-white mb-3.5 underline-reveal">
             What a day looks like inside the cohort.
           </h2>
-          <WordReveal className="text-[0.82rem] text-white/60 leading-relaxed" speed={40}>The most productive 10 days of your company&apos;s life.</WordReveal>
+          <WordReveal className="text-[0.82rem] text-white/60 leading-relaxed" speed={40}>{"The most productive 10 days of your company's life."}</WordReveal>
         </Reveal>
-        <div className="border-l border-white/5">
+        <div className="border-t lg:border-t-0 lg:border-l border-white/5 pt-4 lg:pt-0">
           {scheduleItems.map((item, i) => (
             <Reveal key={item.time} delay={i * 80}>
               <div
-                className="grid grid-cols-[88px_1fr] border-b border-white/5 hover:bg-navy-2 transition-all duration-300 ease-8vc hover:pl-2 group"
+                className="grid grid-cols-[70px_1fr] sm:grid-cols-[88px_1fr] border-b border-white/5 hover:bg-navy-2 transition-all duration-300 ease-8vc hover:pl-2 group"
               >
-                <div className="font-mono text-[0.7rem] text-white/40 group-hover:text-white/70 px-4 py-4 tracking-wide transition-colors duration-300">
+                <div className="font-mono text-[0.7rem] text-white/40 group-hover:text-white/70 px-3 sm:px-4 py-3 sm:py-4 tracking-wide transition-colors duration-300">
                   {item.time}
                 </div>
-                <div className="text-[0.82rem] text-white/80 group-hover:text-white px-4 py-4 transition-colors duration-300">
+                <div className="text-[0.82rem] text-white/80 group-hover:text-white px-3 sm:px-4 py-3 sm:py-4 transition-colors duration-300">
                   {item.desc}
                 </div>
               </div>

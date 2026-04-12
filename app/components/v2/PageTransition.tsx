@@ -36,7 +36,8 @@ const PageTransition: React.FC<{ children: React.ReactNode }> = ({ children }) =
     }
 
     const stars: WarpStar[] = [];
-    for (let i = 0; i < 200; i++) {
+    const starCount = w < 768 ? 100 : 200;
+    for (let i = 0; i < starCount; i++) {
       stars.push({
         angle: Math.random() * Math.PI * 2,
         speed: Math.random() * 8 + 3,

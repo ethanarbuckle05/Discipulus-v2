@@ -77,7 +77,7 @@ export const Reveal: React.FC<{
       const els = ref.current.querySelectorAll('.underline-reveal');
       els.forEach(el => el.classList.add('revealed'));
     }
-  }, [visible]);
+  }, [visible, ref]);
 
   return (
     <div

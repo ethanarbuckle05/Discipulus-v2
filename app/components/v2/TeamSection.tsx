@@ -86,14 +86,14 @@ const AdvisorSlider: React.FC = () => {
         {advisors.map((a) => (
           <div
             key={a.name}
-            className="snap-start shrink-0 w-[200px] md:w-[220px] flex flex-col items-center text-center"
+            className="snap-start shrink-0 w-[140px] sm:w-[170px] md:w-[200px] lg:w-[220px] flex flex-col items-center text-center"
           >
             <Image
               src={a.img}
               alt={a.name}
               width={200}
               height={200}
-              className="w-[140px] h-[140px] md:w-[180px] md:h-[180px] rounded-full object-cover mb-4 grayscale-[0.15] border border-white/10"
+              className="w-[100px] h-[100px] sm:w-[130px] sm:h-[130px] md:w-[160px] md:h-[160px] rounded-full object-cover mb-4 grayscale-[0.15] border border-white/10"
             />
             <a href={a.url} target="_blank" rel="noopener noreferrer" className="font-freight text-[1rem] font-medium text-white mb-0.5 hover:text-white/80 underline underline-offset-2 decoration-white/20 hover:decoration-white/50 transition-colors duration-200">
               {a.name}

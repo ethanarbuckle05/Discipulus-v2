@@ -12,7 +12,7 @@ const photos = [
 const PhotoSet = () => (
   <div className="flex gap-[3px] shrink-0">
     {photos.map((src, i) => (
-      <div key={i} className="h-[130px] lg:h-[180px] shrink-0 relative w-[200px] lg:w-[270px] overflow-hidden group">
+      <div key={i} className="h-[90px] sm:h-[110px] md:h-[140px] lg:h-[180px] shrink-0 relative w-[130px] sm:w-[160px] md:w-[210px] lg:w-[270px] overflow-hidden group">
         <Image
           src={src}
           alt={`Cohort photo ${i + 1}`}
@@ -28,8 +28,8 @@ const PhotoSet = () => (
 function PhotoStrip() {
   return (
     <div className="relative overflow-hidden">
-      <div className="absolute inset-y-0 left-0 w-24 bg-gradient-to-r from-navy to-transparent z-10 pointer-events-none" />
-      <div className="absolute inset-y-0 right-0 w-24 bg-gradient-to-l from-navy to-transparent z-10 pointer-events-none" />
+      <div className="absolute inset-y-0 left-0 w-12 sm:w-16 md:w-24 bg-gradient-to-r from-navy to-transparent z-10 pointer-events-none" />
+      <div className="absolute inset-y-0 right-0 w-12 sm:w-16 md:w-24 bg-gradient-to-l from-navy to-transparent z-10 pointer-events-none" />
       <div className="flex gap-[3px] animate-marquee-photos">
         <PhotoSet />
         <PhotoSet />

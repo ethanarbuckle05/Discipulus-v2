@@ -22,7 +22,7 @@ const NavbarV2: React.FC<NavbarV2Props> = ({ transparent = false }) => {
 
   return (
     <>
-      <nav className={`flex justify-between items-center px-6 lg:px-12 py-4 z-50 ${
+      <nav className={`flex justify-between items-center px-4 sm:px-6 lg:px-12 py-4 z-50 ${
         transparent ? "bg-gradient-to-b from-black/50 via-black/25 to-transparent pb-10" : "sticky top-0 bg-navy/95 backdrop-blur-xl border-b border-white/5"
       }`}>
         <Link href="/">

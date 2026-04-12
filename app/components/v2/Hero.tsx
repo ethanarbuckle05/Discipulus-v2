@@ -32,7 +32,7 @@ const Hero: React.FC = () => {
   return (
     <>
       {/* Video with navbar overlaid on top */}
-      <div className="relative w-full h-[80vh] lg:h-[90vh]">
+      <div className="relative w-full h-[55vh] sm:h-[65vh] md:h-[80vh] lg:h-[90vh]">
         <video
           ref={videoRef}
           className="absolute inset-0 w-full h-full object-cover"
@@ -57,7 +57,7 @@ const Hero: React.FC = () => {
         <button
           onClick={toggleMute}
           aria-label={isMuted ? "Unmute video" : "Mute video"}
-          className="absolute bottom-6 right-6 z-20 bg-black/50 backdrop-blur-md text-white/80 hover:text-white px-4 py-2.5 rounded-lg flex items-center gap-2 text-[0.8rem] font-medium transition-all duration-200 ease-8vc hover:bg-black/70"
+          className="absolute bottom-4 right-4 sm:bottom-6 sm:right-6 z-20 bg-black/50 backdrop-blur-md text-white/80 hover:text-white px-3 sm:px-4 py-2 sm:py-2.5 rounded-lg flex items-center gap-2 text-[0.7rem] sm:text-[0.8rem] font-medium transition-all duration-200 ease-8vc hover:bg-black/70 min-h-[44px]"
         >
           {isMuted ? (
             <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
@@ -113,7 +113,7 @@ const Hero: React.FC = () => {
             <div className="flex flex-col md:flex-row gap-4 md:gap-12 border-t border-white/5 pt-6">
               {metaItems.map((item) => (
                 <div key={item.label}>
-                  <div className="font-mono text-[0.65rem] text-white/40 tracking-widest uppercase mb-1">
+                  <div className="font-mono text-[0.7rem] sm:text-[0.65rem] text-white/40 tracking-widest uppercase mb-1">
                     {item.label}
                   </div>
                   <div className="font-freight text-base text-white/95 font-medium">

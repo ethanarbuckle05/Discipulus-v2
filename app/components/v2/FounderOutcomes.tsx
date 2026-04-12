@@ -128,7 +128,7 @@ const FounderOutcomes: React.FC = () => (
                 className="text-[0.82rem] text-white/80 leading-relaxed"
                 dangerouslySetInnerHTML={{ __html: f.after }}
               />
-              <div className="font-mono text-[0.58rem] text-white/25 tracking-wider mt-3.5">
+              <div className="font-mono text-[0.65rem] sm:text-[0.58rem] text-white/25 tracking-wider mt-3.5">
                 {f.tag}
               </div>
             </Reveal>

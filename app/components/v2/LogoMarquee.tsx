@@ -13,14 +13,14 @@ const LogoSet = () => (
         href={v.href}
         target="_blank"
         rel="noreferrer"
-        className="flex items-center justify-center shrink-0 mx-10"
+        className="flex items-center justify-center shrink-0 mx-4 sm:mx-6 md:mx-10"
       >
         <Image
           src={v.src}
           alt={v.id}
           width={150}
           height={20}
-          className="h-[22px] w-auto opacity-60 brightness-[10] shrink-0 hover:opacity-90 transition-opacity duration-300"
+          className="h-[16px] sm:h-[18px] md:h-[22px] w-auto opacity-60 brightness-[10] shrink-0 hover:opacity-90 transition-opacity duration-300"
         />
       </a>
     ))}
