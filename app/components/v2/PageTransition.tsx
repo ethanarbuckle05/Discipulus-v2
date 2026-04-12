@@ -29,7 +29,7 @@ const PageTransition: React.FC<{ children: React.ReactNode }> = ({ children }) =
     const cx = w / 2;
     const cy = h / 2;
     const start = performance.now();
-    const DURATION = 2700;
+    const DURATION = 1350;
 
     interface WarpStar {
       angle: number; speed: number; dist: number; size: number; hue: number;
@@ -134,11 +134,11 @@ const PageTransition: React.FC<{ children: React.ReactNode }> = ({ children }) =
       runWarp();
     });
 
-    // Safety fallback — always show content after 3.5s
+    // Safety fallback — always show content after 2s
     const safety = setTimeout(() => {
       setContentVisible(true);
       setAnimating(false);
-    }, 3500);
+    }, 2000);
 
     return () => {
       clearTimeout(safety);
