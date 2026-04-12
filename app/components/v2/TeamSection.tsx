@@ -22,10 +22,10 @@ const principals = [
 ];
 
 const advisors = [
-  { name: "Josh Manchester", desc: "Defense policy & national security", img: "/team/josh.png", url: "#" },
-  { name: "Kevin Hartz", desc: "GP at A* · Co-founder of Eventbrite", img: "/team/kevin.png", url: "https://www.astarfund.com/" },
+  { name: "Josh Manchester", desc: "GP, Champion Hill Ventures", img: "/team/josh.png", url: "https://www.championhillventures.com/" },
+  { name: "Kevin Hartz", desc: "GP at A* · Co-founder of Eventbrite", img: "/team/kevin.png", url: "https://www.a-star.co/" },
   { name: "Ben Kohlmann", desc: "Defense innovation & military tech", img: "/team/ben.png", url: "#" },
-  { name: "Josh Steinman", desc: "Former NSC · National security strategy", img: "/team/joshua.png", url: "https://www.linkedin.com/in/joshsteinman/" },
+  { name: "Josh Steinman", desc: "Founder, Galvanick", img: "/team/joshua.png", url: "https://www.galvanick.com/" },
   { name: "Isaiah Taylor", desc: "Founder, Valar Atomics · Nuclear energy", img: "/team/isaiah.png", url: "https://www.valaratomics.com/" },
 ];
 

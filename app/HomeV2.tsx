@@ -13,6 +13,7 @@ import ElSegundo from "./components/v2/ElSegundo";
 import TeamSection from "./components/v2/TeamSection";
 import Press from "./components/v2/Press";
 import LogoMarquee from "./components/v2/LogoMarquee";
+import FAQ from "./components/v2/FAQ";
 import CTASection from "./components/v2/CTASection";
 import FooterV2 from "./components/v2/FooterV2";
 
@@ -40,7 +41,9 @@ const HomeV2: React.FC = () => {
       {/* 8. Validation — external proof */}
       <Press />
       <LogoMarquee />
-      {/* 9. Close */}
+      {/* 9. FAQ */}
+      <FAQ />
+      {/* 10. Close */}
       <CTASection />
       <FooterV2 />
     </div>

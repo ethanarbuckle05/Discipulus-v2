@@ -11,16 +11,16 @@ const speakers = [
   { name: "Isaiah Taylor", title: "Founder, Valar Atomics", topic: "On nuclear energy and building in El Segundo.", img: "/speakers/isaiah-taylor.jpg", url: "https://www.valaratomics.com/" },
   { name: "Augustus Doricko", title: "Founder, Rainmaker", topic: "On weather modification tech and scaling from the cohort.", img: "/speakers/augustus-doricko-bw.jpg", url: "https://www.rainmaker.com/" },
   { name: "Saif Khawaja", title: "Founder, Shinkei Systems", topic: "On full-stack robotics and the El Segundo ecosystem.", img: "/speakers/saif.png", url: "https://www.shinkei.systems/" },
-  { name: "Kevin Hartz", title: "General Partner, A*", topic: "On seed investing and breakout founder qualities.", img: "/speakers/kevinhartz.jpg", url: "https://www.astarfund.com/" },
+  { name: "Kevin Hartz", title: "General Partner, A*", topic: "On seed investing and breakout founder qualities.", img: "/speakers/kevinhartz.jpg", url: "https://www.a-star.co/" },
   { name: "Dan Piemont", title: "Founder, Long Wall", topic: "On defense venture and navigating the DoD.", img: "/speakers/danpiemont.jpeg", url: "https://www.longwall.co/" },
   { name: "Delian Asparouhov", title: "General Partner, Founders Fund", topic: "On frontier technology and founder conviction.", img: "/speakers/delian-asparouhov.webp", url: "https://foundersfund.com/" },
   { name: "Chris Power", title: "Founder, Hadrian", topic: "On manufacturing automation for aerospace and defense.", img: "/speakers/chris-power-bw.jpg", url: "https://www.hadrian.co/" },
-  { name: "Nathan Mintz", title: "Founder, Flex Capital", topic: "On defense tech investing and founder-market fit.", img: "/speakers/nathan-mintz.webp", url: "https://www.flex.capital/" },
-  { name: "Josh Steinman", title: "Former NSC Director", topic: "On national security strategy and policy.", img: "/speakers/joshua-steinman.jpg", url: "https://www.linkedin.com/in/joshsteinman/" },
-  { name: "Scott Nolan", title: "Partner, Founders Fund", topic: "On deep tech investing from SpaceX to Founders Fund.", img: "/speakers/scott-nolan.png", url: "https://foundersfund.com/" },
+  { name: "Nathan Mintz", title: "Epirus", topic: "On directed energy systems and defense technology.", img: "/speakers/nathan-mintz.webp", url: "https://www.epirusinc.com/" },
+  { name: "Josh Steinman", title: "Founder, Galvanick", topic: "On industrial cybersecurity and national security.", img: "/speakers/joshua-steinman.jpg", url: "https://www.galvanick.com/" },
+  { name: "Scott Nolan", title: "Partner, Founders Fund · General Matter", topic: "On deep tech investing from SpaceX to Founders Fund.", img: "/speakers/scott-nolan.png", url: "https://generalmatter.com/" },
   { name: "Michael Gibson", title: "Co-founder, 1517 Fund", topic: "On backing young founders and contrarian bets.", img: "/speakers/michael-gibson-bw.jpeg", url: "https://www.1517fund.com/" },
-  { name: "Bryon Hargis", title: "Defense Operator", topic: "On defense operations and scaling military tech.", img: "/speakers/bryon-hargis.webp", url: "#" },
-  { name: "Josh Manchester", title: "Senior Advisor, Discipulus", topic: "On defense policy and national security.", img: "/speakers/josh-manchester-bw.jpg", url: "#" },
+  { name: "Bryon Hargis", title: "Castelion", topic: "On rapid development of defense systems.", img: "/speakers/bryon-hargis.webp", url: "https://castelion.com/" },
+  { name: "Josh Manchester", title: "GP, Champion Hill Ventures", topic: "On defense policy and venture investing.", img: "/speakers/josh-manchester-bw.jpg", url: "https://www.championhillventures.com/" },
 ];
 
 const SpeakerCard: React.FC<{ speaker: typeof speakers[number] }> = ({ speaker }) => {
