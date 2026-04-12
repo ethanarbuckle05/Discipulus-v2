@@ -26,7 +26,7 @@ const HowItWorks: React.FC = () => (
         {steps.map((s, i) => (
           <div key={s.num} className="bg-navy p-5 lg:p-6 relative">
             <Reveal delay={i * 100}>
-              <div className="font-mono text-[0.58rem] text-white/40 tracking-widest mb-3">
+              <div className="font-mono text-[0.65rem] sm:text-[0.58rem] text-white/40 tracking-widest mb-3">
                 {s.num}
               </div>
               <div className="font-freight text-base font-medium text-white mb-2">

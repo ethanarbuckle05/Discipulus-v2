@@ -45,6 +45,7 @@ const FAQItem: React.FC<{ faq: typeof faqs[number]; index: number }> = ({ faq, i
           onClick={() => setOpen(!open)}
           className="w-full flex justify-between items-start gap-4 py-5 sm:py-6 text-left group"
           aria-expanded={open}
+          aria-label={faq.q}
         >
           <span className="font-freight text-[1rem] sm:text-[1.1rem] md:text-[1.2rem] font-medium text-white group-hover:text-white/90 transition-colors duration-300 pr-4">
             {faq.q}
