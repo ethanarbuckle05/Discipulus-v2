@@ -83,11 +83,12 @@ const Hero: React.FC = () => {
 
           <Reveal delay={80}>
             <h1 className="font-freight text-[clamp(2.6rem,5.5vw,4.6rem)] font-normal leading-[1.06] text-white max-w-[760px] mb-6 tracking-tight">
-              Cultivating a visionary vanguard of founders solving America&apos;s hardest problems in El Segundo.
+              Plenty of funds write checks.{" "}
+              <em className="italic text-white/60">We train founders.</em>
             </h1>
           </Reveal>
 
-          <WordReveal className="text-[0.95rem] text-white/60 max-w-[520px] leading-relaxed mb-10" speed={30}>Discipulus Ventures is building a cohort of the most visionary, value-aligned, and contrarian founders.</WordReveal>
+          <WordReveal className="text-[0.95rem] text-white/60 max-w-[520px] leading-relaxed mb-10" speed={30}>10 days in a room with the operators who built Anduril, SpaceX, and Eventbrite — plus daily investor sessions, peer founders building for the national interest, and a Demo Day in front of 100+ investors. This is the most intensive founder training program in defense and hard tech.</WordReveal>
 
           <Reveal delay={240}>
             <div className="flex flex-col sm:flex-row gap-3.5 items-start sm:items-center mb-14">
@@ -97,13 +98,13 @@ const Hero: React.FC = () => {
                 rel="noopener noreferrer"
                 className="bg-white text-navy px-7 py-3 text-[0.8rem] font-semibold tracking-widest uppercase hover:scale-105 hover:shadow-[0_0_25px_rgba(255,255,255,0.2)] transition-all duration-300 ease-8vc inline-block"
               >
-                Apply now
+                Apply to the Cohort
               </a>
               <a
-                href="/cohort"
+                href="/experience"
                 className="text-white/60 px-7 py-3 text-[0.8rem] tracking-wider border border-white/10 hover:text-white hover:border-white/20 transition-all duration-300 ease-8vc inline-block"
               >
-                Learn more
+                See the experience
               </a>
             </div>
           </Reveal>

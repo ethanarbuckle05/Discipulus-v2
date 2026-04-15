@@ -32,10 +32,10 @@ const CTASection: React.FC = () => (
     <ParticlesSVG />
     <Reveal>
       <h2 className="font-freight text-[clamp(1.7rem,3.4vw,2.6rem)] font-normal leading-tight text-white mb-3.5 relative z-10">
-        Build the Future with Discipulus.
+        The next cohort is forming now.
       </h2>
     </Reveal>
-    <div className="mb-8 relative z-10" />
+    <WordReveal className="text-white/60 text-[0.85rem] mb-8 relative z-10 max-w-[540px] mx-auto" speed={30}>{"We select for the founder, not the deck. No revenue, no product, no fully baked idea required — if you're building for the national interest and ready to be trained, apply."}</WordReveal>
     <Reveal delay={200}>
       <div className="flex flex-col sm:flex-row gap-3.5 items-center justify-center relative z-10">
       <a
@@ -44,7 +44,7 @@ const CTASection: React.FC = () => (
         rel="noopener noreferrer"
         className="bg-white text-navy px-5 sm:px-7 py-3 text-[0.72rem] sm:text-[0.8rem] font-semibold tracking-widest uppercase hover:scale-105 hover:shadow-[0_0_25px_rgba(255,255,255,0.2)] transition-all duration-300 ease-8vc inline-block"
       >
-        Join us
+        Apply to Spring 2026
       </a>
       <a
         href="mailto:jakob.diepenbrock@discipulusventures.com"
