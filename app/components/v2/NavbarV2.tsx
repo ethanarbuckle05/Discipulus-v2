@@ -10,8 +10,8 @@ interface NavbarV2Props {
 }
 
 const navLinks = [
-  { href: "/#explore", label: "Explore" },
-  { href: "/#about", label: "About" },
+  { href: "/experience", label: "Experience" },
+  { href: "/speakers", label: "Speakers" },
   { href: "/cohort", label: "Cohort" },
   { href: "/team", label: "Team" },
 ];
