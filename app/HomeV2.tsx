@@ -9,7 +9,6 @@ import Speakers from "./components/v2/Speakers";
 import FounderOutcomes from "./components/v2/FounderOutcomes";
 import HowItWorks from "./components/v2/HowItWorks";
 import ManifestoV2 from "./components/v2/ManifestoV2";
-import ElSegundo from "./components/v2/ElSegundo";
 import TeamSection from "./components/v2/TeamSection";
 import Press from "./components/v2/Press";
 import LogoMarquee from "./components/v2/LogoMarquee";
@@ -36,7 +35,6 @@ const HomeV2: React.FC = () => {
       {/* 6. Conviction — why we exist */}
       <ManifestoV2 />
       {/* 7. Context — where and who */}
-      <ElSegundo />
       <TeamSection />
       {/* 8. Validation — external proof */}
       <Press />

@@ -7,7 +7,6 @@ import Schedule from "../components/v2/Schedule";
 import Speakers from "../components/v2/Speakers";
 import FounderOutcomes from "../components/v2/FounderOutcomes";
 import HowItWorks from "../components/v2/HowItWorks";
-import ElSegundo from "../components/v2/ElSegundo";
 import FAQ from "../components/v2/FAQ";
 import LogoMarquee from "../components/v2/LogoMarquee";
 import CTASection from "../components/v2/CTASection";
@@ -89,7 +88,6 @@ export default function CohortPage() {
       <Speakers />
       <FounderOutcomes />
       <HowItWorks />
-      <ElSegundo />
       <LogoMarquee />
       <FAQ />
       <CTASection />
