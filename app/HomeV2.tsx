@@ -17,6 +17,7 @@ import HowItWorks from "./components/v2/HowItWorks";
 import CTASection from "./components/v2/CTASection";
 import FooterV2 from "./components/v2/FooterV2";
 import { Reveal } from "./components/v2/useScrollEffects";
+import Image from "next/image";
 
 const HomeV2: React.FC = () => {
   return (
@@ -29,6 +30,15 @@ const HomeV2: React.FC = () => {
       {/* 3. Manifesto — conviction sections */}
       <ManifestoV2 />
       {/* 4. Cohort intro */}
+      <div className="relative w-full aspect-[2/1] lg:aspect-[2.8/1] overflow-hidden">
+        <Image
+          src="/FoundingFathers.png"
+          alt="Discipulus cohort founders in front of the American flag"
+          fill
+          className="object-cover object-center"
+        />
+        <div className="absolute inset-x-0 bottom-0 h-[20%] bg-gradient-to-t from-navy to-transparent pointer-events-none" />
+      </div>
       <section id="cohort" className="py-16 lg:py-20">
         <div className="max-w-[1200px] mx-auto px-6 lg:px-12">
           <Reveal>
