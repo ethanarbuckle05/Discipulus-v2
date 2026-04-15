@@ -64,7 +64,7 @@ const Press: React.FC = () => (
                 {a.title}
               </div>
               {/* Preview snippet — appears on hover */}
-              <div className="text-[0.75rem] text-navy/40 leading-relaxed mb-2 max-h-0 overflow-hidden group-hover:max-h-[60px] transition-all duration-500 ease-8vc-out">
+              <div className="text-[0.75rem] text-navy/40 leading-relaxed mb-2 max-h-0 overflow-hidden group-hover:max-h-[60px] group-active:max-h-[60px] transition-all duration-500 ease-8vc-out">
                 {a.preview}
               </div>
               <div className="text-[0.7rem] text-navy/30 group-hover:text-navy/50 transition-colors duration-300">

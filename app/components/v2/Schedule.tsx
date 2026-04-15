@@ -28,7 +28,7 @@ const Schedule: React.FC = () => (
           {scheduleItems.map((item, i) => (
             <Reveal key={item.time} delay={i * 80}>
               <div
-                className="grid grid-cols-[70px_1fr] sm:grid-cols-[88px_1fr] border-b border-white/5 hover:bg-navy-2 transition-all duration-300 ease-8vc hover:pl-2 group"
+                className="grid grid-cols-[60px_1fr] sm:grid-cols-[88px_1fr] border-b border-white/5 hover:bg-navy-2 transition-all duration-300 ease-8vc hover:pl-2 group"
               >
                 <div className="font-mono text-[0.7rem] text-white/40 group-hover:text-white/70 px-3 sm:px-4 py-3 sm:py-4 tracking-wide transition-colors duration-300">
                   {item.time}

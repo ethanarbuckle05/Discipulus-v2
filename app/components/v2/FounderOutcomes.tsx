@@ -169,8 +169,8 @@ const FounderOutcomes: React.FC = () => {
                 </CarouselItem>
               ))}
             </CarouselContent>
-            <CarouselPrevious className="md:-left-14 -left-5 bg-navy text-white hover:!bg-white hover:!text-navy" />
-            <CarouselNext className="md:-right-14 -right-5 bg-navy text-white hover:!bg-white hover:!text-navy" />
+            <CarouselPrevious className="md:-left-14 -left-2 bg-navy text-white hover:!bg-white hover:!text-navy hidden sm:flex" />
+            <CarouselNext className="md:-right-14 -right-2 bg-navy text-white hover:!bg-white hover:!text-navy hidden sm:flex" />
           </Carousel>
         </div>
       </div>

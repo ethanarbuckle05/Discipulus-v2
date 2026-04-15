@@ -86,7 +86,7 @@ const AdvisorSlider: React.FC = () => {
         {advisors.map((a) => (
           <div
             key={a.name}
-            className="snap-start shrink-0 w-[140px] sm:w-[170px] md:w-[200px] lg:w-[220px] flex flex-col items-center text-center"
+            className="snap-start shrink-0 w-[120px] sm:w-[170px] md:w-[200px] lg:w-[220px] flex flex-col items-center text-center"
           >
             <Image
               src={a.img}
@@ -131,7 +131,7 @@ const TeamSection: React.FC = () => (
               alt={p.name}
               width={240}
               height={240}
-              className="w-[160px] h-[160px] md:w-[200px] md:h-[200px] rounded-full object-cover grayscale-[0.1] group-hover:grayscale-0 border border-white/10 group-hover:border-white/20 mb-5 transition-all duration-500 ease-8vc"
+              className="w-[120px] h-[120px] sm:w-[160px] sm:h-[160px] md:w-[200px] md:h-[200px] rounded-full object-cover grayscale-[0.1] group-hover:grayscale-0 border border-white/10 group-hover:border-white/20 mb-5 transition-all duration-500 ease-8vc"
             />
             <a href={p.url} target="_blank" rel="noopener noreferrer" className="font-freight text-[1.3rem] font-medium text-white mb-1 hover:text-white/80 underline underline-offset-2 decoration-white/20 hover:decoration-white/50 transition-colors duration-200">
               {p.name}

@@ -70,7 +70,7 @@ export function CohortCarousel() {
         >
           <button
             onClick={() => setSelected(null)}
-            className="absolute top-6 right-6 text-white/60 hover:text-white text-3xl transition-colors z-10"
+            className="absolute top-8 right-4 sm:top-6 sm:right-6 text-white/60 hover:text-white text-3xl transition-colors z-10 min-w-[44px] min-h-[44px] flex items-center justify-center"
             aria-label="Close"
           >
             &times;

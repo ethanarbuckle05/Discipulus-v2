@@ -67,7 +67,7 @@ const FAQItem: React.FC<{ faq: typeof faqs[number]; index: number }> = ({ faq, i
           }`}
         >
           <WordReveal
-            className="text-[0.85rem] sm:text-[0.88rem] text-white/50 leading-relaxed max-w-[640px] pr-8"
+            className="text-[0.85rem] sm:text-[0.88rem] text-white/50 leading-relaxed max-w-[640px] pr-4 sm:pr-8"
             speed={20}
           >
             {faq.a}
