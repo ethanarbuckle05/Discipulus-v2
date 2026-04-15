@@ -5,26 +5,21 @@ import Image from "next/image";
 import { investors } from "@/app/data/investors";
 import { Reveal } from "./useScrollEffects";
 
-const LogoSet = () => (
-  <div className="flex items-center shrink-0">
-    {investors.map((v) => (
-      <a
-        key={v.id}
-        href={v.href}
-        target="_blank"
-        rel="noreferrer"
-        className="flex items-center justify-center shrink-0 mx-6 sm:mx-8 md:mx-12"
-      >
-        <Image
-          src={v.src}
-          alt={v.id}
-          width={150}
-          height={20}
-          className="h-[22px] sm:h-[28px] md:h-[34px] w-auto opacity-70 brightness-0 invert shrink-0 hover:opacity-100 transition-opacity duration-300"
-        />
-      </a>
-    ))}
-  </div>
+const LogoItem: React.FC<{ v: typeof investors[number] }> = ({ v }) => (
+  <a
+    href={v.href}
+    target="_blank"
+    rel="noreferrer"
+    className="flex items-center justify-center shrink-0 px-6 sm:px-8 md:px-12"
+  >
+    <Image
+      src={v.src}
+      alt={v.id}
+      width={150}
+      height={20}
+      className="h-[22px] sm:h-[28px] md:h-[34px] w-auto opacity-70 brightness-0 invert shrink-0 hover:opacity-100 transition-opacity duration-300"
+    />
+  </a>
 );
 
 const LogoMarquee: React.FC = () => (
@@ -34,9 +29,9 @@ const LogoMarquee: React.FC = () => (
         Cohort companies funded by
       </p>
     </Reveal>
-    <div className="flex w-max animate-investor-scroll">
-      <LogoSet />
-      <LogoSet />
+    <div className="flex animate-investor-scroll" style={{ width: "max-content" }}>
+      {investors.map((v) => <LogoItem key={`a-${v.id}`} v={v} />)}
+      {investors.map((v) => <LogoItem key={`b-${v.id}`} v={v} />)}
     </div>
   </section>
 );
