@@ -22,7 +22,9 @@ const HomeV2: React.FC = () => {
     <div className="flex flex-col bg-navy text-white/80 font-sans min-h-screen max-w-full overflow-hidden antialiased">
       {/* 1. Hook — video backdrop with navbar overlaid, hero text below */}
       <Hero />
-      {/* 2. At a glance — the cohort experience in 4 numbers */}
+      {/* 2. Social proof — investor logos */}
+      <LogoMarquee />
+      {/* 3. At a glance — the cohort experience in 4 numbers */}
       <DealGrid />
       {/* 3. Show, don't tell — the experience */}
       <PhotoStrip />
@@ -38,7 +40,6 @@ const HomeV2: React.FC = () => {
       <TeamSection />
       {/* 8. Validation — external proof */}
       <Press />
-      <LogoMarquee />
       {/* 9. FAQ */}
       <FAQ />
       {/* 10. Close */}

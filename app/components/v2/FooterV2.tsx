@@ -14,9 +14,6 @@ const FooterV2: React.FC = () => (
       />
     </div>
     <div className="flex gap-5 flex-wrap justify-center items-center">
-      <Link href="/#explore" className="text-white/20 text-[0.78rem] sm:text-[0.74rem] tracking-wide hover:text-white/60 transition-colors duration-200 ease-8vc">
-        Explore
-      </Link>
       <Link href="/#about" className="text-white/20 text-[0.78rem] sm:text-[0.74rem] tracking-wide hover:text-white/60 transition-colors duration-200 ease-8vc">
         About
       </Link>
