@@ -10,7 +10,6 @@ import Speakers from "./components/v2/Speakers";
 import Schedule from "./components/v2/Schedule";
 import TeamSection from "./components/v2/TeamSection";
 import FAQ from "./components/v2/FAQ";
-import PhotoStrip from "./components/v2/PhotoStrip";
 import { CohortCarousel } from "./components/cohort/CohortCarousel";
 import Press from "./components/v2/Press";
 import HowItWorks from "./components/v2/HowItWorks";
@@ -69,8 +68,6 @@ const HomeV2: React.FC = () => {
       <FAQ />
       {/* 11. Cohort photo carousel */}
       <CohortCarousel />
-      {/* 12. Cohort photo strip */}
-      <PhotoStrip />
       {/* 13. Press */}
       <Press />
       {/* 13. Close */}
