@@ -109,3 +109,7 @@ body,
 .animate-investor-scroll {
   animation: investor-scroll 30s linear infinite;
 }
+
+.animate-photo-scroll {
+  animation: investor-scroll 60s linear infinite;
+}
