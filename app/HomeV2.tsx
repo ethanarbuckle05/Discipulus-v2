@@ -2,47 +2,65 @@
 
 import PortalIntro from "./components/v2/PortalIntro";
 import Hero from "./components/v2/Hero";
-import DealGrid from "./components/v2/DealGrid";
-import PhotoStrip from "./components/v2/PhotoStrip";
-import Schedule from "./components/v2/Schedule";
-import Speakers from "./components/v2/Speakers";
-import FounderOutcomes from "./components/v2/FounderOutcomes";
-import HowItWorks from "./components/v2/HowItWorks";
-import ManifestoV2 from "./components/v2/ManifestoV2";
-import TeamSection from "./components/v2/TeamSection";
-import Press from "./components/v2/Press";
 import LogoMarquee from "./components/v2/LogoMarquee";
+import ManifestoV2 from "./components/v2/ManifestoV2";
+import DealGrid from "./components/v2/DealGrid";
+import FounderOutcomes from "./components/v2/FounderOutcomes";
+import Speakers from "./components/v2/Speakers";
+import Schedule from "./components/v2/Schedule";
+import TeamSection from "./components/v2/TeamSection";
 import FAQ from "./components/v2/FAQ";
+import PhotoStrip from "./components/v2/PhotoStrip";
+import Press from "./components/v2/Press";
+import HowItWorks from "./components/v2/HowItWorks";
 import CTASection from "./components/v2/CTASection";
 import FooterV2 from "./components/v2/FooterV2";
+import { Reveal } from "./components/v2/useScrollEffects";
 
 const HomeV2: React.FC = () => {
   return (
     <PortalIntro>
     <div className="flex flex-col bg-navy text-white/80 font-sans min-h-screen max-w-full overflow-hidden antialiased">
-      {/* 1. Hook — video backdrop with navbar overlaid, hero text below */}
+      {/* 1. Hero — video, tagline, Apply now / Learn more */}
       <Hero />
-      {/* 2. Social proof — investor logos */}
+      {/* 2. Logo marquee (once) */}
       <LogoMarquee />
-      {/* 3. At a glance — the cohort experience in 4 numbers */}
-      <DealGrid />
-      {/* 3. Show, don't tell — the experience */}
-      <PhotoStrip />
-      <Schedule />
-      <Speakers />
-      {/* 4. Proof — the training works */}
-      <FounderOutcomes />
-      {/* 5. Process — how to get in */}
-      <HowItWorks />
-      {/* 6. Conviction — why we exist */}
+      {/* 3. Manifesto — conviction sections */}
       <ManifestoV2 />
-      {/* 7. Context — where and who */}
+      {/* 4. Cohort intro */}
+      <section id="cohort" className="py-16 lg:py-20">
+        <div className="max-w-[1200px] mx-auto px-6 lg:px-12">
+          <Reveal>
+            <p className="font-mono text-[0.72rem] text-white/60 tracking-[0.14em] uppercase mb-4">
+              Spring 2026 Cohort · El Segundo, CA
+            </p>
+            <h2 className="font-freight text-[clamp(2.2rem,5vw,4rem)] font-normal leading-[1.08] text-white max-w-[700px] mb-5">
+              Discipulus Cohort
+            </h2>
+            <p className="text-[0.92rem] text-white/60 max-w-[520px] leading-relaxed">
+              Two week residency in El Segundo with 10 other early-stage, value-aligned founders building hard tech and software for the national interest.
+            </p>
+          </Reveal>
+        </div>
+      </section>
+      {/* 5. Featured Cohort Founders */}
+      <FounderOutcomes />
+      {/* 6. Selected Past Speakers */}
+      <Speakers />
+      {/* 7. At a glance + Schedule */}
+      <DealGrid />
+      <Schedule />
+      {/* 8. How it works */}
+      <HowItWorks />
+      {/* 9. Team */}
       <TeamSection />
-      {/* 8. Validation — external proof */}
-      <Press />
-      {/* 9. FAQ */}
+      {/* 10. FAQs */}
       <FAQ />
-      {/* 10. Close */}
+      {/* 11. Cohort photos */}
+      <PhotoStrip />
+      {/* 12. Press */}
+      <Press />
+      {/* 13. Close */}
       <CTASection />
       <FooterV2 />
     </div>

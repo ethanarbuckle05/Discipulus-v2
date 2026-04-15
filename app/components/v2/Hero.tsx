@@ -100,7 +100,7 @@ const Hero: React.FC = () => {
                 Apply now
               </a>
               <a
-                href="/cohort"
+                href="#cohort"
                 className="text-white/60 px-7 py-3 text-[0.8rem] tracking-wider border border-white/10 hover:text-white hover:border-white/20 transition-all duration-300 ease-8vc inline-block"
               >
                 Learn more
