@@ -18,7 +18,7 @@ const faqs = [
   },
   {
     q: "Is having a team a requirement to apply?",
-    a: "No, it isn't. Solo founders are welcome.",
+    a: "No, it isn't.",
   },
   {
     q: "Should every team member complete an application?",
@@ -26,7 +26,7 @@ const faqs = [
   },
   {
     q: "Is having an incorporated company necessary to apply?",
-    a: "No, it isn't. We fund ideas and founders, not just companies.",
+    a: "No, it isn't.",
   },
   {
     q: "Do you accept applicants from outside the U.S.?",
