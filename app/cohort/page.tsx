@@ -42,10 +42,11 @@ export default function CohortPage() {
             Spring 2026 Cohort · El Segundo, CA
           </p>
           <h1 className="font-freight text-[clamp(2.2rem,5vw,4rem)] font-normal leading-[1.08] text-white max-w-[700px] mb-5">
-            Discipulus Cohort
+            The most intensive founder training program in defense and hard tech.
           </h1>
           <p className="text-[0.92rem] text-white/60 max-w-[520px] leading-relaxed mb-8">
-            Two week residency in El Segundo with 10 other early-stage, value-aligned founders building hard tech and software for the national interest.
+            A two-week residency with 10 early-stage founders — surrounded by the
+            investors, operators, and unicorn founders who can accelerate their impact.
           </p>
           <div className="flex flex-col sm:flex-row gap-3.5 items-start sm:items-center">
             <a
@@ -54,13 +55,13 @@ export default function CohortPage() {
               rel="noopener noreferrer"
               className="bg-white text-navy px-5 sm:px-7 py-3 text-[0.72rem] sm:text-[0.8rem] font-semibold tracking-widest uppercase hover:scale-105 hover:shadow-[0_0_25px_rgba(255,255,255,0.2)] transition-all duration-300 ease-8vc inline-block"
             >
-              Apply now
+              Apply to the Cohort
             </a>
             <a
               href="#how"
               className="text-white/60 px-5 sm:px-7 py-3 text-[0.72rem] sm:text-[0.8rem] tracking-wider border border-white/10 hover:text-white hover:border-white/20 transition-all duration-300 ease-8vc inline-block"
             >
-              Learn more
+              How it works
             </a>
           </div>
         </div>

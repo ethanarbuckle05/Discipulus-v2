@@ -31,7 +31,7 @@ const LogoMarquee: React.FC = () => (
   <section className="py-16 lg:py-20 overflow-hidden">
     <Reveal>
       <p className="font-mono text-[0.72rem] text-white/50 tracking-[0.12em] uppercase text-center mb-8">
-        Cohort companies funded by
+        Cohort companies backed by
       </p>
     </Reveal>
     <div className="flex w-max animate-marquee">
