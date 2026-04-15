@@ -30,7 +30,7 @@ const HomeV2: React.FC = () => {
       {/* 3. Manifesto — conviction sections */}
       <ManifestoV2 />
       {/* 4. Cohort intro */}
-      <div className="relative w-full aspect-[2/1] lg:aspect-[2.8/1] overflow-hidden">
+      <div id="cohort" className="relative w-full aspect-[2/1] lg:aspect-[2.8/1] overflow-hidden">
         <Image
           src="/FoundingFathers.png"
           alt="Discipulus cohort founders in front of the American flag"
@@ -39,7 +39,7 @@ const HomeV2: React.FC = () => {
         />
         <div className="absolute inset-x-0 bottom-0 h-[20%] bg-gradient-to-t from-navy to-transparent pointer-events-none" />
       </div>
-      <section id="cohort" className="py-16 lg:py-20">
+      <section className="py-16 lg:py-20">
         <div className="max-w-[1200px] mx-auto px-6 lg:px-12">
           <Reveal>
             <p className="font-mono text-[0.72rem] text-white/60 tracking-[0.14em] uppercase mb-4">
