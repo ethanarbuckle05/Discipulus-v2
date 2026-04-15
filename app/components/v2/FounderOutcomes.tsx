@@ -1,8 +1,15 @@
 "use client";
 
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import { Reveal } from "./useScrollEffects";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
 
 const founders = [
   {
@@ -63,61 +70,112 @@ const founders = [
   },
 ];
 
-const FounderOutcomes: React.FC = () => (
-  <section id="outcomes" className="relative py-16 lg:py-20 text-navy">
-    <div className="absolute inset-0 bg-gradient-to-b from-navy via-cream via-[12%] to-cream pointer-events-none" />
-    <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-navy to-cream pointer-events-none" />
-    <div className="relative max-w-[1200px] mx-auto px-6 lg:px-12">
-      <Reveal>
-        <p className="font-mono text-[0.72rem] text-navy/50 tracking-[0.14em] uppercase mb-5">
-          Cohort
-        </p>
-        <h2 className="font-freight text-[2.1rem] font-normal leading-tight max-w-[520px] text-navy underline-reveal underline-reveal-dark mb-12">
-          Featured Cohort Founders.
-        </h2>
-      </Reveal>
-      <div className="flex flex-wrap justify-center gap-px bg-white/10 border border-white/10">
-        {founders.map((f, i) => (
-          <div
-            key={f.name}
-            className="shimmer bg-navy p-6 lg:p-8 hover:bg-navy-2 transition-all duration-300 ease-8vc hover:scale-[1.01] hover:shadow-[0_0_20px_rgba(255,255,255,0.03)] w-full sm:w-[calc(50%-1px)] lg:w-[calc(25%-1px)]"
-          >
-            <Reveal delay={i * 100}>
-              <div className="flex items-center gap-3 mb-4">
-                <Image
-                  src={f.headshot}
-                  alt={f.name}
-                  width={48}
-                  height={48}
-                  className="w-[48px] h-[48px] rounded-full object-cover grayscale-[0.15] border border-white/10 shrink-0"
-                />
-                <div>
-                  <div className="font-freight text-[1.15rem] font-semibold text-white leading-tight">
-                    {f.name}
-                  </div>
-                  <div className="flex items-center gap-2 mt-0.5">
-                    <Image
-                      src={f.logo}
-                      alt={`${f.company} logo`}
-                      width={72}
-                      height={18}
-                      className="h-[16px] w-auto object-contain opacity-60"
-                    />
-                    <a href={f.url} target="_blank" rel="noopener noreferrer" className="text-[0.72rem] text-white/50 font-medium hover:text-white/80 transition-colors duration-200 underline underline-offset-2 decoration-white/20 hover:decoration-white/50">
-                      {f.company}
-                    </a>
-                  </div>
-                </div>
-              </div>
-              <div className="text-[0.82rem] text-white/80 leading-relaxed">
-                {f.desc}
-              </div>
-            </Reveal>
+const FounderCard: React.FC<{ founder: typeof founders[number] }> = ({ founder }) => {
+  const [hovered, setHovered] = useState(false);
+
+  return (
+    <a
+      href={founder.url}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="relative aspect-square block overflow-hidden group cursor-pointer border border-white/10"
+      onMouseEnter={() => setHovered(true)}
+      onMouseLeave={() => setHovered(false)}
+    >
+      <Image
+        src={founder.headshot}
+        alt={founder.name}
+        fill
+        className="object-cover grayscale group-hover:grayscale-[0.3] transition-all duration-500 ease-8vc"
+      />
+      <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent" />
+
+      {/* Name — always visible */}
+      <div className="absolute bottom-0 left-0 right-0 p-4 sm:p-5">
+        <div className="font-freight text-base sm:text-lg font-semibold text-white leading-tight">
+          {founder.name}
+        </div>
+        {/* Company + desc — revealed on hover */}
+        <div
+          className={`overflow-hidden transition-all duration-400 ease-8vc-out ${
+            hovered ? "max-h-[80px] opacity-100 mt-1.5" : "max-h-0 opacity-0"
+          }`}
+        >
+          <div className="flex items-center gap-2 mb-1">
+            <Image
+              src={founder.logo}
+              alt={`${founder.company} logo`}
+              width={64}
+              height={16}
+              className="h-[14px] w-auto object-contain brightness-0 invert opacity-70"
+            />
+            <span className="text-[0.72rem] text-white/60 font-medium">
+              {founder.company}
+            </span>
           </div>
-        ))}
+          <p className="text-[0.75rem] text-white/50 leading-relaxed">
+            {founder.desc}
+          </p>
+        </div>
       </div>
-    </div>
-  </section>
-);
+    </a>
+  );
+};
+
+const FounderOutcomes: React.FC = () => {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const check = () => setIsMobile(window.innerWidth < 768);
+    check();
+    window.addEventListener("resize", check);
+    return () => window.removeEventListener("resize", check);
+  }, []);
+
+  return (
+    <section id="outcomes" className="relative py-16 lg:py-20 text-navy">
+      <div className="absolute inset-0 bg-gradient-to-b from-navy via-cream via-[12%] to-cream pointer-events-none" />
+      <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-navy to-cream pointer-events-none" />
+      <div className="relative max-w-[1200px] mx-auto px-6 lg:px-12">
+        <Reveal>
+          <p className="font-mono text-[0.72rem] text-navy/50 tracking-[0.14em] uppercase mb-5">
+            Cohort
+          </p>
+          <h2 className="font-freight text-[2.1rem] font-normal leading-tight max-w-[520px] text-navy underline-reveal underline-reveal-dark mb-12">
+            Featured Cohort Founders.
+          </h2>
+        </Reveal>
+        <div className="w-full max-w-5xl mx-auto px-6 sm:px-10 md:px-16">
+          <Carousel
+            opts={{
+              align: "start",
+              loop: true,
+              containScroll: false,
+              slidesToScroll: 1,
+            }}
+            className="w-full"
+          >
+            <CarouselContent className="items-stretch ml-0">
+              {founders.map((founder, index) => (
+                <CarouselItem
+                  key={founder.name}
+                  className="min-w-0 pl-0"
+                  style={{
+                    flexBasis: isMobile ? "85%" : "calc(33.333% - 0.5rem)",
+                    marginRight: "0.5rem",
+                  }}
+                >
+                  <FounderCard founder={founder} />
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+            <CarouselPrevious className="md:-left-14 -left-5 bg-navy text-white hover:!bg-white hover:!text-navy" />
+            <CarouselNext className="md:-right-14 -right-5 bg-navy text-white hover:!bg-white hover:!text-navy" />
+          </Carousel>
+        </div>
+      </div>
+    </section>
+  );
+};
 
 export default FounderOutcomes;
