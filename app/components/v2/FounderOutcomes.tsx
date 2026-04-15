@@ -76,11 +76,11 @@ const FounderOutcomes: React.FC = () => (
           Featured Cohort Founders.
         </h2>
       </Reveal>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-px bg-white/10 border border-white/10">
+      <div className="flex flex-wrap justify-center gap-px bg-white/10 border border-white/10">
         {founders.map((f, i) => (
           <div
             key={f.name}
-            className="shimmer bg-navy p-6 lg:p-8 hover:bg-navy-2 transition-all duration-300 ease-8vc hover:scale-[1.01] hover:shadow-[0_0_20px_rgba(255,255,255,0.03)]"
+            className="shimmer bg-navy p-6 lg:p-8 hover:bg-navy-2 transition-all duration-300 ease-8vc hover:scale-[1.01] hover:shadow-[0_0_20px_rgba(255,255,255,0.03)] w-full sm:w-[calc(50%-1px)] lg:w-[calc(25%-1px)]"
           >
             <Reveal delay={i * 100}>
               <div className="flex items-center gap-3 mb-4">
