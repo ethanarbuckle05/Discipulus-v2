@@ -22,7 +22,7 @@ const HowItWorks: React.FC = () => (
           From day one to Demo Day and beyond.
         </h2>
       </Reveal>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-px bg-white/5 border border-white/5">
+      <div className="grid grid-cols-1 md:grid-cols-5 gap-px bg-white/5 border border-white/5">
         {steps.map((s, i) => (
           <div key={s.num} className="bg-navy p-5 lg:p-6 relative">
             <Reveal delay={i * 100}>

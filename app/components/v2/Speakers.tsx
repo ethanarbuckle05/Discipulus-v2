@@ -84,7 +84,7 @@ const Speakers: React.FC = () => (
           Selected Past Speakers.
         </h2>
       </Reveal>
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-px bg-white/5 border border-white/5">
+      <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-4 gap-px bg-white/5 border border-white/5">
         {speakers.map((s) => (
           <SpeakerCard key={s.name} speaker={s} />
         ))}
