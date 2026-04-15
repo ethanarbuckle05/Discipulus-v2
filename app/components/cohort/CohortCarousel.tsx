@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from "react";
 import Image from "next/image";
 
 const images = [
@@ -27,12 +28,13 @@ const images = [
   "/cohort/cohort16.jpeg",
 ];
 
-const PhotoSet = () => (
+const PhotoSet: React.FC<{ onSelect: (src: string) => void }> = ({ onSelect }) => (
   <div className="flex gap-1 shrink-0">
     {images.map((src, i) => (
-      <div
+      <button
         key={i}
-        className="h-[160px] sm:h-[200px] md:h-[260px] lg:h-[320px] shrink-0 relative w-[160px] sm:w-[200px] md:w-[260px] lg:w-[320px] overflow-hidden group"
+        onClick={() => onSelect(src)}
+        className="h-[160px] sm:h-[200px] md:h-[260px] lg:h-[320px] shrink-0 relative w-[160px] sm:w-[200px] md:w-[260px] lg:w-[320px] overflow-hidden group cursor-zoom-in"
       >
         <Image
           src={src}
@@ -41,22 +43,50 @@ const PhotoSet = () => (
           sizes="320px"
           className="object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500 ease-8vc"
         />
-      </div>
+      </button>
     ))}
   </div>
 );
 
 export function CohortCarousel() {
+  const [selected, setSelected] = useState<string | null>(null);
+
   return (
     <section className="py-12 lg:py-16 overflow-hidden">
       <div className="relative">
         <div className="absolute inset-y-0 left-0 w-12 sm:w-16 md:w-24 bg-gradient-to-r from-navy to-transparent z-10 pointer-events-none" />
         <div className="absolute inset-y-0 right-0 w-12 sm:w-16 md:w-24 bg-gradient-to-l from-navy to-transparent z-10 pointer-events-none" />
         <div className="flex gap-1 animate-photo-scroll" style={{ width: "max-content" }}>
-          <PhotoSet />
-          <PhotoSet />
+          <PhotoSet onSelect={setSelected} />
+          <PhotoSet onSelect={setSelected} />
         </div>
       </div>
+
+      {/* Lightbox */}
+      {selected && (
+        <div
+          className="fixed inset-0 z-[99999] bg-black/90 flex items-center justify-center cursor-zoom-out"
+          onClick={() => setSelected(null)}
+        >
+          <button
+            onClick={() => setSelected(null)}
+            className="absolute top-6 right-6 text-white/60 hover:text-white text-3xl transition-colors z-10"
+            aria-label="Close"
+          >
+            &times;
+          </button>
+          <div className="relative w-[90vw] h-[90vh] max-w-[1200px]">
+            <Image
+              src={selected}
+              alt="Cohort photo zoomed"
+              fill
+              sizes="90vw"
+              className="object-contain"
+              priority
+            />
+          </div>
+        </div>
+      )}
     </section>
   );
 }
