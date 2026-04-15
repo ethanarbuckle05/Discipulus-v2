@@ -20,7 +20,7 @@ const LogoSet = () => (
           alt={v.id}
           width={150}
           height={20}
-          className="h-[22px] sm:h-[28px] md:h-[34px] w-auto opacity-70 brightness-[10] shrink-0 hover:opacity-100 transition-opacity duration-300"
+          className="h-[22px] sm:h-[28px] md:h-[34px] w-auto opacity-70 brightness-0 invert shrink-0 hover:opacity-100 transition-opacity duration-300"
         />
       </a>
     ))}
