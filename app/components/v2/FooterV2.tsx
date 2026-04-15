@@ -14,11 +14,11 @@ const FooterV2: React.FC = () => (
       />
     </div>
     <div className="flex gap-5 flex-wrap justify-center items-center">
-      <Link href="/experience" className="text-white/20 text-[0.78rem] sm:text-[0.74rem] tracking-wide hover:text-white/60 transition-colors duration-200 ease-8vc">
-        Experience
+      <Link href="/#explore" className="text-white/20 text-[0.78rem] sm:text-[0.74rem] tracking-wide hover:text-white/60 transition-colors duration-200 ease-8vc">
+        Explore
       </Link>
-      <Link href="/speakers" className="text-white/20 text-[0.78rem] sm:text-[0.74rem] tracking-wide hover:text-white/60 transition-colors duration-200 ease-8vc">
-        Speakers
+      <Link href="/#about" className="text-white/20 text-[0.78rem] sm:text-[0.74rem] tracking-wide hover:text-white/60 transition-colors duration-200 ease-8vc">
+        About
       </Link>
       <Link href="/cohort" className="text-white/20 text-[0.78rem] sm:text-[0.74rem] tracking-wide hover:text-white/60 transition-colors duration-200 ease-8vc">
         Cohort
@@ -42,8 +42,10 @@ const FooterV2: React.FC = () => (
         </a>
       </div>
     </div>
-    <div className="font-mono text-[0.64rem] text-white/20 tracking-wider">
-      © 2026 Discipulus Ventures
+    <div className="font-mono text-[0.64rem] text-white/20 tracking-wider text-center sm:text-right">
+      © 2026 Discipulus Ventures<br />
+      All Rights Reserved.<br />
+      <Link href="/cookies" className="hover:text-white/40 transition-colors duration-200">Cookie Policy</Link>
     </div>
   </footer>
 );

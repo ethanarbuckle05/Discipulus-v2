@@ -5,9 +5,8 @@ import { Reveal, WordReveal } from "./useScrollEffects";
 
 const scheduleItems = [
   { time: "06:00", desc: "Founder workout" },
-  { time: "08:15", desc: "One-hour session from a guest speaker" },
+  { time: "08:15", desc: "One hour session from guest speaker" },
   { time: "09:15", desc: "Unicorn founder office hours" },
-  { time: "12:00", desc: "Working lunch — peer feedback sessions" },
   { time: "15:00", desc: "Investor office hours" },
   { time: "19:00", desc: "Dinner with special guest speaker" },
 ];

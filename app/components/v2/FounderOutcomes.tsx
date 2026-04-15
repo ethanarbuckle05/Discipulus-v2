@@ -7,13 +7,11 @@ import { Reveal } from "./useScrollEffects";
 const founders = [
   {
     name: "Peter Goldsborough",
-    company: "Rune Technologies",
+    company: "Rune",
     url: "https://www.runetech.co/",
     headshot: "/founders/peter.jpg",
     logo: "/companies/rune.png",
-    before: "Arrived with a working prototype and zero government contacts.",
-    after: 'AI-enabled predictive logistics for the military. <strong>Raised seed round; active DoD engagement.</strong>',
-    tag: "Cohort 2 · 2024",
+    desc: "AI-enabled predictive logistics for the military.",
   },
   {
     name: "Ted Feldmann",
@@ -21,19 +19,7 @@ const founders = [
     url: "https://www.durin.com/",
     headshot: "/founders/ted.jpeg",
     logo: "/companies/durin.png",
-    before: "Had the technical vision but needed the right investor introductions.",
-    after: 'Autonomous drilling for mineral discovery. <strong>Backed by top-tier hard tech investors.</strong>',
-    tag: "Cohort 1 · 2023",
-  },
-  {
-    name: "Johnny Ni",
-    company: "Vanguard Defense",
-    url: "https://www.vanguarddefense.us/",
-    headshot: "/founders/johnny.jpeg",
-    logo: "/companies/vanguard.png",
-    before: "Early-stage defense startup looking for a community that understood the mission.",
-    after: 'Accelerating electronic defense capabilities. <strong>Growing team and active contracts.</strong>',
-    tag: "Cohort 2 · 2024",
+    desc: "Autonomous drilling for mineral discovery.",
   },
   {
     name: "Denver Rayburn",
@@ -41,19 +27,15 @@ const founders = [
     url: "https://framework.co/",
     headshot: "/founders/denver.png",
     logo: "/companies/framework.png",
-    before: "Building an apparel manufacturing company — needed the network to scale.",
-    after: 'Building the future of apparel manufacturing. <strong>Expanding domestic production.</strong>',
-    tag: "Cohort 1 · 2023",
+    desc: "Building the future of apparel manufacturing.",
   },
   {
-    name: "Constantin Whitmire",
-    company: "1AU Technologies",
-    url: "https://www.1autechnologies.com/",
-    headshot: "/founders/constantin.jpg",
-    logo: "/companies/1aulogo.png",
-    before: "Deep tech photonics company at the earliest stage.",
-    after: 'Next-generation photonic systems. <strong>Progressing through technical milestones.</strong>',
-    tag: "Cohort 2 · 2024",
+    name: "Johnny Ni",
+    company: "Vanguard Defense",
+    url: "https://www.vanguarddefense.us/",
+    headshot: "/founders/johnny.jpeg",
+    logo: "/companies/vanguard.png",
+    desc: "Accelerating electronic defense capabilities.",
   },
   {
     name: "Elliot Forcier-Poirier",
@@ -61,9 +43,23 @@ const founders = [
     url: "https://www.watoga.tech/",
     headshot: "/founders/elliot.png",
     logo: "/companies/watoga.png",
-    before: "AI for mining — needed exposure to US defense and industrial investors.",
-    after: 'AI co-pilot for mining operations. <strong>Expanded into US market post-cohort.</strong>',
-    tag: "Cohort 2 · 2024",
+    desc: "AI Co-pilot for mining.",
+  },
+  {
+    name: "Constantin Whitmire",
+    company: "1AU Technologies",
+    url: "https://www.1autechnologies.com/",
+    headshot: "/founders/constantin.jpg",
+    logo: "/companies/1aulogo.png",
+    desc: "Next-generation photonic systems.",
+  },
+  {
+    name: "Fed Chávez-Torres",
+    company: "Tex",
+    url: "https://tex.pro/",
+    headshot: "/founders/fed.png",
+    logo: "/companies/tex.png",
+    desc: "Intelligence for equipment procurement & sales.",
   },
 ];
 
@@ -74,16 +70,11 @@ const FounderOutcomes: React.FC = () => (
     <div className="relative max-w-[1200px] mx-auto px-6 lg:px-12">
       <Reveal>
         <p className="font-mono text-[0.72rem] text-navy/50 tracking-[0.14em] uppercase mb-5">
-          The cohort works
+          Cohort
         </p>
-        <div className="flex flex-col lg:flex-row justify-between lg:items-end mb-12 gap-2">
-          <h2 className="font-freight text-[2.1rem] font-normal leading-tight max-w-[520px] text-navy underline-reveal underline-reveal-dark">
-            Founders arrive early-stage. They leave with momentum that compounds.
-          </h2>
-          <p className="text-navy/50 text-[0.82rem] max-w-[300px] lg:text-right">
-            Every founder below was trained through a Discipulus cohort.
-          </p>
-        </div>
+        <h2 className="font-freight text-[2.1rem] font-normal leading-tight max-w-[520px] text-navy underline-reveal underline-reveal-dark mb-12">
+          Featured Cohort Founders.
+        </h2>
       </Reveal>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-px bg-white/10 border border-white/10">
         {founders.map((f, i) => (
@@ -118,18 +109,8 @@ const FounderOutcomes: React.FC = () => (
                   </div>
                 </div>
               </div>
-              <div className="font-mono text-[0.62rem] text-white/40 tracking-widest uppercase mb-2">
-                Before → After
-              </div>
-              <div className="text-[0.78rem] text-white/45 leading-relaxed italic mb-2">
-                &ldquo;{f.before}&rdquo;
-              </div>
-              <div
-                className="text-[0.82rem] text-white/80 leading-relaxed"
-                dangerouslySetInnerHTML={{ __html: f.after }}
-              />
-              <div className="font-mono text-[0.65rem] sm:text-[0.58rem] text-white/25 tracking-wider mt-3.5">
-                {f.tag}
+              <div className="text-[0.82rem] text-white/80 leading-relaxed">
+                {f.desc}
               </div>
             </Reveal>
           </div>

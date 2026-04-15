@@ -83,12 +83,11 @@ const Hero: React.FC = () => {
 
           <Reveal delay={80}>
             <h1 className="font-freight text-[clamp(2.6rem,5.5vw,4.6rem)] font-normal leading-[1.06] text-white max-w-[760px] mb-6 tracking-tight">
-              Plenty of funds write checks.{" "}
-              <em className="italic text-white/60">We train founders.</em>
+              Cultivating a visionary vanguard of founders solving America&apos;s hardest problems in El Segundo.
             </h1>
           </Reveal>
 
-          <WordReveal className="text-[0.95rem] text-white/60 max-w-[520px] leading-relaxed mb-10" speed={30}>10 days in a room with the operators who built Anduril, SpaceX, and Eventbrite — plus daily investor sessions, peer founders building for the national interest, and a Demo Day in front of 100+ investors. This is the most intensive founder training program in defense and hard tech.</WordReveal>
+          <div className="mb-10" />
 
           <Reveal delay={240}>
             <div className="flex flex-col sm:flex-row gap-3.5 items-start sm:items-center mb-14">
@@ -98,29 +97,22 @@ const Hero: React.FC = () => {
                 rel="noopener noreferrer"
                 className="bg-white text-navy px-7 py-3 text-[0.8rem] font-semibold tracking-widest uppercase hover:scale-105 hover:shadow-[0_0_25px_rgba(255,255,255,0.2)] transition-all duration-300 ease-8vc inline-block"
               >
-                Apply to the Cohort
+                Apply now
               </a>
               <a
-                href="/experience"
+                href="/cohort"
                 className="text-white/60 px-7 py-3 text-[0.8rem] tracking-wider border border-white/10 hover:text-white hover:border-white/20 transition-all duration-300 ease-8vc inline-block"
               >
-                See the experience
+                Learn more
               </a>
             </div>
           </Reveal>
 
           <Reveal delay={320}>
-            <div className="flex flex-col md:flex-row gap-4 md:gap-12 border-t border-white/5 pt-6">
-              {metaItems.map((item) => (
-                <div key={item.label}>
-                  <div className="font-mono text-[0.7rem] sm:text-[0.65rem] text-white/40 tracking-widest uppercase mb-1">
-                    {item.label}
-                  </div>
-                  <div className="font-freight text-base text-white/95 font-medium">
-                    {item.value}
-                  </div>
-                </div>
-              ))}
+            <div className="border-t border-white/5 pt-6">
+              <div className="text-white/60 text-sm">
+                April 7 - 16, 2026
+              </div>
             </div>
           </Reveal>
         </div>

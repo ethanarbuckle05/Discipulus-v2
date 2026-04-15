@@ -5,22 +5,22 @@ import Image from "next/image";
 import { Reveal, WordReveal } from "./useScrollEffects";
 
 const speakers = [
-  { name: "Katherine Boyle", title: "General Partner, a16z", topic: "On building for the American dynamism thesis.", img: "/speakers/katherine-boyle-bw.jpg", url: "https://a16z.com/" },
-  { name: "Shaun Maguire", title: "Partner, Sequoia Capital", topic: "On deep tech investing and conviction-driven building.", img: "/speakers/shaun maguire.png", url: "https://www.sequoiacap.com/" },
-  { name: "Tom Mueller", title: "Founder, Impulse Space", topic: "On propulsion systems from SpaceX to founding a company.", img: "/speakers/tom-mueller-bw.png", url: "https://www.impulsespace.com/" },
-  { name: "Isaiah Taylor", title: "Founder, Valar Atomics", topic: "On nuclear energy and building in El Segundo.", img: "/speakers/isaiah-taylor.jpg", url: "https://www.valaratomics.com/" },
-  { name: "Augustus Doricko", title: "Founder, Rainmaker", topic: "On weather modification tech and scaling from the cohort.", img: "/speakers/augustus-doricko-bw.jpg", url: "https://www.rainmaker.com/" },
-  { name: "Saif Khawaja", title: "Founder, Shinkei Systems", topic: "On full-stack robotics and the El Segundo ecosystem.", img: "/speakers/saif.png", url: "https://www.shinkei.systems/" },
-  { name: "Kevin Hartz", title: "General Partner, A*", topic: "On seed investing and breakout founder qualities.", img: "/speakers/kevinhartz.jpg", url: "https://www.a-star.co/" },
-  { name: "Dan Piemont", title: "Founder, Long Wall", topic: "On defense venture and navigating the DoD.", img: "/speakers/danpiemont.jpeg", url: "https://www.longwall.co/" },
-  { name: "Delian Asparouhov", title: "General Partner, Founders Fund", topic: "On frontier technology and founder conviction.", img: "/speakers/delian-asparouhov.webp", url: "https://foundersfund.com/" },
-  { name: "Chris Power", title: "Founder, Hadrian", topic: "On manufacturing automation for aerospace and defense.", img: "/speakers/chris-power-bw.jpg", url: "https://www.hadrian.co/" },
-  { name: "Nathan Mintz", title: "Epirus", topic: "On directed energy systems and defense technology.", img: "/speakers/nathan-mintz.webp", url: "https://www.epirusinc.com/" },
-  { name: "Josh Steinman", title: "Founder, Galvanick", topic: "On industrial cybersecurity and national security.", img: "/speakers/joshua-steinman.jpg", url: "https://www.galvanick.com/" },
-  { name: "Scott Nolan", title: "Partner, Founders Fund · General Matter", topic: "On deep tech investing from SpaceX to Founders Fund.", img: "/speakers/scott-nolan.png", url: "https://generalmatter.com/" },
-  { name: "Michael Gibson", title: "Co-founder, 1517 Fund", topic: "On backing young founders and contrarian bets.", img: "/speakers/michael-gibson-bw.jpeg", url: "https://www.1517fund.com/" },
-  { name: "Bryon Hargis", title: "Castelion", topic: "On rapid development of defense systems.", img: "/speakers/bryon-hargis.webp", url: "https://castelion.com/" },
-  { name: "Josh Manchester", title: "GP, Champion Hill Ventures", topic: "On defense policy and venture investing.", img: "/speakers/josh-manchester-bw.jpg", url: "https://www.championhillventures.com/" },
+  { name: "Augustus Doricko", title: "Founder of Rainmaker", topic: "", img: "/speakers/augustus-doricko-bw.jpg", url: "https://www.rainmaker.com/" },
+  { name: "Tom Mueller", title: "Founder of Impulse Space", topic: "", img: "/speakers/tom-mueller-bw.png", url: "https://www.impulsespace.com/" },
+  { name: "Isaiah Taylor", title: "Founder of Valar Atomics", topic: "", img: "/speakers/isaiah-taylor.jpg", url: "https://www.valaratomics.com/" },
+  { name: "Katherine Boyle", title: "General Partner at a16z", topic: "", img: "/speakers/katherine-boyle-bw.jpg", url: "https://a16z.com/" },
+  { name: "Dan Piemont", title: "Founder of Long Wall", topic: "", img: "/speakers/danpiemont.jpeg", url: "https://www.longwall.co/" },
+  { name: "Shaun Maguire", title: "Partner at Sequoia Capital", topic: "", img: "/speakers/shaun maguire.png", url: "https://www.sequoiacap.com/" },
+  { name: "Saif Khawaja", title: "Founder of Shinkei Systems", topic: "", img: "/speakers/saif.png", url: "https://www.shinkei.systems/" },
+  { name: "Kevin Hartz", title: "General Partner at A*", topic: "", img: "/speakers/kevinhartz.jpg", url: "https://www.a-star.co/" },
+  { name: "Delian Asparouhov", title: "Founder of Varda Space", topic: "", img: "/speakers/delian-asparouhov.webp", url: "https://foundersfund.com/" },
+  { name: "Chris Power", title: "Founder of Hadrian", topic: "", img: "/speakers/chris-power-bw.jpg", url: "https://www.hadrian.co/" },
+  { name: "Nathan Mintz", title: "Founder of CX2", topic: "", img: "/speakers/nathan-mintz.webp", url: "https://www.epirusinc.com/" },
+  { name: "Josh Steinman", title: "Founder of Galvanick", topic: "", img: "/speakers/joshua-steinman.jpg", url: "https://www.galvanick.com/" },
+  { name: "Scott Nolan", title: "Founder of General Matter", topic: "", img: "/speakers/scott-nolan.png", url: "https://generalmatter.com/" },
+  { name: "Michael Gibson", title: "General Partner at 1517 Fund", topic: "", img: "/speakers/michael-gibson-bw.jpeg", url: "https://www.1517fund.com/" },
+  { name: "Bryon Hargis", title: "Founder of Castelion", topic: "", img: "/speakers/bryon-hargis.webp", url: "https://castelion.com/" },
+  { name: "Josh Manchester", title: "General Partner at Champion Hill Ventures", topic: "", img: "/speakers/josh-manchester-bw.jpg", url: "https://www.championhillventures.com/" },
 ];
 
 const SpeakerCard: React.FC<{ speaker: typeof speakers[number] }> = ({ speaker }) => {
@@ -78,12 +78,11 @@ const Speakers: React.FC = () => (
     <div className="relative max-w-[1200px] mx-auto px-6 lg:px-12">
       <Reveal>
         <p className="font-mono text-[0.72rem] text-white/60 tracking-[0.14em] uppercase mb-5">
-          Be in the room with
+          Selected Past Speakers
         </p>
-        <h2 className="font-freight text-[2.1rem] font-normal text-white mb-2.5 underline-reveal">
-          Past speakers and mentors.
+        <h2 className="font-freight text-[2.1rem] font-normal text-white mb-12 underline-reveal">
+          Selected Past Speakers.
         </h2>
-        <WordReveal className="text-white/60 text-[0.82rem] mb-12 max-w-[480px]" speed={40}>{"Founders, investors, and operators who've built at the scale that matters."}</WordReveal>
       </Reveal>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-px bg-white/5 border border-white/5">
         {speakers.map((s) => (
