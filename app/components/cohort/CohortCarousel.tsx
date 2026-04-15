@@ -70,7 +70,7 @@ export function CohortCarousel() {
   return (
     <div className="flex flex-col items-center justify-center mb-8">
       {/* Mobile Layout (matches founder carousel) */}
-      <div className={`w-full max-w-5xl mx-auto ${isMobile ? 'px-12' : 'px-8 md:px-20'} lg:hidden`}>
+      <div className={`w-full max-w-5xl mx-auto ${isMobile ? 'px-6 sm:px-12' : 'px-8 md:px-20'} lg:hidden`}>
         <Carousel setApi={setApi} className="w-full">
           <CarouselContent className="items-stretch ml-0">
             {images.map((image, index) => (

@@ -66,7 +66,7 @@ const NavbarV2: React.FC<NavbarV2Props> = ({ transparent = false }) => {
           {/* Hamburger button — mobile only */}
           <button
             onClick={() => setMenuOpen(true)}
-            className="md:hidden flex flex-col justify-center items-center gap-[5px] p-2"
+            className="md:hidden flex flex-col justify-center items-center gap-[5px] p-3 min-w-[44px] min-h-[44px]"
             aria-label="Open menu"
           >
             <span className="block w-6 h-[2px] bg-white/80" />
