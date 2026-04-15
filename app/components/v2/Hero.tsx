@@ -107,14 +107,6 @@ const Hero: React.FC = () => {
               </a>
             </div>
           </Reveal>
-
-          <Reveal delay={320}>
-            <div className="border-t border-white/5 pt-6">
-              <div className="text-white/60 text-sm">
-                April 7 - 16, 2026
-              </div>
-            </div>
-          </Reveal>
         </div>
       </div>
     </>
