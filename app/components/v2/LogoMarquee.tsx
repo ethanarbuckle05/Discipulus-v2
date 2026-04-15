@@ -34,8 +34,7 @@ const LogoMarquee: React.FC = () => (
         Cohort companies funded by
       </p>
     </Reveal>
-    <div className="flex w-max animate-marquee">
-      <LogoSet />
+    <div className="flex w-max animate-investor-scroll">
       <LogoSet />
       <LogoSet />
     </div>
