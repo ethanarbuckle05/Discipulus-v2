@@ -1,0 +1,75 @@
+"use client";
+
+import React, { useEffect, useRef } from "react";
+import { tweets } from "@/app/data/tweets";
+import { Reveal } from "./useScrollEffects";
+
+declare global {
+  interface Window {
+    twttr?: { widgets: { load: (el?: HTMLElement) => void } };
+  }
+}
+
+const RecentTweets: React.FC = () => {
+  const tweetRefs = useRef<(HTMLDivElement | null)[]>([]);
+
+  useEffect(() => {
+    tweetRefs.current.forEach((ref, index) => {
+      const tweet = tweets[index];
+      if (!ref || !tweet) return;
+      ref.innerHTML = "";
+      const blockquote = document.createElement("blockquote");
+      blockquote.setAttribute("class", "twitter-tweet");
+      blockquote.setAttribute("data-theme", "dark");
+      blockquote.setAttribute("data-dnt", "true");
+      blockquote.setAttribute("data-conversation", "none");
+      const link = document.createElement("a");
+      link.setAttribute("href", tweet.url);
+      blockquote.appendChild(link);
+      ref.appendChild(blockquote);
+    });
+
+    if (window.twttr?.widgets) {
+      window.twttr.widgets.load();
+      return;
+    }
+
+    const existing = document.querySelector<HTMLScriptElement>(
+      "script[src='https://platform.twitter.com/widgets.js']"
+    );
+    if (existing) return;
+
+    const script = document.createElement("script");
+    script.src = "https://platform.twitter.com/widgets.js";
+    script.async = true;
+    document.head.appendChild(script);
+  }, []);
+
+  return (
+    <section className="relative py-14 lg:py-16 bg-navy">
+      <div className="relative max-w-[1200px] mx-auto px-6 lg:px-12">
+        <Reveal>
+          <p className="font-mono text-[0.72rem] text-white/30 tracking-[0.14em] uppercase mb-5">
+            Signal
+          </p>
+          <h2 className="font-freight text-[2.1rem] font-normal text-white mb-10 underline-reveal">
+            From the timeline.
+          </h2>
+        </Reveal>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 max-w-4xl mx-auto">
+          {tweets.map((tweet, index) => (
+            <div
+              key={tweet.id}
+              ref={(el) => {
+                tweetRefs.current[index] = el;
+              }}
+              className="w-full [&_.twitter-tweet]:!mx-0 [&_.twitter-tweet]:!my-0"
+            />
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default RecentTweets;

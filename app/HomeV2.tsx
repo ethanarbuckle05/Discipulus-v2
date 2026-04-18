@@ -12,6 +12,7 @@ import TeamSection from "./components/v2/TeamSection";
 import FAQ from "./components/v2/FAQ";
 import { CohortCarousel } from "./components/cohort/CohortCarousel";
 import Press from "./components/v2/Press";
+import RecentTweets from "./components/v2/RecentTweets";
 import HowItWorks from "./components/v2/HowItWorks";
 import CTASection from "./components/v2/CTASection";
 import FooterV2 from "./components/v2/FooterV2";
@@ -49,7 +50,9 @@ const HomeV2: React.FC = () => {
       <CohortCarousel />
       {/* 13. Press */}
       <Press />
-      {/* 13. Close */}
+      {/* 14. Recent tweets */}
+      <RecentTweets />
+      {/* 15. Close */}
       <CTASection />
       <FooterV2 />
     </div>
