@@ -1,6 +1,33 @@
 "use client";
 
 import React, { useRef, useEffect, useState } from "react";
+import { scrollManager } from "./scrollManager";
+
+/**
+ * Registers an element for layered parallax scroll.
+ * speed < 1: element moves slower than scroll (background feel)
+ * speed > 1: element moves faster than scroll (foreground feel)
+ */
+export function useParallax<T extends HTMLElement = HTMLDivElement>(
+  speed: number,
+  maxOffset?: number,
+) {
+  const ref = useRef<T>(null);
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    return scrollManager.registerParallax(el, speed, maxOffset);
+  }, [speed, maxOffset]);
+  return ref;
+}
+
+/** Foreground-accent divider: 1px rule that floats at 1.15x scroll speed. */
+export const ParallaxDivider: React.FC<{ className?: string }> = ({
+  className = "h-px bg-white/[0.06]",
+}) => {
+  const ref = useParallax<HTMLDivElement>(1.15, 40);
+  return <div ref={ref} className={`${className} will-change-transform`} />;
+};
 
 /**
  * Fade-up + slide on scroll into view
@@ -27,31 +54,6 @@ export function useReveal(threshold = 0.15) {
   }, [threshold]);
 
   return { ref, visible };
-}
-
-/**
- * Parallax offset based on scroll position
- * speed: 0 = static, 0.5 = half speed, -0.3 = reverse
- */
-export function useParallax(speed = 0.3) {
-  const ref = useRef<HTMLDivElement>(null);
-  const [offset, setOffset] = useState(0);
-
-  useEffect(() => {
-    const handler = () => {
-      const el = ref.current;
-      if (!el) return;
-      const rect = el.getBoundingClientRect();
-      const center = rect.top + rect.height / 2;
-      const viewCenter = window.innerHeight / 2;
-      setOffset((center - viewCenter) * speed);
-    };
-    window.addEventListener("scroll", handler, { passive: true });
-    handler();
-    return () => window.removeEventListener("scroll", handler);
-  }, [speed]);
-
-  return { ref, offset };
 }
 
 /**
@@ -101,21 +103,17 @@ export const Reveal: React.FC<{
 };
 
 /**
- * Wrapper: applies parallax transform to children
+ * Wrapper: applies layered parallax transform to children.
+ * Kept as a convenience wrapper around useParallax.
  */
 export const Parallax: React.FC<{
   children: React.ReactNode;
   speed?: number;
   className?: string;
-}> = ({ children, speed = 0.15, className = "" }) => {
-  const { ref, offset } = useParallax(speed);
-
+}> = ({ children, speed = 0.85, className = "" }) => {
+  const ref = useParallax<HTMLDivElement>(speed);
   return (
-    <div
-      ref={ref}
-      className={className}
-      style={{ transform: `translateY(${offset}px)`, willChange: "transform" }}
-    >
+    <div ref={ref} className={`${className} will-change-transform`}>
       {children}
     </div>
   );

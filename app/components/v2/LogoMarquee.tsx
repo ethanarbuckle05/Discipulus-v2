@@ -3,7 +3,7 @@
 import React from "react";
 import Image from "next/image";
 import { investors } from "@/app/data/investors";
-import { Reveal } from "./useScrollEffects";
+import { Reveal, useParallax } from "./useScrollEffects";
 
 const LogoItem: React.FC<{ v: typeof investors[number] }> = ({ v }) => (
   <a
@@ -22,21 +22,26 @@ const LogoItem: React.FC<{ v: typeof investors[number] }> = ({ v }) => (
   </a>
 );
 
-const LogoMarquee: React.FC = () => (
-  <section className="py-10 lg:py-12 overflow-hidden group">
-    <Reveal>
-      <p className="font-mono text-[0.78rem] sm:text-[0.82rem] text-white/30 tracking-[0.16em] uppercase text-center mb-8 font-medium">
-        Cohort companies funded by
-      </p>
-    </Reveal>
-    <div
-      className="flex animate-investor-scroll group-hover:[animation-play-state:paused]"
-      style={{ width: "max-content" }}
-    >
-      {investors.map((v) => <LogoItem key={`a-${v.id}`} v={v} />)}
-      {investors.map((v) => <LogoItem key={`b-${v.id}`} v={v} />)}
-    </div>
-  </section>
-);
+const LogoMarquee: React.FC = () => {
+  const stripRef = useParallax<HTMLDivElement>(0.6, 50);
+  return (
+    <section className="py-10 lg:py-12 overflow-hidden group">
+      <Reveal>
+        <p className="font-mono text-[0.78rem] sm:text-[0.82rem] text-white/30 tracking-[0.16em] uppercase text-center mb-8 font-medium">
+          Cohort companies funded by
+        </p>
+      </Reveal>
+      <div ref={stripRef} className="will-change-transform">
+        <div
+          className="flex animate-investor-scroll group-hover:[animation-play-state:paused]"
+          style={{ width: "max-content" }}
+        >
+          {investors.map((v) => <LogoItem key={`a-${v.id}`} v={v} />)}
+          {investors.map((v) => <LogoItem key={`b-${v.id}`} v={v} />)}
+        </div>
+      </div>
+    </section>
+  );
+};
 
 export default LogoMarquee;

@@ -72,6 +72,17 @@ body::before {
   background: linear-gradient(90deg, rgba(6,12,26,0.3), rgba(6,12,26,0.08));
 }
 
+/* Story-scroll generative reveal: words fade in as the parent
+   section's --reveal-count advances past their --i index. */
+.story-section {
+  --reveal-count: 0;
+}
+.story-word {
+  opacity: clamp(0, calc(var(--reveal-count, 9999) - var(--i, 0)), 1);
+  transition: opacity 180ms ease-out;
+  will-change: opacity;
+}
+
 /* Highlight sweep — pulses a soft cream gradient across a bold keyword
    once its parent reveal becomes visible. */
 .keyword-highlight {

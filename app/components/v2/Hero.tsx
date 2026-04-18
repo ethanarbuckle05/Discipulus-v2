@@ -2,7 +2,7 @@
 
 import React, { useRef, useEffect, useState } from "react";
 import NavbarV2 from "./NavbarV2";
-import { Reveal, WordReveal } from "./useScrollEffects";
+import { Reveal, WordReveal, useParallax } from "./useScrollEffects";
 
 const metaItems = [
   { label: "Residency", value: "10 days, in-person" },
@@ -13,6 +13,7 @@ const metaItems = [
 
 const Hero: React.FC = () => {
   const videoRef = useRef<HTMLVideoElement>(null);
+  const videoWrapRef = useParallax<HTMLDivElement>(0.3, 100);
   const [isMuted, setIsMuted] = useState(true);
 
   useEffect(() => {
@@ -32,19 +33,24 @@ const Hero: React.FC = () => {
   return (
     <>
       {/* Video with navbar overlaid on top */}
-      <div className="relative w-full h-[55vh] sm:h-[65vh] md:h-[80vh] lg:h-[90vh]">
-        <video
-          ref={videoRef}
-          className="absolute inset-0 w-full h-full object-cover"
-          autoPlay
-          muted
-          loop
-          playsInline
-          preload="metadata"
-          poster="/videos/2026_Spring_poster.jpg"
+      <div className="relative w-full h-[55vh] sm:h-[65vh] md:h-[80vh] lg:h-[90vh] overflow-hidden">
+        <div
+          ref={videoWrapRef}
+          className="absolute inset-x-0 -top-[15%] h-[130%] will-change-transform"
         >
-          <source src="/videos/2026_Spring_web.mp4" type="video/mp4" />
-        </video>
+          <video
+            ref={videoRef}
+            className="absolute inset-0 w-full h-full object-cover"
+            autoPlay
+            muted
+            loop
+            playsInline
+            preload="metadata"
+            poster="/videos/2026_Spring_poster.jpg"
+          >
+            <source src="/videos/2026_Spring_web.mp4" type="video/mp4" />
+          </video>
+        </div>
         {/* Bottom fade — blends into navy below */}
         <div className="absolute inset-x-0 bottom-0 h-[40%] bg-gradient-to-t from-navy to-transparent pointer-events-none" />
 
