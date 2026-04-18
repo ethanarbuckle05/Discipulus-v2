@@ -17,7 +17,7 @@ const FooterV2: React.FC = () => (
       <Link href="/#about" className="text-white/20 text-[0.78rem] sm:text-[0.74rem] tracking-wide hover:text-white/60 transition-colors duration-200 ease-8vc">
         About
       </Link>
-      <Link href="/#cohort" className="text-white/20 text-[0.78rem] sm:text-[0.74rem] tracking-wide hover:text-white/60 transition-colors duration-200 ease-8vc">
+      <Link href="/cohort" className="text-white/20 text-[0.78rem] sm:text-[0.74rem] tracking-wide hover:text-white/60 transition-colors duration-200 ease-8vc">
         Cohort
       </Link>
       <Link href="/team" className="text-white/20 text-[0.78rem] sm:text-[0.74rem] tracking-wide hover:text-white/60 transition-colors duration-200 ease-8vc">

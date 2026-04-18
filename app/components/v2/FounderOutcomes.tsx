@@ -78,7 +78,7 @@ const FounderCard: React.FC<{ founder: typeof founders[number] }> = ({ founder }
       href={founder.url}
       target="_blank"
       rel="noopener noreferrer"
-      className="relative aspect-square block overflow-hidden group cursor-pointer border border-white/10"
+      className="relative aspect-square block overflow-hidden group cursor-pointer border border-navy/10 border-l-2 border-l-transparent hover:border-l-navy/40 transition-all duration-300 ease-8vc"
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
     >
@@ -133,7 +133,7 @@ const FounderOutcomes: React.FC = () => {
   }, []);
 
   return (
-    <section id="outcomes" className="relative py-16 lg:py-20 text-navy">
+    <section id="outcomes" className="relative py-14 lg:py-16 text-navy">
       <div className="absolute inset-0 bg-gradient-to-b from-navy via-cream via-[12%] to-cream pointer-events-none" />
       <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-navy to-cream pointer-events-none" />
       <div className="relative max-w-[1200px] mx-auto px-6 lg:px-12">

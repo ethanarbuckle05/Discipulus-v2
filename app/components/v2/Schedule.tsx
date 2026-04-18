@@ -12,7 +12,7 @@ const scheduleItems = [
 ];
 
 const Schedule: React.FC = () => (
-  <section id="experience" className="py-16 lg:py-20">
+  <section id="experience" className="py-14 lg:py-16 bg-[#0c1424]">
     <div className="max-w-[1200px] mx-auto px-6 lg:px-12">
       <div className="grid grid-cols-1 lg:grid-cols-[1fr_1.4fr] gap-8 lg:gap-16">
         <Reveal>

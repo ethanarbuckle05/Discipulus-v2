@@ -109,7 +109,7 @@ const AdvisorSlider: React.FC = () => {
 };
 
 const TeamSection: React.FC = () => (
-  <section id="team" className="py-16 lg:py-20">
+  <section id="team" className="py-14 lg:py-16">
     <div className="max-w-[1200px] mx-auto px-6 lg:px-12">
       <Reveal>
         <p className="font-mono text-[0.72rem] text-white/60 tracking-[0.14em] uppercase mb-5">
@@ -125,7 +125,7 @@ const TeamSection: React.FC = () => (
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-14">
         {principals.map((p, i) => (
           <Reveal key={p.name} delay={i * 120}>
-          <div className="bg-navy-2 border border-white/5 p-6 lg:p-8 flex flex-col items-center text-center hover:border-white/15 hover:shadow-[0_0_30px_rgba(255,255,255,0.03)] transition-all duration-300 ease-8vc group">
+          <div className="bg-navy-2 border border-white/5 border-l-2 border-l-transparent p-6 lg:p-8 flex flex-col items-center text-center hover:bg-[#0e172e] hover:border-white/15 hover:border-l-white/25 hover:shadow-[0_0_30px_rgba(255,255,255,0.03)] transition-all duration-300 ease-8vc group">
             <Image
               src={p.img}
               alt={p.name}

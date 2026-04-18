@@ -15,8 +15,6 @@ import Press from "./components/v2/Press";
 import HowItWorks from "./components/v2/HowItWorks";
 import CTASection from "./components/v2/CTASection";
 import FooterV2 from "./components/v2/FooterV2";
-import { Reveal } from "./components/v2/useScrollEffects";
-import Image from "next/image";
 
 const HomeV2: React.FC = () => {
   return (
@@ -26,44 +24,25 @@ const HomeV2: React.FC = () => {
       <Hero />
       {/* 2. Logo marquee (once) */}
       <LogoMarquee />
+      <div className="h-px bg-white/[0.06]" />
       {/* 3. Manifesto — conviction sections */}
       <ManifestoV2 />
-      {/* 4. Cohort intro */}
-      <div id="cohort" className="relative w-full aspect-[2/1] lg:aspect-[2.8/1] overflow-hidden">
-        <Image
-          src="/FoundingFathers.png"
-          alt="Discipulus cohort founders in front of the American flag"
-          fill
-          className="object-cover object-center"
-        />
-        <div className="absolute inset-x-0 bottom-0 h-[20%] bg-gradient-to-t from-navy to-transparent pointer-events-none" />
-      </div>
-      <section className="py-16 lg:py-20">
-        <div className="max-w-[1200px] mx-auto px-6 lg:px-12">
-          <Reveal>
-            <p className="font-mono text-[0.72rem] text-white/60 tracking-[0.14em] uppercase mb-4">
-              Spring 2026 Cohort · El Segundo, CA
-            </p>
-            <h2 className="font-freight text-[clamp(2.2rem,5vw,4rem)] font-normal leading-[1.08] text-white max-w-[700px] mb-5">
-              Discipulus Cohort
-            </h2>
-            <p className="text-[0.92rem] text-white/60 max-w-[520px] leading-relaxed">
-              Two week residency in El Segundo with 10 other early-stage, value-aligned founders building hard tech and software for the national interest.
-            </p>
-          </Reveal>
-        </div>
-      </section>
       {/* 5. Featured Cohort Founders */}
       <FounderOutcomes />
+      <div className="h-px bg-white/[0.06]" />
       {/* 6. Selected Past Speakers */}
       <Speakers />
+      <div className="h-px bg-white/[0.06]" />
       {/* 7. At a glance + Schedule */}
       <DealGrid />
       <Schedule />
+      <div className="h-px bg-white/[0.06]" />
       {/* 8. How it works */}
       <HowItWorks />
+      <div className="h-px bg-white/[0.06]" />
       {/* 9. Team */}
       <TeamSection />
+      <div className="h-px bg-white/[0.06]" />
       {/* 10. FAQs */}
       <FAQ />
       {/* 11. Cohort photo carousel */}

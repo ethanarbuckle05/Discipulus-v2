@@ -11,7 +11,7 @@ interface NavbarV2Props {
 
 const navLinks = [
   { href: "/#about", label: "About" },
-  { href: "/#cohort", label: "Cohort" },
+  { href: "/cohort", label: "Cohort" },
   { href: "/team", label: "Team" },
 ];
 

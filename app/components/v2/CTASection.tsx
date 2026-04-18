@@ -27,7 +27,7 @@ const ParticlesSVG = () => (
 );
 
 const CTASection: React.FC = () => (
-  <section className="py-16 lg:py-20 text-center relative overflow-hidden">
+  <section className="py-14 lg:py-16 text-center relative overflow-hidden">
     <div className="absolute inset-0 bg-gradient-to-b from-navy via-navy-2 to-navy pointer-events-none" />
     <ParticlesSVG />
     <Reveal>

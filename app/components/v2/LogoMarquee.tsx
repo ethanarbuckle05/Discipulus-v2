@@ -17,19 +17,22 @@ const LogoItem: React.FC<{ v: typeof investors[number] }> = ({ v }) => (
       alt={v.id}
       width={150}
       height={20}
-      className="h-[22px] sm:h-[28px] md:h-[34px] w-auto opacity-70 brightness-0 invert shrink-0 hover:opacity-100 transition-opacity duration-300"
+      className="h-[22px] sm:h-[28px] md:h-[34px] w-auto opacity-50 brightness-0 invert shrink-0 group-hover:opacity-70 hover:!opacity-100 transition-opacity duration-300"
     />
   </a>
 );
 
 const LogoMarquee: React.FC = () => (
-  <section className="py-16 lg:py-20 overflow-hidden">
+  <section className="py-10 lg:py-12 overflow-hidden group">
     <Reveal>
-      <p className="font-mono text-[0.85rem] sm:text-[0.95rem] text-white/70 tracking-[0.16em] uppercase text-center mb-10 font-medium">
+      <p className="font-mono text-[0.78rem] sm:text-[0.82rem] text-white/30 tracking-[0.16em] uppercase text-center mb-8 font-medium">
         Cohort companies funded by
       </p>
     </Reveal>
-    <div className="flex animate-investor-scroll" style={{ width: "max-content" }}>
+    <div
+      className="flex animate-investor-scroll group-hover:[animation-play-state:paused]"
+      style={{ width: "max-content" }}
+    >
       {investors.map((v) => <LogoItem key={`a-${v.id}`} v={v} />)}
       {investors.map((v) => <LogoItem key={`b-${v.id}`} v={v} />)}
     </div>

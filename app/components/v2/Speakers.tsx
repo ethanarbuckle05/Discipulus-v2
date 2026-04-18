@@ -73,7 +73,7 @@ const SpeakerCard: React.FC<{ speaker: typeof speakers[number] }> = ({ speaker }
 };
 
 const Speakers: React.FC = () => (
-  <section id="speakers" className="relative py-16 lg:py-20">
+  <section id="speakers" className="relative py-14 lg:py-16">
     <div className="absolute inset-0 bg-gradient-to-b from-navy via-navy-2 to-navy pointer-events-none" />
     <div className="relative max-w-[1200px] mx-auto px-6 lg:px-12">
       <Reveal>

@@ -73,7 +73,7 @@ const Hero: React.FC = () => {
       </div>
 
       {/* Hero text — below the video, on solid navy */}
-      <div className="px-6 lg:px-12 pt-12 lg:pt-16 pb-12 lg:pb-16 relative z-10">
+      <div className="px-6 lg:px-12 pt-10 lg:pt-14 pb-6 lg:pb-8 relative z-10">
         <div className="max-w-[1200px] mx-auto">
           <Reveal>
             <p className="font-mono text-[0.72rem] text-white/60 tracking-[0.14em] uppercase mb-4">

@@ -11,8 +11,8 @@ const deals = [
 ];
 
 const DealGrid: React.FC = () => (
-  <section className="relative py-16 lg:py-20">
-    <div className="absolute inset-0 bg-gradient-to-b from-navy via-navy-2 to-navy pointer-events-none" />
+  <section className="relative py-14 lg:py-16 bg-[#0c1424]">
+    <div className="absolute inset-0 bg-gradient-to-b from-navy/60 via-transparent to-navy/60 pointer-events-none" />
     <div className="relative max-w-[1200px] mx-auto px-6 lg:px-12">
       <Reveal>
         <p className="font-mono text-[0.72rem] text-white/60 tracking-[0.14em] uppercase mb-5">
