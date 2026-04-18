@@ -16,7 +16,6 @@ import RecentTweets from "./components/v2/RecentTweets";
 import HowItWorks from "./components/v2/HowItWorks";
 import CTASection from "./components/v2/CTASection";
 import FooterV2 from "./components/v2/FooterV2";
-import { ParallaxDivider } from "./components/v2/useScrollEffects";
 
 const HomeV2: React.FC = () => {
   return (
@@ -26,25 +25,19 @@ const HomeV2: React.FC = () => {
       <Hero />
       {/* 2. Logo marquee (once) */}
       <LogoMarquee />
-      <ParallaxDivider />
       {/* 3. Manifesto — conviction sections */}
       <ManifestoV2 />
       {/* 5. Featured Cohort Founders */}
       <FounderOutcomes />
-      <ParallaxDivider />
       {/* 6. Selected Past Speakers */}
       <Speakers />
-      <ParallaxDivider />
       {/* 7. At a glance + Schedule */}
       <DealGrid />
       <Schedule />
-      <ParallaxDivider />
       {/* 8. How it works */}
       <HowItWorks />
-      <ParallaxDivider />
       {/* 9. Team */}
       <TeamSection />
-      <ParallaxDivider />
       {/* 10. FAQs */}
       <FAQ />
       {/* 11. Cohort photo carousel */}

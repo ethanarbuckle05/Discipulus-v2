@@ -133,16 +133,16 @@ const TeamCard: React.FC<TeamCardProps> = ({ member, size = "lg" }) => {
 };
 
 const TeamSection: React.FC = () => (
-  <section id="team" className="py-8 lg:py-10">
+  <section id="team" className="py-5">
     <div className="max-w-6xl mx-auto px-6 lg:px-12">
       <Reveal>
-        <h2 className="font-freight text-4xl md:text-5xl lg:text-6xl font-bold tracking-tighter text-center text-white mb-8 lg:mb-10">
+        <h2 className="font-freight text-4xl md:text-5xl lg:text-6xl font-bold tracking-tighter text-center text-white mb-5">
           Our Team.
         </h2>
       </Reveal>
 
       {/* Principals */}
-      <div className="flex flex-wrap justify-center gap-6 md:gap-8 mb-10 lg:mb-12">
+      <div className="flex flex-wrap justify-center gap-3 md:gap-4 mb-6">
         {principals.map((p, i) => (
           <Reveal key={p.name} delay={i * 120}>
             <div className="w-72 sm:w-80">
@@ -154,7 +154,7 @@ const TeamSection: React.FC = () => (
 
       {/* Advisors */}
       <Reveal>
-        <h3 className="font-freight text-2xl md:text-3xl font-semibold text-center text-white/80 mb-6">
+        <h3 className="font-freight text-2xl md:text-3xl font-semibold text-center text-white/80 mb-3">
           Advisors
         </h3>
       </Reveal>

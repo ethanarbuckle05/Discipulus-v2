@@ -2,7 +2,7 @@
 
 import React from "react";
 import Image from "next/image";
-import { useParallax, ParallaxDivider } from "./useScrollEffects";
+import { useParallax } from "./useScrollEffects";
 import { StorySection, StoryText, countWords } from "./StoryText";
 
 const archetypes = [
@@ -26,7 +26,7 @@ const NumberMark: React.FC<{ n: string }> = ({ n }) => {
     <div
       ref={ref}
       aria-hidden
-      className="pointer-events-none select-none font-freight leading-none text-white/[0.06] absolute top-4 lg:top-6 -left-2 sm:-left-4 lg:-left-6 text-[9rem] sm:text-[13rem] lg:text-[17rem] will-change-transform"
+      className="pointer-events-none select-none font-freight leading-none text-white/[0.04] absolute -top-2 lg:-top-4 -left-3 sm:-left-6 lg:-left-8 text-[11rem] sm:text-[15rem] lg:text-[20rem] will-change-transform"
     >
       {n}
     </div>
@@ -36,7 +36,7 @@ const NumberMark: React.FC<{ n: string }> = ({ n }) => {
 const ManifestoImage: React.FC = () => {
   const ref = useParallax<HTMLDivElement>(0.3, 80);
   return (
-    <div className="relative w-full aspect-[16/9] lg:aspect-[2.4/1] overflow-hidden mb-10 lg:mb-12 media-glow">
+    <div className="relative w-full aspect-[16/9] lg:aspect-[2.4/1] overflow-hidden mb-4 lg:mb-5 media-glow">
       <div ref={ref} className="absolute inset-x-0 -top-[20%] h-[140%] will-change-transform">
         <Image
           src="/manifesto3.png"
@@ -51,13 +51,13 @@ const ManifestoImage: React.FC = () => {
 };
 
 const headlineClass =
-  "font-freight text-[clamp(2rem,4.2vw,3rem)] font-semibold leading-[1.12] text-white max-w-[760px] mb-8";
+  "font-freight text-[clamp(2rem,4.2vw,3rem)] font-semibold leading-[1.12] text-white max-w-[760px] mb-3";
 const bodyClass =
-  "text-[0.98rem] lg:text-[1.02rem] text-white/70 max-w-[640px] leading-[1.75] mb-5 font-light";
+  "text-[0.98rem] lg:text-[1.02rem] text-white/70 max-w-[640px] leading-[1.65] mb-2 font-light";
 const sectionClass =
-  "relative overflow-hidden min-h-[80vh] flex items-center py-8 lg:py-10";
+  "relative overflow-hidden min-h-[50vh] py-5 border-b border-white/[0.05]";
 
-// ---- Section 1 content (headline weighted x3 so it reveals faster than body) ----
+// ---- Section 1 content ----
 const s1Headline = [
   "America\u2019s next generation of innovation is being misdirected.",
 ];
@@ -82,8 +82,6 @@ const s1Bodies: (string | React.ReactElement)[][] = [
     "Where is the new healthy ecosystem for pioneers aiming to embark on our most important quests? And how do we aid our most brilliant minds in engaging in less-traveled, yet more vital, areas of innovation?",
   ],
 ];
-
-// Headline words count as 1/3 (compressed) so the headline reveals faster.
 const s1HeadlineWords = countWords(s1Headline);
 const s1BodyOffsets = s1Bodies.reduce<{ offset: number; totals: number[] }>(
   (acc, bits) => {
@@ -123,7 +121,6 @@ const s3ArchetypeOffsets: number[] = [];
 let s3Running = s3HeadlineWords + s3IntroWords;
 archetypes.forEach((a) => {
   s3ArchetypeOffsets.push(s3Running);
-  // Each archetype: title (1 bold unit) + desc words
   s3Running += 1 + countWords([a.desc]);
 });
 const s3TotalWords = s3Running;
@@ -133,7 +130,7 @@ const ManifestoV2: React.FC = () => (
     {/* Section 1 */}
     <StorySection
       totalWords={s1TotalWords}
-      runway={1.0}
+      runway={0.9}
       className={sectionClass}
     >
       <NumberMark n="1" />
@@ -155,12 +152,10 @@ const ManifestoV2: React.FC = () => (
       </div>
     </StorySection>
 
-    <ParallaxDivider />
-
     {/* Section 2 */}
     <StorySection
       totalWords={s2TotalWords}
-      runway={0.9}
+      runway={0.8}
       className={`${sectionClass} bg-[#0a1120]`}
     >
       <NumberMark n="2" />
@@ -179,22 +174,20 @@ const ManifestoV2: React.FC = () => (
         <StoryText
           bits={s2Bodies[1]}
           offset={s2BodyOffsets.totals[1]}
-          className="text-[1.02rem] text-white/85 max-w-[640px] leading-[1.75] italic"
+          className="text-[1.02rem] text-white/85 max-w-[640px] leading-[1.65] italic"
         />
       </div>
     </StorySection>
 
-    <ParallaxDivider />
-
-    {/* Section 3 */}
+    {/* Section 3 — full-bleed image fills empty space */}
     <StorySection
       totalWords={s3TotalWords}
-      runway={1.0}
-      className={sectionClass}
+      runway={0.9}
+      className="relative overflow-hidden min-h-[50vh] border-b border-white/[0.05]"
     >
       <NumberMark n="3" />
-      <div className="relative max-w-[1200px] mx-auto px-6 lg:px-12 w-full">
-        <ManifestoImage />
+      <ManifestoImage />
+      <div className="relative max-w-[1200px] mx-auto px-6 lg:px-12 w-full pb-5">
         <StoryText
           bits={s3Headline}
           offset={0}
@@ -206,7 +199,7 @@ const ManifestoV2: React.FC = () => (
           offset={s3HeadlineWords}
           className={bodyClass}
         />
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-8 mt-10 mb-12 max-w-[980px]">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-5 md:gap-6 mt-4 mb-5 max-w-[980px]">
           {archetypes.map((a, i) => (
             <div key={a.title}>
               <StoryText
@@ -220,22 +213,22 @@ const ManifestoV2: React.FC = () => (
                 ]}
                 offset={s3ArchetypeOffsets[i]}
                 as="div"
-                className="font-freight text-[1.6rem] font-semibold text-[#e8dcc8] mb-3"
+                className="font-freight text-[1.5rem] font-semibold text-[#e8dcc8] mb-1.5"
               />
               <StoryText
                 bits={[a.desc]}
                 offset={s3ArchetypeOffsets[i] + 1}
-                className="text-[0.92rem] text-white/65 leading-[1.7] font-light"
+                className="text-[0.92rem] text-white/65 leading-[1.55] font-light"
               />
             </div>
           ))}
         </div>
-        <div className="flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-6">
+        <div className="flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-5">
           <a
             href="https://web.miniextensions.com/Zliw55HfhOWXZnca7Q9Q"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-block bg-white text-navy px-7 py-3 text-[0.78rem] font-bold tracking-widest uppercase hover:scale-[1.02] hover:shadow-[0_0_25px_rgba(255,255,255,0.18)] transition-all duration-300 ease-8vc self-start"
+            className="inline-block bg-white text-navy px-6 py-2.5 text-[0.78rem] font-bold tracking-widest uppercase hover:scale-[1.02] hover:shadow-[0_0_25px_rgba(255,255,255,0.18)] transition-all duration-300 ease-8vc self-start"
           >
             Apply now
           </a>

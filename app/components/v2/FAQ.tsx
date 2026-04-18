@@ -43,7 +43,7 @@ const FAQItem: React.FC<{ faq: typeof faqs[number]; index: number }> = ({ faq, i
         <button
           type="button"
           onClick={() => setOpen(!open)}
-          className="w-full flex justify-between items-start gap-4 py-3.5 sm:py-4 text-left group"
+          className="w-full flex justify-between items-start gap-4 py-2.5 sm:py-3 text-left group"
           aria-expanded={open}
           aria-label={faq.q}
         >
@@ -63,7 +63,7 @@ const FAQItem: React.FC<{ faq: typeof faqs[number]; index: number }> = ({ faq, i
         </button>
         <div
           className={`overflow-hidden transition-all duration-500 ease-8vc-out ${
-            open ? "max-h-[500px] opacity-100 pb-3.5 sm:pb-4" : "max-h-0 opacity-0"
+            open ? "max-h-[500px] opacity-100 pb-2.5 sm:pb-3" : "max-h-0 opacity-0"
           }`}
         >
           <WordReveal
@@ -79,13 +79,13 @@ const FAQItem: React.FC<{ faq: typeof faqs[number]; index: number }> = ({ faq, i
 };
 
 const FAQ: React.FC = () => (
-  <section className="py-8 lg:py-10">
+  <section className="py-5">
     <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-12">
       <Reveal>
-        <p className="font-mono text-[0.72rem] text-white/60 tracking-[0.14em] uppercase mb-5">
+        <p className="font-mono text-[0.72rem] text-white/60 tracking-[0.14em] uppercase mb-2">
           Common questions
         </p>
-        <h2 className="font-freight text-[2.1rem] font-normal text-white mb-6 underline-reveal">
+        <h2 className="font-freight text-[2.1rem] font-normal text-white mb-3 underline-reveal">
           Frequently asked questions.
         </h2>
       </Reveal>

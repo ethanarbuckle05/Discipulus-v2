@@ -27,15 +27,15 @@ const ParticlesSVG = () => (
 );
 
 const CTASection: React.FC = () => (
-  <section className="py-12 text-center relative overflow-hidden">
+  <section className="py-4 text-center relative overflow-hidden">
     <div className="absolute inset-0 bg-gradient-to-b from-navy via-navy-2 to-navy pointer-events-none" />
     <ParticlesSVG />
     <Reveal>
-      <h2 className="font-freight text-[clamp(1.7rem,3.4vw,2.6rem)] font-normal leading-tight text-white mb-3.5 relative z-10">
+      <h2 className="font-freight text-[clamp(1.7rem,3.4vw,2.6rem)] font-normal leading-tight text-white mb-3 relative z-10">
         Build the Future with Discipulus.
       </h2>
     </Reveal>
-    <div className="mb-8 relative z-10" />
+    <div className="mb-4 relative z-10" />
     <Reveal delay={200}>
       <div className="flex flex-col sm:flex-row gap-3.5 items-center justify-center relative z-10">
       <a

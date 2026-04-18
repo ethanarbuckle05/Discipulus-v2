@@ -54,7 +54,7 @@ export function CohortCarousel() {
   const parallaxRef = useParallax<HTMLDivElement>(0.3, 60);
 
   return (
-    <section className="py-12 lg:py-16 overflow-hidden">
+    <section className="py-4 overflow-hidden">
       <Reveal>
         <div className="relative">
           <div className="absolute inset-y-0 left-0 w-12 sm:w-16 md:w-24 bg-gradient-to-r from-navy to-transparent z-10 pointer-events-none" />

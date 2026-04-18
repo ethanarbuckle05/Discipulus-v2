@@ -32,12 +32,12 @@ const articles = [
 ];
 
 const Press: React.FC = () => (
-  <section className="relative py-8 lg:py-10 text-navy">
+  <section className="relative py-5 text-navy">
     <div className="absolute inset-0 bg-gradient-to-b from-navy via-cream via-[12%] to-cream pointer-events-none" />
     <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-navy to-cream pointer-events-none" />
     <div className="relative max-w-[1200px] mx-auto px-6 lg:px-12">
       <Reveal>
-        <p className="font-mono text-[0.72rem] text-navy/50 tracking-[0.14em] uppercase mb-5">
+        <p className="font-mono text-[0.72rem] text-navy/50 tracking-[0.14em] uppercase mb-3">
           In the press
         </p>
       </Reveal>
@@ -48,19 +48,19 @@ const Press: React.FC = () => (
             href={a.url}
             target="_blank"
             rel="noopener noreferrer"
-            className="shimmer block bg-cream border-l-2 border-l-transparent p-5 lg:p-6 hover:bg-cream-hover hover:border-l-navy/25 transition-all duration-300 ease-8vc group"
+            className="shimmer block bg-cream border-l-2 border-l-transparent p-4 lg:p-5 hover:bg-cream-hover hover:border-l-navy/25 transition-all duration-300 ease-8vc group"
           >
             <Reveal delay={i * 120}>
-              <div className="h-[20px] mb-4">
+              <div className="h-[36px] mb-3 flex items-center">
                 <Image
                   src={a.logo}
                   alt={`${a.outlet} logo`}
-                  width={120}
-                  height={20}
-                  className="h-[16px] w-auto object-contain brightness-0 opacity-50 group-hover:opacity-80 transition-opacity duration-300"
+                  width={180}
+                  height={36}
+                  className="h-[30px] sm:h-[34px] w-auto object-contain brightness-0 opacity-65 group-hover:opacity-90 transition-opacity duration-300"
                 />
               </div>
-              <div className="font-freight text-[1.05rem] text-navy leading-snug font-medium mb-2 group-hover:underline underline-offset-2 decoration-navy/30 transition-all duration-300">
+              <div className="font-freight text-[1.05rem] text-navy leading-snug font-medium mb-1.5 group-hover:underline underline-offset-2 decoration-navy/30 transition-all duration-300">
                 {a.title}
               </div>
               {/* Preview snippet — appears on hover */}

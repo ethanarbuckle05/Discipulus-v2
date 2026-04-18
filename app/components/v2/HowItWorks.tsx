@@ -12,19 +12,19 @@ const steps = [
 ];
 
 const HowItWorks: React.FC = () => (
-  <section id="how" className="py-8 lg:py-10">
+  <section id="how" className="py-5">
     <div className="max-w-[1200px] mx-auto px-6 lg:px-12">
       <Reveal>
-        <p className="font-mono text-[0.72rem] text-white/60 tracking-[0.14em] uppercase mb-5">
+        <p className="font-mono text-[0.72rem] text-white/60 tracking-[0.14em] uppercase mb-2">
           How it works
         </p>
-        <h2 className="font-freight text-[2.1rem] font-normal text-white mb-6 underline-reveal">
+        <h2 className="font-freight text-[2.1rem] font-normal text-white mb-3 underline-reveal">
           From day one to Demo Day and beyond.
         </h2>
       </Reveal>
       <div className="grid grid-cols-1 md:grid-cols-5 gap-px bg-white/5 border border-white/5">
         {steps.map((s, i) => (
-          <div key={s.num} className="bg-navy p-5 lg:p-6 relative">
+          <div key={s.num} className="bg-navy p-4 lg:p-5 relative">
             <Reveal delay={i * 100}>
               <div className="font-mono text-[0.65rem] sm:text-[0.58rem] text-white/40 tracking-widest mb-3">
                 {s.num}

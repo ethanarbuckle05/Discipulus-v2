@@ -46,13 +46,13 @@ const RecentTweets: React.FC = () => {
   }, []);
 
   return (
-    <section className="relative py-8 lg:py-10 bg-navy">
+    <section className="relative py-5 bg-navy">
       <div className="relative max-w-[1200px] mx-auto px-6 lg:px-12">
         <Reveal>
-          <p className="font-mono text-[0.72rem] text-white/30 tracking-[0.14em] uppercase mb-5">
+          <p className="font-mono text-[0.72rem] text-white/30 tracking-[0.14em] uppercase mb-2">
             Signal
           </p>
-          <h2 className="font-freight text-[2.1rem] font-normal text-white mb-6 underline-reveal">
+          <h2 className="font-freight text-[2.1rem] font-normal text-white mb-3 underline-reveal">
             From the timeline.
           </h2>
         </Reveal>

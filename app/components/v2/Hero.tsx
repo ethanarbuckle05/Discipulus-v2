@@ -79,24 +79,22 @@ const Hero: React.FC = () => {
       </div>
 
       {/* Hero text — below the video, on solid navy */}
-      <div className="px-6 lg:px-12 pt-8 lg:pt-10 pb-0 relative z-10">
+      <div className="px-6 lg:px-12 pt-10 pb-0 relative z-10">
         <div className="max-w-[1200px] mx-auto">
           <Reveal>
-            <p className="font-mono text-[0.72rem] text-white/60 tracking-[0.14em] uppercase mb-4">
+            <p className="font-mono text-[0.72rem] text-white/60 tracking-[0.14em] uppercase mb-2">
               10-Day Founder Residency · El Segundo, CA
             </p>
           </Reveal>
 
           <Reveal delay={80}>
-            <h1 className="font-freight text-[clamp(2.6rem,5.5vw,4.6rem)] font-normal leading-[1.06] text-white max-w-[760px] mb-6 tracking-tight">
+            <h1 className="font-freight text-[clamp(2.6rem,5.5vw,4.6rem)] font-normal leading-[1.06] text-white max-w-[760px] mb-5 tracking-tight">
               Cultivating a visionary vanguard of founders solving America&apos;s hardest problems in El Segundo.
             </h1>
           </Reveal>
 
-          <div className="mb-10" />
-
           <Reveal delay={240}>
-            <div className="flex flex-col sm:flex-row gap-3.5 items-start sm:items-center pb-8 lg:pb-10">
+            <div className="flex flex-col sm:flex-row gap-3.5 items-start sm:items-center pb-4">
               <a
                 href="https://web.miniextensions.com/Zliw55HfhOWXZnca7Q9Q"
                 target="_blank"
