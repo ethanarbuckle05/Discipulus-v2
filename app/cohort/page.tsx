@@ -1,5 +1,11 @@
 import NavbarV2 from "../components/v2/NavbarV2";
 import FounderOutcomes from "../components/v2/FounderOutcomes";
+import Speakers from "../components/v2/Speakers";
+import AfterProgram from "../components/v2/AfterProgram";
+import Schedule from "../components/v2/Schedule";
+import TeamSection from "../components/v2/TeamSection";
+import FAQ from "../components/v2/FAQ";
+import { CohortCarousel } from "../components/cohort/CohortCarousel";
 import CTASection from "../components/v2/CTASection";
 import FooterV2 from "../components/v2/FooterV2";
 import { Reveal } from "../components/v2/useScrollEffects";
@@ -12,13 +18,13 @@ export default function CohortPage() {
     <div className="flex flex-col bg-navy text-white/80 font-sans min-h-screen antialiased">
       <NavbarV2 />
       <CohortHero />
-      <section className="py-16 lg:py-20">
+      <section className="py-5">
         <div className="max-w-[1200px] mx-auto px-6 lg:px-12">
           <Reveal>
-            <p className="font-mono text-[0.72rem] text-white/60 tracking-[0.14em] uppercase mb-4">
+            <p className="font-mono text-[0.72rem] text-white/60 tracking-[0.14em] uppercase mb-2">
               Spring 2026 Cohort · El Segundo, CA
             </p>
-            <h1 className="font-freight text-[clamp(2.2rem,5vw,4rem)] font-normal leading-[1.08] text-white max-w-[700px] mb-5">
+            <h1 className="font-freight text-[clamp(2.2rem,5vw,4rem)] font-normal leading-[1.08] text-white max-w-[700px] mb-3">
               Discipulus Cohort
             </h1>
             <p className="text-[0.92rem] text-white/60 max-w-[520px] leading-relaxed">
@@ -28,6 +34,12 @@ export default function CohortPage() {
         </div>
       </section>
       <FounderOutcomes />
+      <Speakers />
+      <AfterProgram />
+      <Schedule />
+      <TeamSection />
+      <FAQ />
+      <CohortCarousel />
       <CTASection />
       <FooterV2 />
     </div>

@@ -44,7 +44,7 @@ const SpeakerCard: React.FC<{ speaker: typeof speakers[number] }> = ({ speaker }
             src={speaker.img}
             alt={speaker.name}
             fill
-            className="object-cover grayscale border border-white/10"
+            className="object-cover border border-white/10"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
         </div>
