@@ -47,7 +47,7 @@ const RecentTweets: React.FC = () => {
 
   return (
     <section className="relative py-5 bg-navy">
-      <div className="relative max-w-[1200px] mx-auto px-6 lg:px-12">
+      <div className="relative max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-12">
         <Reveal>
           <p className="font-mono text-[0.72rem] text-white/30 tracking-[0.14em] uppercase mb-2">
             Signal

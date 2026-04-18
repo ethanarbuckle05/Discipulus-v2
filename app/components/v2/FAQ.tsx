@@ -43,7 +43,7 @@ const FAQItem: React.FC<{ faq: typeof faqs[number]; index: number }> = ({ faq, i
         <button
           type="button"
           onClick={() => setOpen(!open)}
-          className="w-full flex justify-between items-start gap-4 py-2.5 sm:py-3 text-left group"
+          className="w-full flex justify-between items-start gap-4 py-3 sm:py-3.5 min-h-[44px] text-left group"
           aria-expanded={open}
           aria-label={faq.q}
         >

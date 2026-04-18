@@ -33,7 +33,7 @@ const Hero: React.FC = () => {
   return (
     <>
       {/* Video with navbar overlaid on top */}
-      <div className="relative w-full h-[55vh] sm:h-[65vh] md:h-[80vh] lg:h-[90vh] overflow-hidden">
+      <div className="relative w-full aspect-video sm:aspect-auto sm:h-[65vh] md:h-[80vh] lg:h-[90vh] overflow-hidden">
         <div
           ref={videoWrapRef}
           className="absolute inset-x-0 -top-[15%] h-[130%] will-change-transform"
@@ -79,7 +79,7 @@ const Hero: React.FC = () => {
       </div>
 
       {/* Hero text — below the video, on solid navy */}
-      <div className="px-6 lg:px-12 pt-10 pb-0 relative z-10">
+      <div className="px-4 sm:px-6 lg:px-12 pt-8 pb-4 relative z-10">
         <div className="max-w-[1200px] mx-auto">
           <Reveal>
             <p className="font-mono text-[0.72rem] text-white/60 tracking-[0.14em] uppercase mb-2">
@@ -88,24 +88,24 @@ const Hero: React.FC = () => {
           </Reveal>
 
           <Reveal delay={80}>
-            <h1 className="font-freight text-[clamp(2.6rem,5.5vw,4.6rem)] font-normal leading-[1.06] text-white max-w-[760px] mb-5 tracking-tight">
+            <h1 className="font-freight text-[clamp(1.75rem,5.5vw,4.6rem)] font-normal leading-[1.1] text-white max-w-[760px] mb-5 tracking-tight">
               Cultivating a visionary vanguard of founders solving America&apos;s hardest problems in El Segundo.
             </h1>
           </Reveal>
 
           <Reveal delay={240}>
-            <div className="flex flex-col sm:flex-row gap-3.5 items-start sm:items-center pb-4">
+            <div className="flex flex-col sm:flex-row gap-3 items-stretch sm:items-center">
               <a
                 href="https://web.miniextensions.com/Zliw55HfhOWXZnca7Q9Q"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-white text-navy px-7 py-3 text-[0.8rem] font-semibold tracking-widest uppercase hover:scale-105 hover:shadow-[0_0_25px_rgba(255,255,255,0.2)] transition-all duration-300 ease-8vc inline-block"
+                className="bg-white text-navy px-7 py-3.5 text-[0.8rem] font-semibold tracking-widest uppercase text-center w-full sm:w-auto min-h-[44px] flex items-center justify-center hover:scale-[1.02] sm:hover:scale-105 hover:shadow-[0_0_25px_rgba(255,255,255,0.2)] transition-all duration-300 ease-8vc"
               >
                 Apply now
               </a>
               <a
                 href="/cohort"
-                className="text-white/60 px-7 py-3 text-[0.8rem] tracking-wider border border-white/10 hover:text-white hover:border-white/20 transition-all duration-300 ease-8vc inline-block"
+                className="text-white/60 px-7 py-3.5 text-[0.8rem] tracking-wider border border-white/10 text-center w-full sm:w-auto min-h-[44px] flex items-center justify-center hover:text-white hover:border-white/20 transition-all duration-300 ease-8vc"
               >
                 Learn more
               </a>

@@ -134,7 +134,7 @@ const TeamCard: React.FC<TeamCardProps> = ({ member, size = "lg" }) => {
 
 const TeamSection: React.FC = () => (
   <section id="team" className="py-5">
-    <div className="max-w-6xl mx-auto px-6 lg:px-12">
+    <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-12">
       <Reveal>
         <h2 className="font-freight text-4xl md:text-5xl lg:text-6xl font-bold tracking-tighter text-center text-white mb-5">
           Our Team.
@@ -159,25 +159,12 @@ const TeamSection: React.FC = () => (
         </h3>
       </Reveal>
 
-      <div className="flex flex-col items-center gap-2 md:gap-3">
-        <div className="flex justify-center gap-2 md:gap-3 flex-wrap">
-          {advisors.slice(0, 3).map((a, i) => (
-            <Reveal key={a.name} delay={i * 80}>
-              <div className="w-28 sm:w-40 md:w-52 lg:w-56">
-                <TeamCard member={a} size="sm" />
-              </div>
-            </Reveal>
-          ))}
-        </div>
-        <div className="flex justify-center gap-2 md:gap-3 flex-wrap">
-          {advisors.slice(3).map((a, i) => (
-            <Reveal key={a.name} delay={(i + 3) * 80}>
-              <div className="w-28 sm:w-40 md:w-52 lg:w-56">
-                <TeamCard member={a} size="sm" />
-              </div>
-            </Reveal>
-          ))}
-        </div>
+      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-2 md:gap-3 max-w-3xl md:max-w-none mx-auto">
+        {advisors.map((a, i) => (
+          <Reveal key={a.name} delay={i * 80}>
+            <TeamCard member={a} size="sm" />
+          </Reveal>
+        ))}
       </div>
     </div>
   </section>

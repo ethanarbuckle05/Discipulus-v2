@@ -17,7 +17,7 @@ const LogoItem: React.FC<{ v: typeof investors[number] }> = ({ v }) => (
       alt={v.id}
       width={150}
       height={20}
-      className="h-[22px] sm:h-[28px] md:h-[34px] w-auto opacity-50 brightness-0 invert shrink-0 group-hover:opacity-70 hover:!opacity-100 transition-opacity duration-300"
+      className="h-[16px] sm:h-[24px] md:h-[34px] w-auto opacity-50 brightness-0 invert shrink-0 group-hover:opacity-70 hover:!opacity-100 transition-opacity duration-300"
     />
   </a>
 );

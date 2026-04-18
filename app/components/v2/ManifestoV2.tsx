@@ -26,7 +26,7 @@ const NumberMark: React.FC<{ n: string }> = ({ n }) => {
     <div
       ref={ref}
       aria-hidden
-      className="pointer-events-none select-none font-freight leading-none text-white/[0.04] absolute -top-2 lg:-top-4 -left-3 sm:-left-6 lg:-left-8 text-[11rem] sm:text-[15rem] lg:text-[20rem] will-change-transform"
+      className="hidden sm:block pointer-events-none select-none font-freight leading-none text-white/[0.04] absolute -top-2 lg:-top-4 -left-6 lg:-left-8 text-[15rem] lg:text-[20rem] will-change-transform"
     >
       {n}
     </div>
@@ -55,7 +55,7 @@ const headlineClass =
 const bodyClass =
   "text-[0.98rem] lg:text-[1.02rem] text-white/70 max-w-[640px] leading-[1.65] mb-2 font-light";
 const sectionClass =
-  "relative overflow-hidden min-h-[50vh] py-5 border-b border-white/[0.05]";
+  "relative overflow-hidden min-h-[40vh] sm:min-h-[50vh] py-5 border-b border-white/[0.05]";
 
 // ---- Section 1 content ----
 const s1Headline = [
@@ -134,7 +134,7 @@ const ManifestoV2: React.FC = () => (
       className={sectionClass}
     >
       <NumberMark n="1" />
-      <div className="relative max-w-[1200px] mx-auto px-6 lg:px-12 w-full">
+      <div className="relative max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-12 w-full">
         <StoryText
           bits={s1Headline}
           offset={0}
@@ -159,7 +159,7 @@ const ManifestoV2: React.FC = () => (
       className={`${sectionClass} bg-[#0a1120]`}
     >
       <NumberMark n="2" />
-      <div className="relative max-w-[1200px] mx-auto px-6 lg:px-12 w-full">
+      <div className="relative max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-12 w-full">
         <StoryText
           bits={s2Headline}
           offset={0}
@@ -183,11 +183,11 @@ const ManifestoV2: React.FC = () => (
     <StorySection
       totalWords={s3TotalWords}
       runway={0.9}
-      className="relative overflow-hidden min-h-[50vh] border-b border-white/[0.05]"
+      className="relative overflow-hidden min-h-[40vh] sm:min-h-[50vh] border-b border-white/[0.05]"
     >
       <NumberMark n="3" />
       <ManifestoImage />
-      <div className="relative max-w-[1200px] mx-auto px-6 lg:px-12 w-full pb-5">
+      <div className="relative max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-12 w-full pb-5">
         <StoryText
           bits={s3Headline}
           offset={0}

@@ -15,16 +15,16 @@ export { default as metadata } from "./metadata";
 
 export default function CohortPage() {
   return (
-    <div className="flex flex-col bg-navy text-white/80 font-sans min-h-screen antialiased">
+    <div className="flex flex-col bg-navy text-white/80 font-sans min-h-screen max-w-full overflow-hidden antialiased">
       <NavbarV2 />
       <CohortHero />
       <section className="py-5">
-        <div className="max-w-[1200px] mx-auto px-6 lg:px-12">
+        <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-12">
           <Reveal>
             <p className="font-mono text-[0.72rem] text-white/60 tracking-[0.14em] uppercase mb-2">
               Spring 2026 Cohort · El Segundo, CA
             </p>
-            <h1 className="font-freight text-[clamp(2.2rem,5vw,4rem)] font-normal leading-[1.08] text-white max-w-[700px] mb-3">
+            <h1 className="font-freight text-[clamp(1.75rem,5vw,4rem)] font-normal leading-[1.1] text-white max-w-[700px] mb-3">
               Discipulus Cohort
             </h1>
             <p className="text-[0.92rem] text-white/60 max-w-[520px] leading-relaxed">
