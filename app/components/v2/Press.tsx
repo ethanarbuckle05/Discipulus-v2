@@ -32,7 +32,7 @@ const articles = [
 ];
 
 const Press: React.FC = () => (
-  <section className="relative py-14 lg:py-16 text-navy">
+  <section className="relative py-8 lg:py-10 text-navy">
     <div className="absolute inset-0 bg-gradient-to-b from-navy via-cream via-[12%] to-cream pointer-events-none" />
     <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-navy to-cream pointer-events-none" />
     <div className="relative max-w-[1200px] mx-auto px-6 lg:px-12">
@@ -48,7 +48,7 @@ const Press: React.FC = () => (
             href={a.url}
             target="_blank"
             rel="noopener noreferrer"
-            className="shimmer block bg-cream border-l-2 border-l-transparent p-6 lg:p-7 hover:bg-cream-hover hover:border-l-navy/25 transition-all duration-300 ease-8vc group"
+            className="shimmer block bg-cream border-l-2 border-l-transparent p-5 lg:p-6 hover:bg-cream-hover hover:border-l-navy/25 transition-all duration-300 ease-8vc group"
           >
             <Reveal delay={i * 120}>
               <div className="h-[20px] mb-4">

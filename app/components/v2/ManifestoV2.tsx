@@ -55,7 +55,7 @@ const headlineClass =
 const bodyClass =
   "text-[0.98rem] lg:text-[1.02rem] text-white/70 max-w-[640px] leading-[1.75] mb-5 font-light";
 const sectionClass =
-  "relative py-16 lg:py-20 overflow-hidden min-h-[150vh] flex items-start";
+  "relative overflow-hidden min-h-[80vh] flex items-center py-8 lg:py-10";
 
 // ---- Section 1 content (headline weighted x3 so it reveals faster than body) ----
 const s1Headline = [
@@ -133,11 +133,11 @@ const ManifestoV2: React.FC = () => (
     {/* Section 1 */}
     <StorySection
       totalWords={s1TotalWords}
-      runway={1.6}
+      runway={1.0}
       className={sectionClass}
     >
       <NumberMark n="1" />
-      <div className="relative max-w-[1200px] mx-auto px-6 lg:px-12 w-full pt-8">
+      <div className="relative max-w-[1200px] mx-auto px-6 lg:px-12 w-full">
         <StoryText
           bits={s1Headline}
           offset={0}
@@ -160,11 +160,11 @@ const ManifestoV2: React.FC = () => (
     {/* Section 2 */}
     <StorySection
       totalWords={s2TotalWords}
-      runway={1.3}
+      runway={0.9}
       className={`${sectionClass} bg-[#0a1120]`}
     >
       <NumberMark n="2" />
-      <div className="relative max-w-[1200px] mx-auto px-6 lg:px-12 w-full pt-8">
+      <div className="relative max-w-[1200px] mx-auto px-6 lg:px-12 w-full">
         <StoryText
           bits={s2Headline}
           offset={0}
@@ -189,11 +189,11 @@ const ManifestoV2: React.FC = () => (
     {/* Section 3 */}
     <StorySection
       totalWords={s3TotalWords}
-      runway={1.6}
+      runway={1.0}
       className={sectionClass}
     >
       <NumberMark n="3" />
-      <div className="relative max-w-[1200px] mx-auto px-6 lg:px-12 w-full pt-8">
+      <div className="relative max-w-[1200px] mx-auto px-6 lg:px-12 w-full">
         <ManifestoImage />
         <StoryText
           bits={s3Headline}

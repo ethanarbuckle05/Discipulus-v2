@@ -79,7 +79,7 @@ const Hero: React.FC = () => {
       </div>
 
       {/* Hero text — below the video, on solid navy */}
-      <div className="px-6 lg:px-12 pt-10 lg:pt-14 pb-6 lg:pb-8 relative z-10">
+      <div className="px-6 lg:px-12 pt-8 lg:pt-10 pb-0 relative z-10">
         <div className="max-w-[1200px] mx-auto">
           <Reveal>
             <p className="font-mono text-[0.72rem] text-white/60 tracking-[0.14em] uppercase mb-4">
@@ -96,7 +96,7 @@ const Hero: React.FC = () => {
           <div className="mb-10" />
 
           <Reveal delay={240}>
-            <div className="flex flex-col sm:flex-row gap-3.5 items-start sm:items-center mb-14">
+            <div className="flex flex-col sm:flex-row gap-3.5 items-start sm:items-center pb-8 lg:pb-10">
               <a
                 href="https://web.miniextensions.com/Zliw55HfhOWXZnca7Q9Q"
                 target="_blank"

@@ -83,9 +83,11 @@ class ScrollManager {
       // finish by the time the section has scrolled (runway) viewports past.
       const start = vh * 0.85;
       const end = -vh * (item.runway - 0.85);
-      const raw = (start - rect.top) / (start - end);
-      const progress = Math.max(0, Math.min(1, raw));
-      item.el.style.setProperty("--reveal-count", String(progress * item.totalWords));
+      const raw = Math.max(0, Math.min(1, (start - rect.top) / (start - end)));
+      // Front-load the reveal: 60% of the words in the first 40% of scroll,
+      // so headlines land immediately and the last few words trail at the end.
+      const eased = raw < 0.4 ? raw * 1.5 : 0.6 + (raw - 0.4) * (2 / 3);
+      item.el.style.setProperty("--reveal-count", String(eased * item.totalWords));
     });
   };
 

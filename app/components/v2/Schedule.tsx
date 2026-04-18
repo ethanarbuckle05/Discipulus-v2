@@ -12,7 +12,7 @@ const scheduleItems = [
 ];
 
 const Schedule: React.FC = () => (
-  <section id="experience" className="py-14 lg:py-16 bg-[#0c1424]">
+  <section id="experience" className="py-8 lg:py-10 bg-[#0c1424]">
     <div className="max-w-[1200px] mx-auto px-6 lg:px-12">
       <div className="grid grid-cols-1 lg:grid-cols-[1fr_1.4fr] gap-8 lg:gap-16">
         <Reveal>
@@ -30,10 +30,10 @@ const Schedule: React.FC = () => (
               <div
                 className="grid grid-cols-[60px_1fr] sm:grid-cols-[88px_1fr] border-b border-white/5 hover:bg-navy-2 transition-all duration-300 ease-8vc hover:pl-2 group"
               >
-                <div className="font-mono text-[0.7rem] text-white/40 group-hover:text-white/70 px-3 sm:px-4 py-3 sm:py-4 tracking-wide transition-colors duration-300">
+                <div className="font-mono text-[0.7rem] text-white/40 group-hover:text-white/70 px-3 sm:px-4 py-2.5 sm:py-3 tracking-wide transition-colors duration-300">
                   {item.time}
                 </div>
-                <div className="text-[0.82rem] text-white/80 group-hover:text-white px-3 sm:px-4 py-3 sm:py-4 transition-colors duration-300">
+                <div className="text-[0.82rem] text-white/80 group-hover:text-white px-3 sm:px-4 py-2.5 sm:py-3 transition-colors duration-300">
                   {item.desc}
                 </div>
               </div>

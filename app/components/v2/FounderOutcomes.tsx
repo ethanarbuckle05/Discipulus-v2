@@ -133,7 +133,7 @@ const FounderOutcomes: React.FC = () => {
   }, []);
 
   return (
-    <section id="outcomes" className="relative py-14 lg:py-16 text-navy">
+    <section id="outcomes" className="relative py-8 lg:py-10 text-navy">
       <div className="absolute inset-0 bg-gradient-to-b from-navy via-cream via-[12%] to-cream pointer-events-none" />
       <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-navy to-cream pointer-events-none" />
       <div className="relative max-w-[1200px] mx-auto px-6 lg:px-12">
@@ -141,7 +141,7 @@ const FounderOutcomes: React.FC = () => {
           <p className="font-mono text-[0.72rem] text-navy/50 tracking-[0.14em] uppercase mb-5">
             Cohort
           </p>
-          <h2 className="font-freight text-[2.1rem] font-normal leading-tight max-w-[520px] text-navy underline-reveal underline-reveal-dark mb-12">
+          <h2 className="font-freight text-[2.1rem] font-normal leading-tight max-w-[520px] text-navy underline-reveal underline-reveal-dark mb-6">
             Featured Cohort Founders.
           </h2>
         </Reveal>

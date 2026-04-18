@@ -3,7 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 const FooterV2: React.FC = () => (
-  <footer className="px-4 sm:px-6 lg:px-12 py-6 sm:py-9 flex flex-col sm:flex-row justify-between items-center gap-4">
+  <footer className="px-4 sm:px-6 lg:px-12 py-6 flex flex-col sm:flex-row justify-between items-center gap-4">
     <div>
       <Image
         src="/Discipulus - Logo.png"

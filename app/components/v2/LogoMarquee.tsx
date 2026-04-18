@@ -25,9 +25,9 @@ const LogoItem: React.FC<{ v: typeof investors[number] }> = ({ v }) => (
 const LogoMarquee: React.FC = () => {
   const stripRef = useParallax<HTMLDivElement>(0.6, 50);
   return (
-    <section className="py-10 lg:py-12 overflow-hidden group">
+    <section className="py-6 lg:py-8 overflow-hidden group">
       <Reveal>
-        <p className="font-mono text-[0.78rem] sm:text-[0.82rem] text-white/30 tracking-[0.16em] uppercase text-center mb-8 font-medium">
+        <p className="font-mono text-[0.78rem] sm:text-[0.82rem] text-white/30 tracking-[0.16em] uppercase text-center mb-5 font-medium">
           Cohort companies funded by
         </p>
       </Reveal>
