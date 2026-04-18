@@ -61,20 +61,26 @@ export const Reveal: React.FC<{
   children: React.ReactNode;
   className?: string;
   delay?: number;
-  direction?: "up" | "left" | "right";
-}> = ({ children, className = "", delay = 0, direction = "up" }) => {
+  direction?: "up" | "left" | "right" | "scale" | "none";
+  offset?: "sm" | "md";
+}> = ({ children, className = "", delay = 0, direction = "up", offset = "md" }) => {
   const { ref, visible } = useReveal();
 
-  const translate = {
-    up: "translate-y-8",
-    left: "translate-x-8",
-    right: "-translate-x-8",
+  const offsetY = offset === "sm" ? "translate-y-5" : "translate-y-8";
+  const offsetX = offset === "sm" ? "translate-x-5" : "translate-x-8";
+
+  const hidden = {
+    up: `opacity-0 ${offsetY}`,
+    left: `opacity-0 ${offsetX}`,
+    right: `opacity-0 -${offsetX}`,
+    scale: "opacity-0 scale-[0.97]",
+    none: "opacity-0",
   }[direction];
 
-  // Add 'revealed' class to children that have 'underline-reveal'
+  // Add 'revealed' class to decorative children that hook into it.
   useEffect(() => {
     if (visible && ref.current) {
-      const els = ref.current.querySelectorAll('.underline-reveal');
+      const els = ref.current.querySelectorAll('.underline-reveal, .keyword-highlight');
       els.forEach(el => el.classList.add('revealed'));
     }
   }, [visible, ref]);
@@ -82,8 +88,10 @@ export const Reveal: React.FC<{
   return (
     <div
       ref={ref}
-      className={`transition-all duration-700 ease-8vc-out ${
-        visible ? "opacity-100 translate-y-0 translate-x-0" : `opacity-0 ${translate}`
+      className={`transition-all duration-[600ms] ease-8vc-out ${
+        visible
+          ? "opacity-100 translate-y-0 translate-x-0 scale-100"
+          : hidden
       } ${className}`}
       style={{ transitionDelay: `${delay}ms` }}
     >

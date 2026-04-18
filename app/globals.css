@@ -72,6 +72,25 @@ body::before {
   background: linear-gradient(90deg, rgba(6,12,26,0.3), rgba(6,12,26,0.08));
 }
 
+/* Highlight sweep — pulses a soft cream gradient across a bold keyword
+   once its parent reveal becomes visible. */
+.keyword-highlight {
+  background-image: linear-gradient(90deg, transparent 0%, rgba(232,220,200,0.22) 50%, transparent 100%);
+  background-size: 220% 100%;
+  background-position: -120% 0;
+  background-repeat: no-repeat;
+  padding: 0.05em 0.12em;
+  margin: 0 -0.12em;
+  border-radius: 2px;
+}
+.keyword-highlight.revealed {
+  animation: keyword-sweep 1.2s cubic-bezier(.19,1,.22,1) 0.15s forwards;
+}
+@keyframes keyword-sweep {
+  0%   { background-position: -120% 0; }
+  100% { background-position:  220% 0; }
+}
+
 /* Shimmer effect */
 .shimmer {
   position: relative;

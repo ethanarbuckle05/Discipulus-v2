@@ -58,13 +58,14 @@ const RecentTweets: React.FC = () => {
         </Reveal>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 max-w-4xl mx-auto">
           {tweets.map((tweet, index) => (
-            <div
-              key={tweet.id}
-              ref={(el) => {
-                tweetRefs.current[index] = el;
-              }}
-              className="w-full [&_.twitter-tweet]:!mx-0 [&_.twitter-tweet]:!my-0"
-            />
+            <Reveal key={tweet.id} delay={index * 100} offset="sm">
+              <div
+                ref={(el) => {
+                  tweetRefs.current[index] = el;
+                }}
+                className="w-full [&_.twitter-tweet]:!mx-0 [&_.twitter-tweet]:!my-0"
+              />
+            </Reveal>
           ))}
         </div>
       </div>

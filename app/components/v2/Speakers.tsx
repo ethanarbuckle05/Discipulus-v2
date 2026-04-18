@@ -85,8 +85,10 @@ const Speakers: React.FC = () => (
         </h2>
       </Reveal>
       <div className="grid grid-cols-2 md:grid-cols-4 gap-1 sm:gap-px sm:bg-white/5 sm:border sm:border-white/5">
-        {speakers.map((s) => (
-          <SpeakerCard key={s.name} speaker={s} />
+        {speakers.map((s, i) => (
+          <Reveal key={s.name} delay={(i % 8) * 80} offset="sm">
+            <SpeakerCard speaker={s} />
+          </Reveal>
         ))}
       </div>
     </div>
